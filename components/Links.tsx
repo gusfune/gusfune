@@ -67,7 +67,7 @@ const Links = () => (
       </a>
       , full source code{" "}
       <a
-        href="https://github.com/gusfune/portfolio"
+        href="https://github.com/gusfune/gusfune.com"
         target="_blank"
         rel="noopener noreferrer"
         className="underline"
