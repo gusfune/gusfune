@@ -1,0 +1,9 @@
+query GET_RECOMMENDATIONS {
+  recommendations {
+    name
+    id
+    photo
+    title
+    content
+  }
+}
