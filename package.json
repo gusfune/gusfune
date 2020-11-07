@@ -37,8 +37,12 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
+    "postcss-flexbugs-fixes": "^5.0.0",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.1.2",
     "react-cookie-consent": "^6.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-standard": "^20.0.0",
     "tailwindcss": "^1.9.6",
     "typeface-open-sans": "^1.1.13",
     "typescript": "^4.0.5"

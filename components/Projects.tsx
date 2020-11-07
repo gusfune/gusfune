@@ -99,7 +99,6 @@ const ProjectUnit = ({
 const Projects = () => {
   const { loading, error, data } = useQuery<Get_ProjectsQuery>(GET_PROJECTS)
   if (error) return <p>Error!(</p>
-  console.log(data)
   return (
     <Section title="These are some selected projects from the last years that I'm really proud of">
       <div className="grid grid-cols-2 lg:grid-cols-4">
