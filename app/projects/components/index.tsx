@@ -28,6 +28,7 @@ const ProjectLoader = () => (
       <ProjectLoaderItem />
       <ProjectLoaderItem />
       <ProjectLoaderItem />
+      <ProjectLoaderItem />
     </div>
   </Section>
 )
