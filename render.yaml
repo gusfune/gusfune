@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: blitzapp
+    name: gusfune.com
     env: node
     plan: starter
     buildCommand: yarn --frozen-lockfile --prod=true &&
