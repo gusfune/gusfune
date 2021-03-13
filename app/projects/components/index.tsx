@@ -5,7 +5,7 @@ import { faAndroid, faApple } from "@fortawesome/free-brands-svg-icons"
 import { faGlasses, faGlobeEurope } from "@fortawesome/free-solid-svg-icons"
 import Section from "app/core/components/Section"
 import getProjects from "app/projects/queries/getProjects"
-import { Link } from "node_modules/.prisma/client"
+import { Link } from "@prisma/client"
 
 const ProjectLoaderItem = (props) => (
   <ContentLoader
