@@ -5,6 +5,7 @@ import { faAndroid, faApple } from "@fortawesome/free-brands-svg-icons"
 import { faGlasses, faGlobeEurope } from "@fortawesome/free-solid-svg-icons"
 import Section from "app/core/components/Section"
 import getProjects from "app/projects/queries/getProjects"
+import { Link } from "node_modules/.prisma/client"
 
 const ProjectLoaderItem = (props) => (
   <ContentLoader
@@ -57,9 +58,8 @@ interface ProjectUnitProps {
   title: string
   subtitle: string
   role: string
-  year: number
-  //links: Links[]
-  links: any[]
+  year?: number | null
+  links: Link[]
 }
 
 const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: ProjectUnitProps) => {
@@ -75,11 +75,11 @@ const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: Projec
       />
       {title && <div className="mb-2 text-lg font-semibold">{title}</div>}
       {subtitle && <div className="mb-2 text-sm font-light">{subtitle}</div>}
-      {role && year && (
+      {role && (
         <div className="text-sm font-light">
           <strong>Role:</strong> {role}
           <br />
-          <strong>Year:</strong> {year}
+          <strong>Year:</strong> {year || "current"}
           <br />
         </div>
       )}
@@ -94,15 +94,12 @@ const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: Projec
   )
 }
 
-const ITEMS_PER_PAGE = 10
-
 const ProjectList = () => {
   const [{ projects }] = usePaginatedQuery(getProjects, {
     orderBy: { id: "asc" },
     skip: 0,
     take: ITEMS_PER_PAGE,
   })
-  console.log(projects)
   return (
     <Section title="These are some selected projects from the last years that I'm really proud of">
       <div className="grid grid-cols-2 lg:grid-cols-4">
