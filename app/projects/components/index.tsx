@@ -48,7 +48,7 @@ const ProjectLink = ({ url, type }: ProjectLinkProps) => (
   </a>
 )
 
-interface ProjectUnitProps {
+type ProjectUnitProps = {
   logo: string
   color: string
   title: string
@@ -58,37 +58,35 @@ interface ProjectUnitProps {
   links: Link[]
 }
 
-const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: ProjectUnitProps) => {
-  return (
-    <div className="p-2 experience-unit col-xs-12 col-sm-6 col-md-3">
-      <div
-        className="w-full h-32 mb-2 bg-center bg-no-repeat border rounded image"
-        style={{
-          backgroundImage: `url(${logo})`,
-          backgroundColor: color,
-          backgroundSize: "calc(100% - 80px)",
-        }}
-      />
-      {title && <div className="mb-2 text-lg font-semibold">{title}</div>}
-      {subtitle && <div className="mb-2 text-sm font-light">{subtitle}</div>}
-      {role && (
-        <div className="text-sm font-light">
-          <strong>Role:</strong> {role}
-          <br />
-          <strong>Year:</strong> {year || "current"}
-          <br />
-        </div>
-      )}
-      {links && (
-        <div className="flex flex-row gap-3 my-2">
-          {links.map((node) => (
-            <ProjectLink key={node.id} url={node.url} type={node.type} />
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
+const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: ProjectUnitProps) => (
+  <div className="p-2 experience-unit col-xs-12 col-sm-6 col-md-3">
+    <div
+      className="w-full h-32 mb-2 bg-center bg-no-repeat border rounded image"
+      style={{
+        backgroundImage: `url(${logo})`,
+        backgroundColor: color,
+        backgroundSize: "calc(100% - 80px)",
+      }}
+    />
+    {title && <div className="mb-2 text-lg font-semibold">{title}</div>}
+    {subtitle && <div className="mb-2 text-sm font-light">{subtitle}</div>}
+    {role && (
+      <div className="text-sm font-light">
+        <strong>Role:</strong> {role}
+        <br />
+        <strong>Year:</strong> {year || "current"}
+        <br />
+      </div>
+    )}
+    {links && (
+      <div className="flex flex-row gap-3 my-2">
+        {links.map((node) => (
+          <ProjectLink key={node.id} url={node.url} type={node.type} />
+        ))}
+      </div>
+    )}
+  </div>
+)
 
 const ProjectList = () => {
   const [{ projects }] = useQuery(getProjects, {
