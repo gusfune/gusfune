@@ -1,102 +1,65 @@
 {
-  "name": "gusfune.com",
-  "author": "gus@hey.com",
-  "version": "2.0.0",
-  "private": true,
+  "name": "gusfune",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "codegen": "graphql-codegen --config codegen.yml -r dotenv/config"
+    "dev": "blitz dev",
+    "build": "blitz build",
+    "start": "blitz start",
+    "studio": "blitz prisma studio",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "prisma": {
+    "schema": "db/schema.prisma"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && pretty-quick --staged",
+      "pre-push": "tsc && npm run lint && npm run test"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
   },
   "dependencies": {
-    "envsafe": "^1.1.0",
-    "next": "10.0.1",
-    "next-seo": "^4.15.1",
-    "react": "17.0.1",
-    "react-content-loader": "^5.1.4",
-    "react-dom": "17.0.1"
+    "@fortawesome/fontawesome-svg-core": "1.2.34",
+    "@fortawesome/free-brands-svg-icons": "5.15.2",
+    "@fortawesome/free-solid-svg-icons": "5.15.2",
+    "@fortawesome/react-fontawesome": "0.1.14",
+    "@prisma/client": "2.18.0",
+    "blitz": "0.32.1",
+    "next-seo": "4.20.0",
+    "prisma": "2.18.0",
+    "react": "0.0.0-experimental-3310209d0",
+    "react-content-loader": "6.0.2",
+    "react-cookie-consent": "6.2.3",
+    "react-dom": "0.0.0-experimental-3310209d0",
+    "react-error-boundary": "3.1.1",
+    "react-hook-form": "6.15.4",
+    "tailwindcss": "2",
+    "typeface-open-sans": "1.1.13",
+    "typescript": "~4.1",
+    "zod": "1.11.11"
   },
   "devDependencies": {
-    "@apollo/client": "^3.2.5",
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.12",
-    "@fullhuman/postcss-purgecss": "^3.0.0",
-    "@graphql-codegen/cli": "1.19.1",
-    "@graphql-codegen/typescript": "1.17.11",
-    "@graphql-codegen/typescript-graphql-files-modules": "1.18.0",
-    "@graphql-codegen/typescript-operations": "1.17.9",
-    "@types/node": "^14.14.6",
-    "@types/react": "^16.9.56",
-    "@typescript-eslint/eslint-plugin": "^4.6.1",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^7.13.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "graphql": "^15.4.0",
-    "graphql-tag": "^2.11.0",
-    "postcss-flexbugs-fixes": "^5.0.0",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.1.2",
-    "react-cookie-consent": "^6.0.0",
-    "stylelint": "^13.7.2",
-    "stylelint-config-standard": "^20.0.0",
-    "tailwindcss": "^1.9.6",
-    "typeface-open-sans": "^1.1.13",
-    "typescript": "^4.0.5"
+    "@types/preview-email": "2.0.0",
+    "@types/react": "17.0.3",
+    "autoprefixer": "10",
+    "eslint": "7.22.0",
+    "husky": "4.3.8",
+    "lint-staged": "10.5.4",
+    "postcss": "8",
+    "prettier": "2.2.1",
+    "prettier-plugin-prisma": "0.5.1",
+    "pretty-quick": "3.1.0",
+    "preview-email": "3.0.3"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "browser": true,
-      "node": true,
-      "es6": true,
-      "commonjs": true
-    },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true,
-        "modules": true
-      }
-    },
-    "settings": {
-      "react": {
-        "version": "detect"
-      },
-      "import/resolver": {
-        "node": {
-          "paths": [
-            "./"
-          ]
-        }
-      }
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier/@typescript-eslint",
-      "plugin:prettier/recommended",
-      "plugin:react-hooks/recommended"
-    ],
-    "rules": {
-      "react/prop-types": "off",
-      "react/react-in-jsx-scope": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "*.js"
-        ],
-        "rules": {
-          "@typescript-eslint/no-var-requires": "off"
-        }
-      }
-    ]
-  }
+  "private": true
 }
