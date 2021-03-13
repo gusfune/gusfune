@@ -19,21 +19,25 @@ const RecommendationLoaderItem = (props) => (
   </ContentLoader>
 )
 
+const ReadMore = () => (
+  <p className="mt-8 text-center">
+    <a
+      href="https://www.linkedin.com/in/gusfune/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-4 py-2 text-white bg-black rounded hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
+    >
+      Want to read more? Check my Linkedin
+    </a>
+  </p>
+)
+
 const RecommendationLoader = () => (
   <Section title="This is what some people said about working with me">
     <RecommendationLoaderItem />
     <RecommendationLoaderItem />
     <RecommendationLoaderItem />
-    <p className="mt-8 text-center">
-      <a
-        href="https://www.linkedin.com/in/gusfune/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="px-4 py-2 text-white bg-black rounded hover:underline"
-      >
-        Want to read more? Check my Linkedin
-      </a>
-    </p>
+    <ReadMore />
   </Section>
 )
 
@@ -74,16 +78,7 @@ const RecommendationList = () => {
           content={recommendation.content}
         />
       ))}
-      <p className="mt-8 text-center">
-        <a
-          href="https://www.linkedin.com/in/gusfune/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 text-white bg-black rounded hover:underline"
-        >
-          Want to read more? Check my Linkedin
-        </a>
-      </p>
+      <ReadMore />
     </Section>
   )
 }

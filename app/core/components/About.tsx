@@ -23,11 +23,6 @@ const About = () => (
         , a Stockholm 🇸🇪 based startup which I am CTO and Founder. We're working to reinvent
         e-commerce with a new take: putting people in the center.
       </p>
-      <p className="mb-4">
-        I am unavailable for contract work, but available for anything that would help people with
-        their business or skills, such as mentorship, participation in events or just general help.
-        Shoot me an e-mail if you want to chat.
-      </p>
     </div>
     <Image
       src="/seal-cspo.png"

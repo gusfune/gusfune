@@ -1,4 +1,4 @@
-import {Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/} from 'blitz'
+import { Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/ } from "blitz"
 
 class MyDocument extends Document {
   // Only uncomment if you need to customize this behaviour
@@ -6,7 +6,6 @@ class MyDocument extends Document {
   //   const initialProps = await Document.getInitialProps(ctx)
   //   return {...initialProps}
   // }
-
   render() {
     return (
       <Html lang="en">

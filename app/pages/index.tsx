@@ -4,10 +4,12 @@ import { NextSeo } from "next-seo"
 import Layout from "app/core/layouts/Layout"
 import { ProjectList, ProjectLoader } from "app/projects/components"
 import { RecommendationList, RecommendationLoader } from "app/recommendations/components"
+import { useDarkMode } from "app/core/components/DarkMode"
 
 const Home: BlitzPage = () => {
+  const { darkMode } = useDarkMode()
   return (
-    <>
+    <div className={`${darkMode ? "dark" : "light"}`}>
       <NextSeo
         title="Gus Fune"
         description="I'm a highly technical Web &amp; Mobile Product Manager who delivered over 100 products to scale."
@@ -45,7 +47,7 @@ const Home: BlitzPage = () => {
       >
         <RecommendationList />
       </Suspense>
-    </>
+    </div>
   )
 }
 
