@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: gusfune.com
+    env: node
+    plan: starter
+    buildCommand: yarn --frozen-lockfile --prod=true &&
+      blitz build &&
+      blitz prisma migrate deploy --preview-feature
+    startCommand: blitz start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: "file:./db.sqlite"
