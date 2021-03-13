@@ -21,7 +21,7 @@ model Project {
   color     String
   subtitle  String
   role      String
-  year      Int
+  year      Int?
   Link      Link[]
 }
 
