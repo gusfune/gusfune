@@ -56,8 +56,8 @@ const RecommendationUnit = ({ id, photo, name, title, content }: RecommendationU
     </div>
     <div className="w-9/12 p-2 lg:w-11/12">
       <h2 className="text-lg font-semibold">{name}</h2>
-      <h4 className="my-1">{title}</h4>
-      <div className="my-1 font-thin subtitle">&ldquo;{content}&rdquo;</div>
+      <p className="my-1">{title}</p>
+      <p className="my-1 font-thin subtitle">&ldquo;{content}&rdquo;</p>
     </div>
   </article>
 )
