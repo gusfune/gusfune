@@ -1,4 +1,4 @@
-import { usePaginatedQuery } from "blitz"
+import { useQuery } from "blitz"
 import ContentLoader from "react-content-loader"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAndroid, faApple } from "@fortawesome/free-brands-svg-icons"
@@ -10,19 +10,15 @@ import { Link } from "node_modules/.prisma/client"
 const ProjectLoaderItem = (props) => (
   <ContentLoader
     speed={2}
-    width={400}
-    height={460}
-    viewBox="0 0 400 460"
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
-    className="w-full"
+    width={260}
+    height={386}
+    viewBox="0 0 260 386"
+    backgroundColor="#e7e7e7"
+    foregroundColor="#d6d6d6"
+    className="w-full p-2"
     {...props}
   >
-    <rect x="0" y="0" rx="0" ry="0" width="128" height="128" />
-    <rect x="0" y="134" rx="0" ry="0" width="128" height="16" />
-    <rect x="0" y="156" rx="0" ry="0" width="128" height="8" />
-    <rect x="0" y="170" rx="0" ry="0" width="128" height="8" />
-    <rect x="0" y="184" rx="0" ry="0" width="128" height="8" />
+    <path d="M 0.5 0.5 h 259 v 127 H 0.5 z M 0.5 144.5 h 259 v 27 H 0.5 z M 0.5 188.5 h 259 v 79 H 0.5 z M 0.5 284.5 h 63 v 39 H 0.5 z M 0.5 340.5 h 129 v 39 H 0.5 z" />
   </ContentLoader>
 )
 
@@ -95,10 +91,8 @@ const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: Projec
 }
 
 const ProjectList = () => {
-  const [{ projects }] = usePaginatedQuery(getProjects, {
-    orderBy: { id: "asc" },
-    skip: 0,
-    take: ITEMS_PER_PAGE,
+  const [{ projects }] = useQuery(getProjects, {
+    orderBy: { year: "desc" },
   })
   return (
     <Section title="These are some selected projects from the last years that I'm really proud of">

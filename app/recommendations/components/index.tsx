@@ -1,26 +1,21 @@
 import ContentLoader from "react-content-loader"
 import Section from "app/core/components/Section"
-import { usePaginatedQuery, Image } from "blitz"
+import { useQuery, Image } from "blitz"
 import getRecommendations from "app/recommendations/queries/getRecommendations"
 
 const RecommendationLoaderItem = (props) => (
   <ContentLoader
     speed={2}
-    width={476}
-    height={124}
-    viewBox="0 0 476 124"
-    backgroundColor="#f3f3f3"
-    foregroundColor="#ecebeb"
-    uniqueKey="recommend"
-    className="w-full"
+    width={550}
+    height={224}
+    viewBox="0 0 550 224"
+    backgroundColor="#e7e7e7"
+    foregroundColor="#d6d6d6"
+    className="w-full p-2"
     {...props}
   >
-    <rect x="72" y="0" rx="3" ry="3" width="88" height="10" />
-    <rect x="72" y="18" rx="3" ry="3" width="52" height="8" />
-    <rect x="72" y="36" rx="3" ry="3" width="410" height="8" />
-    <rect x="72" y="52" rx="3" ry="3" width="380" height="8" />
-    <rect x="72" y="68" rx="3" ry="3" width="178" height="8" />
-    <circle cx="26" cy="26" r="26" />
+    <circle cx="61" cy="61" r="61" />
+    <path d="M 146.5 0.5 h 121 v 27 h -121 z M 146.5 36.5 h 121 v 23 h -121 z M 146.5 68.5 h 403 v 155 h -403 z" />
   </ContentLoader>
 )
 
@@ -64,10 +59,8 @@ const RecommendationUnit = ({ id, photo, name, title, content }: RecommendationU
 )
 
 const RecommendationList = () => {
-  const [{ recommendations }] = usePaginatedQuery(getRecommendations, {
+  const [{ recommendations }] = useQuery(getRecommendations, {
     orderBy: { id: "asc" },
-    skip: 0,
-    take: 10,
   })
   return (
     <Section title="This is what some people said about working with me">
