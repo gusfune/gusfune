@@ -3,7 +3,7 @@ import Section from "app/core/components/Section"
 import { usePaginatedQuery, Image } from "blitz"
 import getRecommendations from "app/recommendations/queries/getRecommendations"
 
-const RecommendationLoader = (props) => (
+const RecommendationLoaderItem = (props) => (
   <ContentLoader
     speed={2}
     width={476}
@@ -12,6 +12,7 @@ const RecommendationLoader = (props) => (
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
     uniqueKey="recommend"
+    className="w-full"
     {...props}
   >
     <rect x="72" y="0" rx="3" ry="3" width="88" height="10" />
@@ -21,6 +22,24 @@ const RecommendationLoader = (props) => (
     <rect x="72" y="68" rx="3" ry="3" width="178" height="8" />
     <circle cx="26" cy="26" r="26" />
   </ContentLoader>
+)
+
+const RecommendationLoader = () => (
+  <Section title="This is what some people said about working with me">
+    <RecommendationLoaderItem />
+    <RecommendationLoaderItem />
+    <RecommendationLoaderItem />
+    <p className="mt-8 text-center">
+      <a
+        href="https://www.linkedin.com/in/gusfune/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="px-4 py-2 text-white bg-black rounded hover:underline"
+      >
+        Want to read more? Check my Linkedin
+      </a>
+    </p>
+  </Section>
 )
 
 interface RecommendationUnitProps {

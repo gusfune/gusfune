@@ -6,7 +6,7 @@ import { faGlasses, faGlobeEurope } from "@fortawesome/free-solid-svg-icons"
 import Section from "app/core/components/Section"
 import getProjects from "app/projects/queries/getProjects"
 
-const ProjectLoader = (props) => (
+const ProjectLoaderItem = (props) => (
   <ContentLoader
     speed={2}
     width={400}
@@ -14,6 +14,7 @@ const ProjectLoader = (props) => (
     viewBox="0 0 400 460"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
+    className="w-full"
     {...props}
   >
     <rect x="0" y="0" rx="0" ry="0" width="128" height="128" />
@@ -22,6 +23,16 @@ const ProjectLoader = (props) => (
     <rect x="0" y="170" rx="0" ry="0" width="128" height="8" />
     <rect x="0" y="184" rx="0" ry="0" width="128" height="8" />
   </ContentLoader>
+)
+
+const ProjectLoader = () => (
+  <Section title="These are some selected projects from the last years that I'm really proud of">
+    <div className="grid grid-cols-2 lg:grid-cols-4">
+      <ProjectLoaderItem />
+      <ProjectLoaderItem />
+      <ProjectLoaderItem />
+    </div>
+  </Section>
 )
 
 interface ProjectLinkProps {
