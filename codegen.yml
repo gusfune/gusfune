@@ -1,8 +1,0 @@
-overwrite: true
-schema: ${NEXT_PUBLIC_GRAPHQL_ENDPOINT}
-documents: "graphql/*.graphql"
-generates:
-  lib/generated/types.ts:
-    plugins:
-      - "typescript"
-      - "typescript-operations"
