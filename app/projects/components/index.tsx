@@ -90,9 +90,7 @@ const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: Projec
 )
 
 const ProjectList = () => {
-  const [{ projects }] = useQuery(getProjects, {
-    orderBy: { year: "desc" },
-  })
+  const [{ projects }] = useQuery(getProjects, {})
   return (
     <Section title="These are some selected projects from the last years that I'm really proud of">
       <div className="grid grid-cols-2 lg:grid-cols-4">
