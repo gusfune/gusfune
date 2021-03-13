@@ -40,6 +40,7 @@ interface ProjectLinkProps {
 
 const ProjectLink = ({ url, type }: ProjectLinkProps) => (
   <a href={url} target="_blank" rel="noopener noreferrer" className="text-base hover:opacity-50">
+    <span className="sr-only">Link to {type}</span>
     <>
       {type === "android" && <FontAwesomeIcon icon={faAndroid} width="24" />}
       {type === "ios" && <FontAwesomeIcon icon={faApple} width="24" />}
