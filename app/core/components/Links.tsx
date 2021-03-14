@@ -1,3 +1,4 @@
+import { dynamic } from "blitz"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faGithub,
@@ -7,6 +8,12 @@ import {
   faSteam,
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+const DarkModeToggle = dynamic(
+  () => import("app/core/components/DarkMode").then((mod) => mod.DarkModeToggle),
+  {
+    ssr: false,
+  }
+)
 
 const destinations = [
   {
@@ -36,21 +43,24 @@ const destinations = [
 ]
 
 const Links = () => (
-  <div className="sidebar-links">
-    <ul className="flex flex-row justify-start mb-4">
-      {destinations.map((item, i) => (
-        <li key={i} className="inline-block mr-4 text-2xl">
-          <a
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white"
-          >
-            <FontAwesomeIcon icon={item.icon} width="22" />
-          </a>
-        </li>
-      ))}
-    </ul>
+  <div id="sidebar-links">
+    <div className="flex flex-row justify-between">
+      <ul className="flex flex-row justify-start mb-4">
+        {destinations.map((item, i) => (
+          <li key={i} className="inline-block mr-4 text-2xl">
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              <FontAwesomeIcon icon={item.icon} width="22" />
+            </a>
+          </li>
+        ))}
+      </ul>
+      <DarkModeToggle />
+    </div>
     <div className="text-xs">
       Built with{" "}
       <span role="img" aria-label="love">
