@@ -1,4 +1,4 @@
-import { useQuery } from "blitz"
+import { useQuery, Image } from "blitz"
 import ContentLoader from "react-content-loader"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAndroid, faApple } from "@fortawesome/free-brands-svg-icons"
@@ -63,13 +63,13 @@ type ProjectUnitProps = {
 const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: ProjectUnitProps) => (
   <div className="p-2 experience-unit col-xs-12 col-sm-6 col-md-3">
     <div
-      className="w-full h-32 mb-2 bg-center bg-no-repeat border rounded image"
+      className="relative w-full h-32 p-16 mb-2 bg-center bg-no-repeat rounded"
       style={{
-        backgroundImage: `url(${logo})`,
         backgroundColor: color,
-        backgroundSize: "calc(100% - 80px)",
       }}
-    />
+    >
+      {logo && <Image src={logo} layout="fill" objectFit="contain" objectPosition="center" />}
+    </div>
     {title && <div className="mb-2 text-lg font-semibold">{title}</div>}
     {subtitle && <div className="mb-2 text-sm font-light">{subtitle}</div>}
     {role && (
