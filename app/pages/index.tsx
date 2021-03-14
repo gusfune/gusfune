@@ -25,26 +25,10 @@ const Home: BlitzPage = () => {
         </h2>
         <h3 className="text-3xl font-light">I'm a CTO who delivered over 100 products to scale.</h3>
       </header>
-      <Suspense
-        fallback={
-          <>
-            <ProjectLoader />
-            <ProjectLoader />
-            <ProjectLoader />
-          </>
-        }
-      >
+      <Suspense fallback={<ProjectLoader />}>
         <ProjectList />
       </Suspense>
-      <Suspense
-        fallback={
-          <>
-            <RecommendationLoader />
-            <RecommendationLoader />
-            <RecommendationLoader />
-          </>
-        }
-      >
+      <Suspense fallback={<RecommendationLoader />}>
         <RecommendationList />
       </Suspense>
     </div>
