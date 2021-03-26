@@ -2,6 +2,7 @@ import ContentLoader from "react-content-loader"
 import Section from "app/core/components/Section"
 import { useQuery, Image } from "blitz"
 import getRecommendations from "app/recommendations/queries/getRecommendations"
+import { Recommendation } from "@prisma/client"
 
 const RecommendationLoaderItem = (props) => (
   <ContentLoader
@@ -62,10 +63,20 @@ const RecommendationUnit = ({ id, photo, name, title, content }: RecommendationU
   </article>
 )
 
-const RecommendationList = () => {
-  const [{ recommendations }] = useQuery(getRecommendations, {
-    orderBy: { id: "asc" },
-  })
+type Props = {
+  initialData: {
+    recommendations: Recommendation[]
+  }
+}
+
+const RecommendationList = ({ initialData }: Props) => {
+  const [{ recommendations }] = useQuery(
+    getRecommendations,
+    {
+      orderBy: { id: "asc" },
+    },
+    { initialData }
+  )
   return (
     <Section title="This is what some people said about working with me">
       {recommendations.map((recommendation) => (
