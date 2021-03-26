@@ -9,7 +9,7 @@ const GetLink = z.object({
 
 export default resolver.pipe(resolver.zod(GetLink), async ({ id }) => {
   // TODO: in multi-tenant app, you must add validation to ensure correct tenant
-  const link = await db.link.findFirst({ where: { id } })
+  const link = await db.projectLink.findFirst({ where: { id } })
 
   if (!link) throw new NotFoundError()
 
