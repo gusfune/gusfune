@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { BlitzPage, GetStaticProps, InferGetStaticPropsType } from "blitz"
+import { BlitzPage, GetStaticProps, InferGetStaticPropsType, Ctx } from "blitz"
 import { NextSeo } from "next-seo"
 import Layout from "app/core/layouts/Layout"
 import { ProjectList, ProjectLoader } from "app/projects/components"
@@ -9,8 +9,8 @@ import getProjects from "app/projects/queries/getProjects"
 import getRecommendations from "app/recommendations/queries/getRecommendations"
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { projects } = await getProjects({}, context)
-  const { recommendations } = await getRecommendations({}, context)
+  const { projects } = await getProjects({}, context as Ctx)
+  const { recommendations } = await getRecommendations({}, context as Ctx)
   return {
     props: {
       initialData: {
