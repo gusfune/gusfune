@@ -51,7 +51,10 @@ interface RecommendationUnitProps {
 }
 
 const RecommendationUnit = ({ id, photo, name, title, content }: RecommendationUnitProps) => (
-  <article className="flex flex-row" id={`recommendation-${id.toString()}`}>
+  <article
+    className="flex flex-row transition-transform transform hover:scale-105 hover:shadow-lg"
+    id={`recommendation-${id.toString()}`}
+  >
     <div className="w-3/12 p-2 lg:w-1/12">
       <Image src={photo} alt={name} width={180} height={180} className="rounded-full" />
     </div>
