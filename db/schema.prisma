@@ -62,16 +62,16 @@ model Token {
 }
 
 model Project {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id        Int           @id @default(autoincrement())
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
   title     String
   logo      String
   color     String
   subtitle  String
   role      String
   year      Int?
-  Link      Link[]
+  Link      ProjectLink[]
 }
 
 model Recommendation {
@@ -84,7 +84,7 @@ model Recommendation {
   photo     String
 }
 
-model Link {
+model ProjectLink {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

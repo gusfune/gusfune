@@ -5,7 +5,7 @@ import { faAndroid, faApple } from "@fortawesome/free-brands-svg-icons"
 import { faGlasses, faGlobeEurope } from "@fortawesome/free-solid-svg-icons"
 import Section from "app/core/components/Section"
 import getProjects from "app/projects/queries/getProjects"
-import { Project, Link } from "@prisma/client"
+import { Project, ProjectLink } from "@prisma/client"
 
 const ProjectLoaderItem = (props) => (
   <ContentLoader
@@ -38,7 +38,7 @@ interface ProjectLinkProps {
   type: string
 }
 
-const ProjectLink = ({ url, type }: ProjectLinkProps) => (
+const ProjectLinkItem = ({ url, type }: ProjectLinkProps) => (
   <a href={url} target="_blank" rel="noopener noreferrer" className="text-base hover:opacity-50">
     <span className="sr-only">Link to {type}</span>
     <>
@@ -57,18 +57,28 @@ type ProjectUnitProps = {
   subtitle: string
   role: string
   year?: number | null
-  links: Link[]
+  links: ProjectLink[]
 }
 
 const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: ProjectUnitProps) => (
-  <div className="p-2 experience-unit col-xs-12 col-sm-6 col-md-3">
+  <div className="p-2 transition-transform transform experience-unit col-xs-12 col-sm-6 col-md-3 hover:scale-105 hover:shadow-lg">
     <div
       className="relative w-full h-32 p-16 mb-2 bg-center bg-no-repeat rounded"
       style={{
         backgroundColor: color,
+        borderColor: color,
+        borderWidth: "16px",
       }}
     >
-      {logo && <Image src={logo} layout="fill" objectFit="contain" objectPosition="center" />}
+      {logo && (
+        <Image
+          src={logo}
+          layout="fill"
+          objectFit="contain"
+          objectPosition="center"
+          className="p-8"
+        />
+      )}
     </div>
     {title && <div className="mb-2 text-lg font-semibold">{title}</div>}
     {subtitle && <div className="mb-2 text-sm font-light">{subtitle}</div>}
@@ -83,7 +93,7 @@ const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: Projec
     {links && (
       <div className="flex flex-row gap-3 my-2">
         {links.map((node) => (
-          <ProjectLink key={node.id} url={node.url} type={node.type} />
+          <ProjectLinkItem key={node.id} url={node.url} type={node.type} />
         ))}
       </div>
     )}
@@ -93,7 +103,7 @@ const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: Projec
 type Props = {
   initialData: {
     projects: (Project & {
-      Link: Link[]
+      Link: ProjectLink[]
     })[]
   }
 }

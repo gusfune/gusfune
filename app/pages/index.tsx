@@ -1,7 +1,8 @@
 import { Suspense } from "react"
 import { BlitzPage, GetStaticProps, InferGetStaticPropsType, Ctx } from "blitz"
 import { NextSeo } from "next-seo"
-import Layout from "app/core/layouts/Layout"
+import CountUp from "react-countup"
+import Layout from "app/core/layouts/Home"
 import { ProjectList, ProjectLoader } from "app/projects/components"
 import { RecommendationList, RecommendationLoader } from "app/recommendations/components"
 import { useDarkMode } from "app/core/components/DarkMode"
@@ -38,7 +39,9 @@ const Home: BlitzPage = ({ initialData }: InferGetStaticPropsType<typeof getStat
         <h2 className="mb-4 text-4xl font-light">
           Hi, I'm <span className="font-semibold">Gus Fune</span>
         </h2>
-        <h3 className="text-3xl font-light">I'm a CTO who delivered over 100 products to scale.</h3>
+        <h3 className="text-3xl font-light">
+          I'm a CTO who delivered over <CountUp start={0} end={100} delay={0} /> products to scale.
+        </h3>
       </header>
       <Suspense fallback={<ProjectLoader />}>
         <ProjectList initialData={initialData} />

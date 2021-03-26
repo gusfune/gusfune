@@ -1,9 +1,4 @@
-/* TODO - You need to add a mailer integration in `integrations/` and import here.
- *
- * The integration file can be very simple. Instantiate the email client
- * and then export it. That way you can import here and anywhere else
- * and use it straight away.
- */
+import mailer from "../integrations/mailer"
 import previewEmail from "preview-email"
 
 type ResetPasswordMailer = {
@@ -17,7 +12,7 @@ export function forgotPasswordMailer({ to, token }: ResetPasswordMailer) {
   const resetUrl = `${origin}/reset-password?token=${token}`
 
   const msg = {
-    from: "TODO@example.com",
+    from: '"Gus Fune" <no-reply@gusfune.com>',
     to,
     subject: "Your Password Reset Instructions",
     html: `
@@ -34,7 +29,7 @@ export function forgotPasswordMailer({ to, token }: ResetPasswordMailer) {
     async send() {
       if (process.env.NODE_ENV === "production") {
         // TODO - send the production email, like this:
-        // await postmark.sendEmail(msg)
+        await mailer(msg)
         throw new Error("No production email implementation in mailers/forgotPasswordMailer")
       } else {
         // Preview email in the browser
