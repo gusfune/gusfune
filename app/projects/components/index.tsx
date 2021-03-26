@@ -5,7 +5,7 @@ import { faAndroid, faApple } from "@fortawesome/free-brands-svg-icons"
 import { faGlasses, faGlobeEurope } from "@fortawesome/free-solid-svg-icons"
 import Section from "app/core/components/Section"
 import getProjects from "app/projects/queries/getProjects"
-import { Link } from "@prisma/client"
+import { Project, Link } from "@prisma/client"
 
 const ProjectLoaderItem = (props) => (
   <ContentLoader
@@ -90,8 +90,16 @@ const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: Projec
   </div>
 )
 
-const ProjectList = () => {
-  const [{ projects }] = useQuery(getProjects, {})
+type Props = {
+  initialData: {
+    projects: (Project & {
+      Link: Link[]
+    })[]
+  }
+}
+
+const ProjectList = ({ initialData }: Props) => {
+  const [{ projects }] = useQuery(getProjects, {}, { initialData })
   return (
     <Section title="These are some selected projects from the last years that I'm really proud of">
       <div className="grid grid-cols-2 lg:grid-cols-4">

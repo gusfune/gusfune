@@ -1,12 +1,24 @@
 import { Suspense } from "react"
-import { BlitzPage } from "blitz"
+import { BlitzPage, GetStaticProps, InferGetStaticPropsType } from "blitz"
 import { NextSeo } from "next-seo"
 import Layout from "app/core/layouts/Layout"
 import { ProjectList, ProjectLoader } from "app/projects/components"
 import { RecommendationList, RecommendationLoader } from "app/recommendations/components"
 import { useDarkMode } from "app/core/components/DarkMode"
+import getProjects from "app/projects/queries/getProjects"
 
-const Home: BlitzPage = () => {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { projects } = await getProjects({}, context)
+  return {
+    props: {
+      initialData: {
+        projects,
+      },
+    },
+  }
+}
+
+const Home: BlitzPage = ({ initialData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { darkMode } = useDarkMode()
   return (
     <div className={`${darkMode ? "dark" : "light"}`}>
@@ -26,7 +38,7 @@ const Home: BlitzPage = () => {
         <h3 className="text-3xl font-light">I'm a CTO who delivered over 100 products to scale.</h3>
       </header>
       <Suspense fallback={<ProjectLoader />}>
-        <ProjectList />
+        <ProjectList initialData={initialData} />
       </Suspense>
       <Suspense fallback={<RecommendationLoader />}>
         <RecommendationList />
