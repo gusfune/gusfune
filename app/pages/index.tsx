@@ -6,13 +6,16 @@ import { ProjectList, ProjectLoader } from "app/projects/components"
 import { RecommendationList, RecommendationLoader } from "app/recommendations/components"
 import { useDarkMode } from "app/core/components/DarkMode"
 import getProjects from "app/projects/queries/getProjects"
+import getRecommendations from "app/recommendations/queries/getRecommendations"
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { projects } = await getProjects({}, context)
+  const { recommendations } = await getRecommendations({}, context)
   return {
     props: {
       initialData: {
         projects,
+        recommendations,
       },
     },
   }
@@ -41,7 +44,7 @@ const Home: BlitzPage = ({ initialData }: InferGetStaticPropsType<typeof getStat
         <ProjectList initialData={initialData} />
       </Suspense>
       <Suspense fallback={<RecommendationLoader />}>
-        <RecommendationList />
+        <RecommendationList initialData={initialData} />
       </Suspense>
     </div>
   )
