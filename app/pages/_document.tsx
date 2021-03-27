@@ -1,4 +1,5 @@
 import { Document, Html, DocumentHead, Main, BlitzScript /*DocumentContext*/ } from "blitz"
+import { CookiesProvider } from "react-cookie"
 
 class MyDocument extends Document {
   // Only uncomment if you need to customize this behaviour
@@ -11,8 +12,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <DocumentHead />
         <body>
-          <Main />
-          <BlitzScript />
+          <CookiesProvider>
+            <Main />
+            <BlitzScript />
+          </CookiesProvider>
         </body>
       </Html>
     )
