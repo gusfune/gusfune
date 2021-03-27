@@ -1,5 +1,6 @@
 import { useState, ReactNode, PropsWithoutRef } from "react"
 import { FormProvider, useForm, UseFormOptions } from "react-hook-form"
+import Alert from "./Alert"
 import * as z from "zod"
 
 export interface FormProps<S extends z.ZodType<any, any>>
@@ -45,46 +46,44 @@ export function Form<S extends z.ZodType<any, any>>({
   const [formError, setFormError] = useState<string | null>(null)
 
   return (
-    <FormProvider {...ctx}>
-      <form
-        onSubmit={ctx.handleSubmit(async (values) => {
-          const result = (await onSubmit(values)) || {}
-          for (const [key, value] of Object.entries(result)) {
-            if (key === FORM_ERROR) {
-              setFormError(value)
-            } else {
-              ctx.setError(key as any, {
-                type: "submit",
-                message: value,
-              })
-            }
-          }
-        })}
-        className="form"
-        {...props}
-      >
-        {/* Form fields supplied as children are rendered here */}
-        {children}
+    <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
+        <FormProvider {...ctx}>
+          <form
+            onSubmit={ctx.handleSubmit(async (values) => {
+              const result = (await onSubmit(values)) || {}
+              for (const [key, value] of Object.entries(result)) {
+                if (key === FORM_ERROR) {
+                  setFormError(value)
+                } else {
+                  ctx.setError(key as any, {
+                    type: "submit",
+                    message: value,
+                  })
+                }
+              }
+            })}
+            className="space-y-6 form"
+            {...props}
+          >
+            {/* Form fields supplied as children are rendered here */}
+            {children}
 
-        {formError && (
-          <div role="alert" style={{ color: "red" }}>
-            {formError}
-          </div>
-        )}
+            {formError && <Alert message={formError} />}
 
-        {submitText && (
-          <button type="submit" disabled={ctx.formState.isSubmitting}>
-            {submitText}
-          </button>
-        )}
-
-        <style global jsx>{`
-          .form > * + * {
-            margin-top: 1rem;
-          }
-        `}</style>
-      </form>
-    </FormProvider>
+            {submitText && (
+              <button
+                type="submit"
+                className="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                disabled={ctx.formState.isSubmitting}
+              >
+                {submitText}
+              </button>
+            )}
+          </form>
+        </FormProvider>
+      </div>
+    </div>
   )
 }
 

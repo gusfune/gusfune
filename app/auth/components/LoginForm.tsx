@@ -13,7 +13,7 @@ export const LoginForm = (props: LoginFormProps) => {
 
   return (
     <div>
-      <h1>Login</h1>
+      <h1 className="text-xl font-semibold text-center">Login</h1>
 
       <Form
         submitText="Login"
@@ -39,13 +39,16 @@ export const LoginForm = (props: LoginFormProps) => {
         <LabeledTextField name="password" label="Password" placeholder="Password" type="password" />
         <div>
           <Link href="/forgot-password">
-            <a>Forgot your password?</a>
+            <a className="text-sm text-indigo-500 hover:underline">Forgot your password?</a>
           </Link>
         </div>
       </Form>
 
-      <div style={{ marginTop: "1rem" }}>
-        Or <Link href="/signup">Sign Up</Link>
+      <div className="my-2 text-center">
+        Or{" "}
+        <Link href="/signup">
+          <a className="text-indigo-500 hover:underline">Sign Up</a>
+        </Link>
       </div>
     </div>
   )
