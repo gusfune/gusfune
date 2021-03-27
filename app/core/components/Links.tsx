@@ -8,6 +8,7 @@ import {
   faSteam,
 } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import Footnotes from "app/core/components/Footnotes"
 const DarkModeToggle = dynamic(
   () => import("app/core/components/DarkMode").then((mod) => mod.DarkModeToggle),
   {
@@ -42,51 +43,30 @@ const destinations = [
   },
 ]
 
-const Links = () => (
+type Props = {
+  small?: boolean
+}
+
+const Links = ({ small }: Props) => (
+  <ul className="flex flex-row justify-start mb-4">
+    {destinations.map((item, i) => (
+      <li key={i} className={`inline-block mr-4 ${small ? "text-base" : "text-2xl"}`}>
+        <a href={item.link} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+          <FontAwesomeIcon icon={item.icon} width={small ? 16 : 22} />
+        </a>
+      </li>
+    ))}
+  </ul>
+)
+
+const LinksSidebar = () => (
   <div id="sidebar-links">
     <div className="flex flex-row justify-between">
-      <ul className="flex flex-row justify-start mb-4">
-        {destinations.map((item, i) => (
-          <li key={i} className="inline-block mr-4 text-2xl">
-            <a
-              href={item.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white"
-            >
-              <FontAwesomeIcon icon={item.icon} width="22" />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <Links />
       <DarkModeToggle />
     </div>
-    <div className="text-xs">
-      Built with{" "}
-      <span role="img" aria-label="love">
-        ❤️
-      </span>
-      &nbsp; using{" "}
-      <a
-        href="https://blitzjs.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline"
-      >
-        BlitzJS
-      </a>
-      , full source code{" "}
-      <a
-        href="https://github.com/gusfune/gusfune.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline"
-      >
-        available here
-      </a>
-      .
-    </div>
+    <Footnotes />
   </div>
 )
 
-export default Links
+export { Links, LinksSidebar }
