@@ -51,6 +51,7 @@
     "zod": "1.11.13"
   },
   "devDependencies": {
+    "@types/nodemailer": "6.4.1",
     "@types/preview-email": "2.0.0",
     "@types/react": "17.0.3",
     "autoprefixer": "10",
