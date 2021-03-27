@@ -10,11 +10,11 @@ import {
 } from "blitz"
 import { ErrorBoundary } from "react-error-boundary"
 import { queryCache } from "react-query"
-import CookieConsent from "react-cookie-consent"
 import "typeface-open-sans"
 import "app/core/styles/index.css"
 import * as snippet from "@segment/snippet"
 import { useCookies } from "react-cookie"
+import CookieConsent from "app/core/components/CookieConsent"
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -56,19 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {getLayout(
         <>
           <Component {...pageProps} />
-          <CookieConsent
-            location="bottom"
-            buttonText="Ok!"
-            cookieName="consent"
-            style={{ background: "#111", fontSize: "1.1rem" }}
-            buttonStyle={{ color: "#000", background: "#fff" }}
-            expires={150}
-            onAccept={() => setCookieConsent(true)}
-          >
-            This website uses cookies so I can find ways to improve it over time. Because of
-            regulation, I am obliged to tell you so, but no worries, all data is kept anonymous and
-            never shared with third-parties.{" "}
-          </CookieConsent>
+          <CookieConsent />
         </>
       )}
     </ErrorBoundary>
