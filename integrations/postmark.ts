@@ -1,7 +1,5 @@
 import postmark from "postmark"
 
-const client = new postmark.ServerClient(process.env.POSTMARK_KEY as string)
-
 type MailMessage = {
   from: string
   to: string
@@ -12,6 +10,7 @@ type MailMessage = {
 
 const mailer = async (message: MailMessage) => {
   try {
+    const client = new postmark.ServerClient(process.env.POSTMARK_KEY as string)
     client.sendEmail({
       From: message.from,
       To: message.to,
@@ -20,7 +19,6 @@ const mailer = async (message: MailMessage) => {
       TextBody: message.text,
       MessageStream: "outbound",
     })
-
     // send mail with defined transport object
     //let info = await transporter.sendMail(message)
 
