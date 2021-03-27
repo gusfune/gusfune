@@ -1,36 +1,26 @@
-import { Suspense } from "react"
-import { Head, useQuery, useParam, BlitzPage } from "blitz"
-import Layout from "app/core/layouts/Layout"
+import { GetServerSideProps, invokeWithMiddleware } from "blitz"
 import getLink from "app/links/queries/getLink"
 
-export const Link = () => {
-  const linkSlug = useParam("slug", "string")
-  const [link] = useQuery(getLink, { slug: linkSlug })
+export const getServerSideProps: GetServerSideProps = async ({ params, req, res }) => {
+  const data = await invokeWithMiddleware(getLink, { slug: params?.slug as string }, { req, res })
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    }
+  }
 
-  return (
-    <>
-      <Head>
-        <title>Link {link.id}</title>
-      </Head>
-
-      <div>
-        <h1>Link {link.id}</h1>
-        <pre>{JSON.stringify(link, null, 2)}</pre>
-      </div>
-    </>
-  )
+  return {
+    redirect: {
+      destination: data.url,
+      permanent: false,
+    },
+  }
 }
 
-const ShowLinkPage: BlitzPage = () => {
-  return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Link />
-      </Suspense>
-    </div>
-  )
+function Page({ link }) {
+  return <p>{link.slug}</p>
 }
-
-ShowLinkPage.getLayout = (page) => <Layout>{page}</Layout>
-
-export default ShowLinkPage
+export default Page
