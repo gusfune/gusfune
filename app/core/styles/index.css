@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.markdown ul {
+  @apply list-disc list-inside;
+}
+.markdown a {
+  @apply text-indigo-500 hover:underline;
+}
+.markdown ul > li {
+  @apply mb-2;
+}
+.markdown p {
+  @apply mb-2;
+}
