@@ -1,10 +1,14 @@
-import { BlitzPage, Image, dynamic } from "blitz"
+import { Suspense } from "react"
+import { Ctx, BlitzPage, Image, dynamic, GetStaticProps, InferGetStaticPropsType } from "blitz"
 import { NextSeo } from "next-seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSpinner } from "@fortawesome/free-solid-svg-icons"
 import Layout from "app/core/layouts/Layout"
 import { useDarkMode } from "app/core/components/DarkMode"
 import Panel from "app/core/components/Panel"
 import { Links } from "app/core/components/Links"
+import getLinks from "app/links/queries/getLinks"
+import LinkList from "app/links/components/LinkList"
 const DarkModeToggle = dynamic(
   () => import("app/core/components/DarkMode").then((mod) => mod.DarkModeToggle),
   {
@@ -12,51 +16,19 @@ const DarkModeToggle = dynamic(
   }
 )
 
-type NavItemProps = {
-  link: string
-  title: string
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { links } = await getLinks({ where: { featured: true } }, context as Ctx)
+  return {
+    props: {
+      initialData: {
+        links,
+      },
+    },
+    revalidate: 1,
+  }
 }
 
-const NavItem = ({ link, title }: NavItemProps) => (
-  <a
-    href={link}
-    className="flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-gray-100 rounded-md group hover:bg-gray-50 hover:text-gray-900"
-    aria-current="page"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span className="truncate">{title}</span>
-  </a>
-)
-
-const HeyLinks = [
-  {
-    link: "/",
-    title: "My Website",
-  },
-  {
-    link: "https://github.com/gusfune",
-    title: "GitHub",
-  },
-  {
-    link: "https://www.twitter.com/gusfune",
-    title: "Twitter",
-  },
-  {
-    link: "https://www.linkedin.com/in/gusfune/",
-    title: "Linkedin",
-  },
-  {
-    link: "https://log.epicawesome.co/@gusfune",
-    title: "Medium",
-  },
-  {
-    link: "mailto:gus@hey.com",
-    title: "Email",
-  },
-]
-
-const Hey: BlitzPage = () => {
+const Hey: BlitzPage = ({ initialData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { darkMode } = useDarkMode()
   return (
     <div className={`w-full container max-w-md my-8 ${darkMode ? "dark" : "light"}`}>
@@ -97,11 +69,9 @@ const Hey: BlitzPage = () => {
         </div>
       </header>
       <Panel head={<p>Hey welcome to my landing page. Here are a couple of interesting things.</p>}>
-        <nav className="space-y-1" aria-label="Sidebar">
-          {HeyLinks.map((link, i) => (
-            <NavItem key={i} link={link.link} title={link.title} />
-          ))}
-        </nav>
+        <Suspense fallback={<FontAwesomeIcon icon={faSpinner} width={42} spin />}>
+          <LinkList initialData={initialData} />
+        </Suspense>
       </Panel>
       <div className="mx-auto my-4 text-center">
         <DarkModeToggle />
