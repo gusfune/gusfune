@@ -1595,6 +1595,13 @@
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
   integrity sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==
 
+"@types/postmark@2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@types/postmark/-/postmark-2.0.3.tgz#a8032b74633f9ef7efa14cea23c81d8d2463bb78"
+  integrity sha512-gaj+SoVh+T/MvCHfRlXz7h+BF6QBjan712aXWbhYKzNt8Yf4tCHYDPuSxZkj9xxY+RQ077Rrcex5YoOX0yh4mA==
+  dependencies:
+    postmark "*"
+
 "@types/prettier@^2.0.0":
   version "2.2.3"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.2.3.tgz#ef65165aea2924c9359205bf748865b8881753c0"
@@ -8098,7 +8105,7 @@ postcss@^7.0.32:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postmark@2.7.3:
+postmark@*, postmark@2.7.3:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/postmark/-/postmark-2.7.3.tgz#e699dd52794cbca8a0d22b9bdcf472fe4e5f9dbc"
   integrity sha512-YQ6mngTBmX9x/s9E5cE2K8JwOeMNI2yfNlLLRdtM+WyxyrLJ8CuIqDRGa5hyngd7+P4bH34mKuy2CHeci8ViOQ==
