@@ -4,7 +4,9 @@ import * as z from "zod"
 
 const CreateLink = z
   .object({
-    name: z.string(),
+    title: z.string(),
+    url: z.string(),
+    slug: z.string(),
   })
   .nonstrict()
 
