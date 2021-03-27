@@ -1,4 +1,4 @@
-import mailer from "../integrations/mailer"
+import mailer from "../integrations/postmark"
 import previewEmail from "preview-email"
 
 type ResetPasswordMailer = {
