@@ -1619,6 +1619,13 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
   integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
 
+"@types/react-countup@4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@types/react-countup/-/react-countup-4.3.0.tgz#ef621d25993b73005c673785b93d1691436eaaa5"
+  integrity sha512-rYgwPh1erAv/oCc8WRWPMP0SwFuce6a1HISTBup6QWQ9oskjfawruDhFvnJD3b4QuZFOeaZNyMdVQoIeSMP31A==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-test-renderer@>=16.9.0":
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-17.0.1.tgz#3120f7d1c157fba9df0118dae20cb0297ee0e06b"
