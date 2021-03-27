@@ -1,7 +1,6 @@
 import { ReactNode } from "react"
 import { Head } from "blitz"
-import CookieConsent from "react-cookie-consent"
-import Sidebar from "app/core/components/Sidebar"
+import Footnotes from "app/core/components/Footnotes"
 
 type LayoutProps = {
   title?: string
@@ -13,24 +12,12 @@ const Layout = ({ title, children }: LayoutProps) => (
     <Head>
       <title>{title || "Gus Fune"}</title>
     </Head>
-    <div className="flex flex-col sm:flex-row font-body">
-      <div className="w-full p-8 lg:p-16 sm:w-7/12 md:w-8/12 lg:w-9/12 dark:bg-gray-800 dark:text-gray-300">
-        {children}
-      </div>
-      <Sidebar />
+    <div className="flex flex-col items-center justify-center w-full min-h-screen align-middle bg-gray-100 font-body dark:bg-gray-800 dark:text-gray-300">
+      {children}
+      <footer className="py-2 text-center">
+        <Footnotes />
+      </footer>
     </div>
-    <CookieConsent
-      location="bottom"
-      buttonText="Ok!"
-      cookieName="gusfuneCookie"
-      style={{ background: "#111", fontSize: "1.1rem" }}
-      buttonStyle={{ color: "#000", background: "#fff" }}
-      expires={150}
-    >
-      This website uses cookies so I can find ways to improve it over time. Because of regulation, I
-      am obliged to tell you so, but no worries, all data is kept anonymous and never shared with
-      third-parties.{" "}
-    </CookieConsent>
   </>
 )
 

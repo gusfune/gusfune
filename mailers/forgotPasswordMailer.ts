@@ -17,8 +17,6 @@ export function forgotPasswordMailer({ to, token }: ResetPasswordMailer) {
     subject: "Your Password Reset Instructions",
     html: `
       <h1>Reset Your Password</h1>
-      <h3>NOTE: You must set up a production email integration in mailers/forgotPasswordMailer.ts</h3>
-
       <a href="${resetUrl}">
         Click here to set a new password
       </a>
@@ -33,7 +31,8 @@ export function forgotPasswordMailer({ to, token }: ResetPasswordMailer) {
         throw new Error("No production email implementation in mailers/forgotPasswordMailer")
       } else {
         // Preview email in the browser
-        await previewEmail(msg)
+        await mailer(msg)
+        //await previewEmail(msg)
       }
     },
   }

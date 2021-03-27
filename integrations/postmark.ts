@@ -1,4 +1,4 @@
-import postmark from "postmark"
+import { ServerClient } from "postmark"
 
 type MailMessage = {
   from: string
@@ -10,7 +10,7 @@ type MailMessage = {
 
 const mailer = async (message: MailMessage) => {
   try {
-    const client = new postmark.ServerClient(process.env.POSTMARK_KEY as string)
+    const client = new ServerClient(process.env.POSTMARK_KEY as string)
     client.sendEmail({
       From: message.from,
       To: message.to,

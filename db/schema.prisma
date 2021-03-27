@@ -93,3 +93,13 @@ model ProjectLink {
   project   Project  @relation(fields: [projectId], references: [id])
   projectId Int
 }
+
+model Link {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  url       String
+  featured  Boolean  @default(false)
+  slug      String   @unique
+}

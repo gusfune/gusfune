@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useState } from "react"
 import {
   AppProps,
   AuthorizationError,
@@ -9,12 +11,27 @@ import {
 import { ErrorBoundary } from "react-error-boundary"
 import { queryCache } from "react-query"
 import "typeface-open-sans"
-
 import "app/core/styles/index.css"
+import * as snippet from "@segment/snippet"
+import { useCookies } from "react-cookie"
+import CookieConsent from "app/core/components/CookieConsent"
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
   const router = useRouter()
+  const [cookies, _setCookie] = useCookies(["consent"])
+  const [cookieConsent, setCookieConsent] = useState(Boolean(cookies.consent))
+
+  const renderSnippet = () => {
+    const opts = {
+      apiKey: process.env.NEXT_PUBLIC_ANALYTICS_WRITE_KEY,
+      page: true,
+    }
+    if (process.env.NODE_ENV === "development") {
+      return snippet.max(opts)
+    }
+    return snippet.min(opts)
+  }
 
   return (
     <ErrorBoundary
@@ -32,8 +49,16 @@ export default function App({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=6.0,user-scalable=0"
         />
+        {cookieConsent && (
+          <script dangerouslySetInnerHTML={{ __html: renderSnippet() }} key="segment" />
+        )}
       </Head>
-      {getLayout(<Component {...pageProps} />)}
+      {getLayout(
+        <>
+          <Component {...pageProps} />
+          <CookieConsent />
+        </>
+      )}
     </ErrorBoundary>
   )
 }
