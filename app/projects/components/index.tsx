@@ -61,7 +61,7 @@ type ProjectUnitProps = {
 }
 
 const ProjectUnit = ({ logo, color, title, subtitle, role, year, links }: ProjectUnitProps) => (
-  <div className="p-2 transition-transform transform experience-unit col-xs-12 col-sm-6 col-md-3 hover:scale-105 hover:shadow-lg">
+  <div className="p-2 transition-transform transform experience-unit hover:scale-105 hover:shadow-lg">
     <div
       className="relative w-full h-32 p-16 mb-2 bg-center bg-no-repeat rounded"
       style={{
@@ -112,7 +112,7 @@ const ProjectList = ({ initialData }: Props) => {
   const [{ projects }] = useQuery(getProjects, {}, { initialData })
   return (
     <Section title="These are some selected projects from the last years that I'm really proud of">
-      <div className="grid grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {projects.map((project) => (
           <ProjectUnit
             key={project.id}

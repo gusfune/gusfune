@@ -14,6 +14,11 @@ module.exports = {
         destination: "/hey",
         permanent: true,
       },
+      {
+        source: "/sitemap.xml",
+        destination: "/api/sitemap",
+        permanent: true,
+      },
     ]
   },
   /* Uncomment this to customize the webpack config
