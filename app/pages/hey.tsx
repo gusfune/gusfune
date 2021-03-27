@@ -34,8 +34,8 @@ const Hey: BlitzPage = ({ initialData }: InferGetStaticPropsType<typeof getStati
     <div className={`w-full container max-w-md my-8 ${darkMode ? "dark" : "light"}`}>
       <NextSeo
         title="Gus Fune"
-        description="I'm a highly technical Web &amp; Mobile Product Manager who delivered over 100 products to scale."
-        canonical="https://gusfune.com"
+        description="Hey welcome to my landing page. Here are a couple of interesting things."
+        canonical="https://gusfune.com/hey"
         twitter={{
           handle: "@gusfune",
           cardType: "summary_large_image",
