@@ -1,5 +1,5 @@
 import { Suspense } from "react"
-import { Ctx, BlitzPage, Image, dynamic, GetStaticProps, InferGetStaticPropsType } from "blitz"
+import { Ctx, BlitzPage, Image, GetStaticProps, InferGetStaticPropsType } from "blitz"
 import { NextSeo } from "next-seo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
@@ -9,12 +9,6 @@ import Panel from "app/core/components/Panel"
 import { Links } from "app/core/components/Links"
 import getLinks from "app/links/queries/getLinks"
 import LinkList from "app/links/components/LinkList"
-const DarkModeToggle = dynamic(
-  () => import("app/core/components/DarkMode").then((mod) => mod.DarkModeToggle),
-  {
-    ssr: false,
-  }
-)
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const { links } = await getLinks({ where: { featured: true } }, context as Ctx)
@@ -73,9 +67,6 @@ const Hey: BlitzPage = ({ initialData }: InferGetStaticPropsType<typeof getStati
           <LinkList initialData={initialData} />
         </Suspense>
       </Panel>
-      <div className="mx-auto my-4 text-center">
-        <DarkModeToggle />
-      </div>
     </div>
   )
 }
