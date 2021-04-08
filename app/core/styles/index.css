@@ -14,3 +14,11 @@
 .markdown p {
   @apply mb-2;
 }
+
+.markdown blockquote {
+  @apply ml-2 italic;
+}
+
+.markdown h2 {
+  @apply mb-2 font-semibold;
+}
