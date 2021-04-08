@@ -6,6 +6,7 @@ import {
   ErrorComponent,
   ErrorFallbackProps,
   Head,
+  Router,
   useRouter,
 } from "blitz"
 import { ErrorBoundary } from "react-error-boundary"
@@ -15,6 +16,11 @@ import "app/core/styles/index.css"
 import * as snippet from "@segment/snippet"
 import { useCookies } from "react-cookie"
 import CookieConsent from "app/core/components/CookieConsent"
+
+// Track client-side page views with Segment
+Router.events.on("routeChangeComplete", (url) => {
+  window.analytics?.page(url)
+})
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
