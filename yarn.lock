@@ -9950,6 +9950,11 @@ table@^6.0.4:
     slice-ansi "^4.0.0"
     string-width "^4.2.0"
 
+tailwind-dracula@1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tailwind-dracula/-/tailwind-dracula-1.0.5.tgz#0062eeddc438bdd619ae0e2b46e674e6d63d1472"
+  integrity sha512-4SHEsi/JWZ27ALAL74t2hcfQgHSOBPNdYszoLgiMfPQYAsQdsvG1eAMEeFjC5bsMKkSh+cXZssrsj2Xo2DRFvw==
+
 tailwindcss@2:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-2.1.1.tgz#642f6038c9283a8e1454da34585b8b7c1a1e8877"

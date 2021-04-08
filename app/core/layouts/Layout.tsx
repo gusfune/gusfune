@@ -21,7 +21,7 @@ const Layout = ({ title, children, breadcrumbs }: LayoutProps) => (
       <title>{title || "Gus Fune"}</title>
     </Head>
     {breadcrumbs && <Breadcrumb tree={breadcrumbs} />}
-    <div className="flex flex-col items-center justify-center w-full min-h-screen align-middle bg-gray-100 font-body dark:bg-gray-800 dark:text-gray-300">
+    <div className="flex flex-col items-center justify-center w-full min-h-screen align-middle bg-gray-100 font-body dark:bg-dracula-darker dark:text-dracula-light">
       {children}
       <footer className="py-2 text-center">
         <div className="mx-auto my-4 text-center">
