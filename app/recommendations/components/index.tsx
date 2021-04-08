@@ -26,7 +26,7 @@ const ReadMore = () => (
       href="https://www.linkedin.com/in/gusfune/"
       target="_blank"
       rel="noopener noreferrer"
-      className="px-4 py-2 text-white bg-black rounded hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
+      className="px-4 py-2 text-white bg-black rounded hover:bg-gray-900 dark:bg-dracula-blue dark:text-dracula-yellow dark:hover:bg-dracula-pink"
     >
       Want to read more? Check my Linkedin
     </a>
