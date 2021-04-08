@@ -28,12 +28,22 @@ const letter = `
 
   This won't work. If you sent a message like that, it's time for a reflection.
 
+
   ## Why your offer isn't appealing?
   A lot of people will fall for the "very cheap labor" fallacy, but we all know that this low price comes at another cost. Developers will be working under stress, with long journeys and low wage. Sometimes a low wage in a country means a livable wage in another country, but let's face the fact that a company charging less than US$ 15/ hour, a developer will get a small chunk of that.
 
-  And finally, most critical outsourcing sales come from networking and recommendation. No sane manager will ever hire a company that they met through soliciting.
+  And finally, most critical outsourcing sales come from recommendations. No sane manager will ever hire a company that they met through soliciting.
 
-  So please stop this madness.
+
+  ## Why are you over reacting of an innocent e-mail marketing?
+  E-mail marketing assumes there was a clear opt-in. If you are sending a message that was unsolicited for, that is spam. The definition of spam is straight-forward:
+
+  > Unsolicited e-mail, often of a commercial nature, sent indiscriminately to multiple mailing lists, individuals, or newsgroups; junk e-mail.
+
+  Source: [The American Heritage® Dictionary of the English Language, 5th Edition, extracted from Wordnik](https://www.wordnik.com/words/spam).
+
+  People need to start treating e-mail inboxes with more respect. Would you like people showing at your doorstep talking about their services? Now imagine dozes of people everyday ringing your door bell. It's not because it's not a physical space that the rules of good sense are not applicable anymore.
+
 
   ## Can I use this message?
 

@@ -20,5 +20,5 @@
 }
 
 .markdown h2 {
-  @apply mb-2 font-semibold;
+  @apply mt-4 mb-2 font-semibold;
 }
