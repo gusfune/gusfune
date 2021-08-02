@@ -35,7 +35,7 @@ const UsesPage = () => {
         <div className="md:mt-10">
           <MeHat />
         </div>
-        <p className="px-4 my-8 text-center">
+        <p className="px-4 my-8 text-center" role="contentinfo">
           Here are the tools I use for my projects.
           <br />
           This page was inspired by{" "}
@@ -49,7 +49,7 @@ const UsesPage = () => {
           </a>
           .
         </p>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2" role="main">
           <Panel head={<h2 className="font-semibold">Editor + Terminal</h2>}>
             <ReactMarkdown className="markdown">{terminal}</ReactMarkdown>
           </Panel>

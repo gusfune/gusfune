@@ -1,24 +1,13 @@
 import Image from "next/image"
-import { LinkBaseFragment } from "lib/graphql"
+import { LinkBaseFragment, Project, Asset } from "lib/graphql"
 import { ProjectLinkItem } from "./LinkItem"
 
-interface Props {
-  title: string
-  description: string
-  logo: any
-  role: string
-  year?: number | null
-  links: LinkBaseFragment[]
+type Props = Pick<Project, "id" | "title" | "description" | "role" | "year"> & {
+  logo: { __typename?: "Asset" } & Pick<Asset, "url">
+  link: Array<{ __typename?: "ProjectLink" } & LinkBaseFragment>
 }
 
-const ProjectItem = ({
-  title,
-  description,
-  logo,
-  role,
-  year,
-  links,
-}: Props) => (
+const ProjectItem = ({ title, description, logo, role, year, link }: Props) => (
   <div className="p-4 space-y-2 text-black transition-transform transform bg-white shadow hover:scale-105">
     <div className="relative w-full h-32 p-16 bg-center bg-no-repeat rounded">
       {logo && (
@@ -42,14 +31,15 @@ const ProjectItem = ({
         <br />
       </div>
     )}
-    {links && (
+    {link && (
       <div className="flex flex-row items-center gap-3">
-        {links.map((node) => (
+        {link.map(({ id, url, type }) => (
           <ProjectLinkItem
-            key={node.id}
-            id={node.id}
-            url={node.url}
-            type={node.type}
+            key={id}
+            id={id}
+            url={url}
+            type={type}
+            title={title}
           />
         ))}
       </div>

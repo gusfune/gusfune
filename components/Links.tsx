@@ -15,26 +15,32 @@ const DarkModeToggle = dynamic(() => import("components/DarkMode"), {
 
 const destinations = [
   {
+    title: "GitHub",
     link: "https://github.com/gusfune",
     icon: faGithub,
   },
   {
+    title: "Twitter",
     link: "https://www.twitter.com/gusfune",
     icon: faTwitter,
   },
   {
+    title: "Linkedin",
     link: "https://www.linkedin.com/in/gusfune/",
     icon: faLinkedin,
   },
   {
+    title: "Medium",
     link: "https://log.epicawesome.co/@gusfune",
     icon: faMedium,
   },
   {
+    title: "Steam",
     link: "https://steamcommunity.com/id/the_killer_panda/",
     icon: faSteam,
   },
   {
+    title: "Email",
     link: "mailto:gus@hey.com",
     icon: faEnvelope,
   },
@@ -46,18 +52,19 @@ type Props = {
 
 const Links = ({ small }: Props) => (
   <ul className="flex flex-row justify-start mb-4">
-    {destinations.map((item, i) => (
+    {destinations.map(({ link, title, icon }, i) => (
       <li
         key={i}
         className={`inline-block mr-4 ${small ? "text-base" : "text-2xl"}`}
       >
         <a
-          href={item.link}
+          href={link}
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-white"
+          title={title}
         >
-          <FontAwesomeIcon icon={item.icon} width={small ? 16 : 22} />
+          <FontAwesomeIcon icon={icon} width={small ? 16 : 22} />
         </a>
       </li>
     ))}

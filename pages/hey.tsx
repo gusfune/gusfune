@@ -42,6 +42,7 @@ const Hey = ({ initialData }: Props) => (
             things.
           </p>
         }
+        role="main"
       >
         <LinkList initialData={initialData.links} />
       </Panel>

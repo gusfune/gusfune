@@ -59,7 +59,7 @@ const HomePage = ({ initialData }: Props) => {
         description="I'm a highly technical Web &amp; Mobile Product Manager who delivered over 100 products to scale."
         canonical="https://gusfune.com"
       />
-      <header className="mb-8">
+      <header className="mb-8" role="banner">
         <div className="flex flex-row items-center space-x-8 align-middle">
           <Image
             src="/gusfune.jpg"
@@ -69,24 +69,21 @@ const HomePage = ({ initialData }: Props) => {
             className="rounded-full"
           />
           <div>
-            <h2 className="mb-4 text-4xl font-light">
+            <h1 className="mb-4 text-4xl font-light">
               Hi, I&apos;m <span className="font-semibold">Gus Fune</span>
-            </h2>
-            <h3 className="text-3xl font-light">
+            </h1>
+            <h2 className="text-3xl font-light">
               I&apos;m a CTO who delivered over 100 products to scale.
-            </h3>
+            </h2>
           </div>
         </div>
       </header>
-      <ProjectList initialData={projects} />
-      <RecommendationList
-        initialData={recommendations as GetRecommendationsQuery}
-      />
-      {/*
-      <Suspense fallback={<RecommendationLoader />}>
-        <RecommendationList initialData={initialData} />
-      </Suspense>
-      */}
+      <section role="main">
+        <ProjectList initialData={projects} />
+        <RecommendationList
+          initialData={recommendations as GetRecommendationsQuery}
+        />
+      </section>
     </Layout>
   )
 }

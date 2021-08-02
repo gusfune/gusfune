@@ -22,17 +22,20 @@ const ProjectList = ({ initialData }: Props) => {
   return (
     <Section title="These are some selected projects from the last years that I'm really proud of">
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        {data?.projects.map((project) => (
-          <ProjectItem
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            role={project.role}
-            year={project.year}
-            logo={project.logo}
-            links={project.link}
-          />
-        ))}
+        {data?.projects.map(
+          ({ id, title, description, role, year, logo, link }) => (
+            <ProjectItem
+              key={id}
+              id={id}
+              title={title}
+              description={description}
+              role={role}
+              year={year}
+              logo={logo}
+              link={link}
+            />
+          )
+        )}
       </div>
     </Section>
   )
