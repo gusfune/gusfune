@@ -1,0 +1,7 @@
+query GetLink($slug: String!) {
+  link(where: { slug: $slug }) {
+    id
+    url
+    title
+  }
+}

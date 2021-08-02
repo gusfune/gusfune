@@ -1,11 +1,7 @@
-// tailwind.config.js
 module.exports = {
-  purge: ["{app,pages}/**/*.{js,jsx,ts,tsx}"],
+  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: "class",
   theme: {
-    fontFamily: {
-      body: ["Open Sans", "sans-serif"],
-    },
     extend: {},
   },
   variants: {

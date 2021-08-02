@@ -1,0 +1,8 @@
+query GetLinks {
+  links(where: { featured: true }) {
+    id
+    slug
+    title
+    url
+  }
+}

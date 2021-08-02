@@ -1,0 +1,21 @@
+query GetProjects {
+  projects(orderBy: year_DESC) {
+    id
+    title
+    description
+    logo {
+      url
+    }
+    role
+    year
+    link {
+      ...linkBase
+    }
+  }
+}
+
+fragment linkBase on ProjectLink {
+  id
+  type
+  url
+}
