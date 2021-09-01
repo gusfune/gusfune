@@ -1,4 +1,6 @@
 import Image from "next/image"
+import ImgAWS from "../public/seal-aws.png"
+import ImgCSPO from "../public/seal-cspo.png"
 
 const About = () => (
   <section className="flex-grow-1">
@@ -24,13 +26,34 @@ const About = () => (
         center.
       </p>
     </div>
-    <Image
-      src="/seal-cspo.png"
-      alt="Certified Scrum Product Owner®"
-      width={100}
-      height={100}
-      className="rounded-full"
-    />
+    <a
+      href="https://www.credly.com/badges/bc06b2fd-b44f-4ff9-987b-e94e82064f6b/public_url"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <Image
+        src={ImgAWS}
+        alt="AWS Certified Solutions Architect Associate"
+        width={100}
+        height={100}
+        className="rounded-full"
+        placeholder="blur"
+      />
+    </a>
+    <a
+      href="https://bcert.me/bc/html/show-badge.html?b=tcnftnbq"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <Image
+        src={ImgCSPO}
+        alt="Certified Scrum Product Owner®"
+        width={100}
+        height={100}
+        className="rounded-full"
+        placeholder="blur"
+      />
+    </a>
   </section>
 )
 
