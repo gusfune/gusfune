@@ -1,17 +1,13 @@
 import dynamic from "next/dynamic"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faGithub,
-  faTwitter,
-  faLinkedin,
-  faMedium,
-  faSteam,
-} from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import Image from "next/image"
 import Footnotes from "components/Footnotes"
 const DarkModeToggle = dynamic(() => import("components/DarkMode"), {
   ssr: false,
 })
+import faGithub from "../public/icons/github-brands.svg"
+import faTwitter from "../public/icons/twitter-brands.svg"
+import faLinkedin from "../public/icons/linkedin-brands.svg"
+import faMedium from "../public/icons/medium-brands.svg"
 
 const destinations = [
   {
@@ -34,16 +30,6 @@ const destinations = [
     link: "https://log.epicawesome.co/@gusfune",
     icon: faMedium,
   },
-  {
-    title: "Steam",
-    link: "https://steamcommunity.com/id/the_killer_panda/",
-    icon: faSteam,
-  },
-  {
-    title: "Email",
-    link: "mailto:gus@hey.com",
-    icon: faEnvelope,
-  },
 ]
 
 type Props = {
@@ -64,7 +50,13 @@ const Links = ({ small }: Props) => (
           className="hover:text-white"
           title={title}
         >
-          <FontAwesomeIcon icon={icon} width={small ? 16 : 22} />
+          <Image
+            src={icon as StaticImageData}
+            layout="intrinsic"
+            alt={title}
+            width={small ? 16 : 22}
+            height={small ? 16 : 22}
+          />
         </a>
       </li>
     ))}
