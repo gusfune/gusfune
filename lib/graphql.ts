@@ -16,23 +16,19 @@ export type Scalars = {
   Int: number;
   Float: number;
   /** A date string, such as 2007-12-03 (YYYY-MM-DD), compliant with ISO 8601 standard for representation of dates using the Gregorian calendar. */
-  Date: any;
+  Date: string;
   /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the date-timeformat outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representationof dates and times using the Gregorian calendar. */
-  DateTime: any;
-  Hex: any;
+  DateTime: string;
+  Hex: string;
   /** Raw JSON value */
-  Json: any;
+  Json: object;
   /** The Long scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1. */
-  Long: any;
-  RGBAHue: any;
-  RGBATransparency: any;
+  Long: number;
+  RGBAHue: string;
+  RGBATransparency: string;
   /** Slate-compatible RichText AST */
-  RichTextAST: any;
+  RichTextAST: string;
 };
-
-
-
-
 
 export type Aggregate = {
   __typename?: 'Aggregate';
@@ -175,12 +171,12 @@ export type AssetUrlArgs = {
   transformation?: Maybe<AssetTransformationInput>;
 };
 
-export type AssetConnectInput = {
+export interface AssetConnectInput {
   /** Document to connect */
   where: AssetWhereUniqueInput;
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
   position?: Maybe<ConnectPositionInput>;
-};
+}
 
 /** A connection to a list of items. */
 export type AssetConnection = {
@@ -192,7 +188,7 @@ export type AssetConnection = {
   aggregate: Aggregate;
 };
 
-export type AssetCreateInput = {
+export interface AssetCreateInput {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
   handle: Scalars['String'];
@@ -205,9 +201,9 @@ export type AssetCreateInput = {
   photoRecommendation?: Maybe<RecommendationCreateManyInlineInput>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: Maybe<AssetCreateLocalizationsInput>;
-};
+}
 
-export type AssetCreateLocalizationDataInput = {
+export interface AssetCreateLocalizationDataInput {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
   handle: Scalars['String'];
@@ -216,32 +212,32 @@ export type AssetCreateLocalizationDataInput = {
   width?: Maybe<Scalars['Float']>;
   size?: Maybe<Scalars['Float']>;
   mimeType?: Maybe<Scalars['String']>;
-};
+}
 
-export type AssetCreateLocalizationInput = {
+export interface AssetCreateLocalizationInput {
   /** Localization input */
   data: AssetCreateLocalizationDataInput;
   locale: Locale;
-};
+}
 
-export type AssetCreateLocalizationsInput = {
+export interface AssetCreateLocalizationsInput {
   /** Create localizations for the newly-created document */
   create?: Maybe<Array<AssetCreateLocalizationInput>>;
-};
+}
 
-export type AssetCreateManyInlineInput = {
+export interface AssetCreateManyInlineInput {
   /** Create and connect multiple existing Asset documents */
   create?: Maybe<Array<AssetCreateInput>>;
   /** Connect multiple existing Asset documents */
   connect?: Maybe<Array<AssetWhereUniqueInput>>;
-};
+}
 
-export type AssetCreateOneInlineInput = {
+export interface AssetCreateOneInlineInput {
   /** Create and connect one Asset document */
   create?: Maybe<AssetCreateInput>;
   /** Connect one existing Asset document */
   connect?: Maybe<AssetWhereUniqueInput>;
-};
+}
 
 /** An edge in a connection. */
 export type AssetEdge = {
@@ -253,7 +249,7 @@ export type AssetEdge = {
 };
 
 /** Identifies documents */
-export type AssetManyWhereInput = {
+export interface AssetManyWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -335,7 +331,7 @@ export type AssetManyWhereInput = {
   photoRecommendation_every?: Maybe<RecommendationWhereInput>;
   photoRecommendation_some?: Maybe<RecommendationWhereInput>;
   photoRecommendation_none?: Maybe<RecommendationWhereInput>;
-};
+}
 
 export enum AssetOrderByInput {
   IdAsc = 'id_ASC',
@@ -361,14 +357,14 @@ export enum AssetOrderByInput {
 }
 
 /** Transformations for Assets */
-export type AssetTransformationInput = {
+export interface AssetTransformationInput {
   image?: Maybe<ImageTransformationInput>;
   document?: Maybe<DocumentTransformationInput>;
   /** Pass true if you want to validate the passed transformation parameters */
   validateOptions?: Maybe<Scalars['Boolean']>;
-};
+}
 
-export type AssetUpdateInput = {
+export interface AssetUpdateInput {
   handle?: Maybe<Scalars['String']>;
   fileName?: Maybe<Scalars['String']>;
   height?: Maybe<Scalars['Float']>;
@@ -379,23 +375,23 @@ export type AssetUpdateInput = {
   photoRecommendation?: Maybe<RecommendationUpdateManyInlineInput>;
   /** Manage document localizations */
   localizations?: Maybe<AssetUpdateLocalizationsInput>;
-};
+}
 
-export type AssetUpdateLocalizationDataInput = {
+export interface AssetUpdateLocalizationDataInput {
   handle?: Maybe<Scalars['String']>;
   fileName?: Maybe<Scalars['String']>;
   height?: Maybe<Scalars['Float']>;
   width?: Maybe<Scalars['Float']>;
   size?: Maybe<Scalars['Float']>;
   mimeType?: Maybe<Scalars['String']>;
-};
+}
 
-export type AssetUpdateLocalizationInput = {
+export interface AssetUpdateLocalizationInput {
   data: AssetUpdateLocalizationDataInput;
   locale: Locale;
-};
+}
 
-export type AssetUpdateLocalizationsInput = {
+export interface AssetUpdateLocalizationsInput {
   /** Localizations to create */
   create?: Maybe<Array<AssetCreateLocalizationInput>>;
   /** Localizations to update */
@@ -403,9 +399,9 @@ export type AssetUpdateLocalizationsInput = {
   upsert?: Maybe<Array<AssetUpsertLocalizationInput>>;
   /** Localizations to delete */
   delete?: Maybe<Array<Locale>>;
-};
+}
 
-export type AssetUpdateManyInlineInput = {
+export interface AssetUpdateManyInlineInput {
   /** Create and connect multiple Asset documents */
   create?: Maybe<Array<AssetCreateInput>>;
   /** Connect multiple existing Asset documents */
@@ -420,9 +416,9 @@ export type AssetUpdateManyInlineInput = {
   disconnect?: Maybe<Array<AssetWhereUniqueInput>>;
   /** Delete multiple Asset documents */
   delete?: Maybe<Array<AssetWhereUniqueInput>>;
-};
+}
 
-export type AssetUpdateManyInput = {
+export interface AssetUpdateManyInput {
   fileName?: Maybe<Scalars['String']>;
   height?: Maybe<Scalars['Float']>;
   width?: Maybe<Scalars['Float']>;
@@ -430,34 +426,34 @@ export type AssetUpdateManyInput = {
   mimeType?: Maybe<Scalars['String']>;
   /** Optional updates to localizations */
   localizations?: Maybe<AssetUpdateManyLocalizationsInput>;
-};
+}
 
-export type AssetUpdateManyLocalizationDataInput = {
+export interface AssetUpdateManyLocalizationDataInput {
   fileName?: Maybe<Scalars['String']>;
   height?: Maybe<Scalars['Float']>;
   width?: Maybe<Scalars['Float']>;
   size?: Maybe<Scalars['Float']>;
   mimeType?: Maybe<Scalars['String']>;
-};
+}
 
-export type AssetUpdateManyLocalizationInput = {
+export interface AssetUpdateManyLocalizationInput {
   data: AssetUpdateManyLocalizationDataInput;
   locale: Locale;
-};
+}
 
-export type AssetUpdateManyLocalizationsInput = {
+export interface AssetUpdateManyLocalizationsInput {
   /** Localizations to update */
   update?: Maybe<Array<AssetUpdateManyLocalizationInput>>;
-};
+}
 
-export type AssetUpdateManyWithNestedWhereInput = {
+export interface AssetUpdateManyWithNestedWhereInput {
   /** Document search */
   where: AssetWhereInput;
   /** Update many input */
   data: AssetUpdateManyInput;
-};
+}
 
-export type AssetUpdateOneInlineInput = {
+export interface AssetUpdateOneInlineInput {
   /** Create and connect one Asset document */
   create?: Maybe<AssetCreateInput>;
   /** Update single Asset document */
@@ -470,37 +466,37 @@ export type AssetUpdateOneInlineInput = {
   disconnect?: Maybe<Scalars['Boolean']>;
   /** Delete currently connected Asset document */
   delete?: Maybe<Scalars['Boolean']>;
-};
+}
 
-export type AssetUpdateWithNestedWhereUniqueInput = {
+export interface AssetUpdateWithNestedWhereUniqueInput {
   /** Unique document search */
   where: AssetWhereUniqueInput;
   /** Document to update */
   data: AssetUpdateInput;
-};
+}
 
-export type AssetUpsertInput = {
+export interface AssetUpsertInput {
   /** Create document if it didn't exist */
   create: AssetCreateInput;
   /** Update document if it exists */
   update: AssetUpdateInput;
-};
+}
 
-export type AssetUpsertLocalizationInput = {
+export interface AssetUpsertLocalizationInput {
   update: AssetUpdateLocalizationDataInput;
   create: AssetCreateLocalizationDataInput;
   locale: Locale;
-};
+}
 
-export type AssetUpsertWithNestedWhereUniqueInput = {
+export interface AssetUpsertWithNestedWhereUniqueInput {
   /** Unique document search */
   where: AssetWhereUniqueInput;
   /** Upsert data */
   data: AssetUpsertInput;
-};
+}
 
 /** Identifies documents */
-export type AssetWhereInput = {
+export interface AssetWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -684,12 +680,12 @@ export type AssetWhereInput = {
   photoRecommendation_every?: Maybe<RecommendationWhereInput>;
   photoRecommendation_some?: Maybe<RecommendationWhereInput>;
   photoRecommendation_none?: Maybe<RecommendationWhereInput>;
-};
+}
 
 /** References Asset record uniquely */
-export type AssetWhereUniqueInput = {
+export interface AssetWhereUniqueInput {
   id?: Maybe<Scalars['ID']>;
-};
+}
 
 export type BatchPayload = {
   __typename?: 'BatchPayload';
@@ -706,12 +702,12 @@ export type Color = {
 };
 
 /** Accepts either HEX or RGBA color value. At least one of hex or rgba value should be passed. If both are passed RGBA is used. */
-export type ColorInput = {
+export interface ColorInput {
   hex?: Maybe<Scalars['Hex']>;
   rgba?: Maybe<RgbaInput>;
-};
+}
 
-export type ConnectPositionInput = {
+export interface ConnectPositionInput {
   /** Connect document after specified document */
   after?: Maybe<Scalars['ID']>;
   /** Connect document before specified document */
@@ -720,9 +716,7 @@ export type ConnectPositionInput = {
   start?: Maybe<Scalars['Boolean']>;
   /** Connect document at last position */
   end?: Maybe<Scalars['Boolean']>;
-};
-
-
+}
 
 export enum DocumentFileTypes {
   Jpg = 'jpg',
@@ -743,7 +737,7 @@ export enum DocumentFileTypes {
   Ppt = 'ppt'
 }
 
-export type DocumentOutputInput = {
+export interface DocumentOutputInput {
   /**
    * Transforms a document into a desired file type.
    * See this matrix for format support:
@@ -771,13 +765,13 @@ export type DocumentOutputInput = {
    * TXT:	jpg, html, odt, pdf, svg, and webp
    */
   format?: Maybe<DocumentFileTypes>;
-};
+}
 
 /** Transformations for Documents */
-export type DocumentTransformationInput = {
+export interface DocumentTransformationInput {
   /** Changes the output for the file. */
   output?: Maybe<DocumentOutputInput>;
-};
+}
 
 export type DocumentVersion = {
   __typename?: 'DocumentVersion';
@@ -787,7 +781,6 @@ export type DocumentVersion = {
   createdAt: Scalars['DateTime'];
   data?: Maybe<Scalars['Json']>;
 };
-
 
 export enum ImageFit {
   /** Resizes the image to fit within the specified parameters without distorting, cropping, or changing the aspect ratio. */
@@ -800,21 +793,20 @@ export enum ImageFit {
   Max = 'max'
 }
 
-export type ImageResizeInput = {
+export interface ImageResizeInput {
   /** The width in pixels to resize the image to. The value must be an integer from 1 to 10000. */
   width?: Maybe<Scalars['Int']>;
   /** The height in pixels to resize the image to. The value must be an integer from 1 to 10000. */
   height?: Maybe<Scalars['Int']>;
   /** The default value for the fit parameter is fit:clip. */
   fit?: Maybe<ImageFit>;
-};
+}
 
 /** Transformations for Images */
-export type ImageTransformationInput = {
+export interface ImageTransformationInput {
   /** Resizes the image */
   resize?: Maybe<ImageResizeInput>;
-};
-
+}
 
 export type Link = Node & {
   __typename?: 'Link';
@@ -873,12 +865,12 @@ export type LinkHistoryArgs = {
   stageOverride?: Maybe<Stage>;
 };
 
-export type LinkConnectInput = {
+export interface LinkConnectInput {
   /** Document to connect */
   where: LinkWhereUniqueInput;
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
   position?: Maybe<ConnectPositionInput>;
-};
+}
 
 /** A connection to a list of items. */
 export type LinkConnection = {
@@ -890,28 +882,28 @@ export type LinkConnection = {
   aggregate: Aggregate;
 };
 
-export type LinkCreateInput = {
+export interface LinkCreateInput {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
   title?: Maybe<Scalars['String']>;
   url: Scalars['String'];
   featured?: Maybe<Scalars['Boolean']>;
   slug: Scalars['String'];
-};
+}
 
-export type LinkCreateManyInlineInput = {
+export interface LinkCreateManyInlineInput {
   /** Create and connect multiple existing Link documents */
   create?: Maybe<Array<LinkCreateInput>>;
   /** Connect multiple existing Link documents */
   connect?: Maybe<Array<LinkWhereUniqueInput>>;
-};
+}
 
-export type LinkCreateOneInlineInput = {
+export interface LinkCreateOneInlineInput {
   /** Create and connect one Link document */
   create?: Maybe<LinkCreateInput>;
   /** Connect one existing Link document */
   connect?: Maybe<LinkWhereUniqueInput>;
-};
+}
 
 /** An edge in a connection. */
 export type LinkEdge = {
@@ -923,7 +915,7 @@ export type LinkEdge = {
 };
 
 /** Identifies documents */
-export type LinkManyWhereInput = {
+export interface LinkManyWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -1059,7 +1051,7 @@ export type LinkManyWhereInput = {
   createdBy?: Maybe<UserWhereInput>;
   updatedBy?: Maybe<UserWhereInput>;
   publishedBy?: Maybe<UserWhereInput>;
-};
+}
 
 export enum LinkOrderByInput {
   IdAsc = 'id_ASC',
@@ -1080,14 +1072,14 @@ export enum LinkOrderByInput {
   SlugDesc = 'slug_DESC'
 }
 
-export type LinkUpdateInput = {
+export interface LinkUpdateInput {
   title?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   featured?: Maybe<Scalars['Boolean']>;
   slug?: Maybe<Scalars['String']>;
-};
+}
 
-export type LinkUpdateManyInlineInput = {
+export interface LinkUpdateManyInlineInput {
   /** Create and connect multiple Link documents */
   create?: Maybe<Array<LinkCreateInput>>;
   /** Connect multiple existing Link documents */
@@ -1102,22 +1094,22 @@ export type LinkUpdateManyInlineInput = {
   disconnect?: Maybe<Array<LinkWhereUniqueInput>>;
   /** Delete multiple Link documents */
   delete?: Maybe<Array<LinkWhereUniqueInput>>;
-};
+}
 
-export type LinkUpdateManyInput = {
+export interface LinkUpdateManyInput {
   title?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
   featured?: Maybe<Scalars['Boolean']>;
-};
+}
 
-export type LinkUpdateManyWithNestedWhereInput = {
+export interface LinkUpdateManyWithNestedWhereInput {
   /** Document search */
   where: LinkWhereInput;
   /** Update many input */
   data: LinkUpdateManyInput;
-};
+}
 
-export type LinkUpdateOneInlineInput = {
+export interface LinkUpdateOneInlineInput {
   /** Create and connect one Link document */
   create?: Maybe<LinkCreateInput>;
   /** Update single Link document */
@@ -1130,31 +1122,31 @@ export type LinkUpdateOneInlineInput = {
   disconnect?: Maybe<Scalars['Boolean']>;
   /** Delete currently connected Link document */
   delete?: Maybe<Scalars['Boolean']>;
-};
+}
 
-export type LinkUpdateWithNestedWhereUniqueInput = {
+export interface LinkUpdateWithNestedWhereUniqueInput {
   /** Unique document search */
   where: LinkWhereUniqueInput;
   /** Document to update */
   data: LinkUpdateInput;
-};
+}
 
-export type LinkUpsertInput = {
+export interface LinkUpsertInput {
   /** Create document if it didn't exist */
   create: LinkCreateInput;
   /** Update document if it exists */
   update: LinkUpdateInput;
-};
+}
 
-export type LinkUpsertWithNestedWhereUniqueInput = {
+export interface LinkUpsertWithNestedWhereUniqueInput {
   /** Unique document search */
   where: LinkWhereUniqueInput;
   /** Upsert data */
   data: LinkUpsertInput;
-};
+}
 
 /** Identifies documents */
-export type LinkWhereInput = {
+export interface LinkWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -1290,13 +1282,13 @@ export type LinkWhereInput = {
   createdBy?: Maybe<UserWhereInput>;
   updatedBy?: Maybe<UserWhereInput>;
   publishedBy?: Maybe<UserWhereInput>;
-};
+}
 
 /** References Link record uniquely */
-export type LinkWhereUniqueInput = {
+export interface LinkWhereUniqueInput {
   id?: Maybe<Scalars['ID']>;
   slug?: Maybe<Scalars['String']>;
-};
+}
 
 /** Locale system enumeration */
 export enum Locale {
@@ -1319,11 +1311,10 @@ export type LocationDistanceArgs = {
 };
 
 /** Input for a geolocation point with latitude and longitude */
-export type LocationInput = {
+export interface LocationInput {
   latitude: Scalars['Float'];
   longitude: Scalars['Float'];
-};
-
+}
 
 export type Mutation = {
   __typename?: 'Mutation';
@@ -2156,12 +2147,12 @@ export type ProjectHistoryArgs = {
   stageOverride?: Maybe<Stage>;
 };
 
-export type ProjectConnectInput = {
+export interface ProjectConnectInput {
   /** Document to connect */
   where: ProjectWhereUniqueInput;
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
   position?: Maybe<ConnectPositionInput>;
-};
+}
 
 /** A connection to a list of items. */
 export type ProjectConnection = {
@@ -2173,7 +2164,7 @@ export type ProjectConnection = {
   aggregate: Aggregate;
 };
 
-export type ProjectCreateInput = {
+export interface ProjectCreateInput {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
   title: Scalars['String'];
@@ -2182,21 +2173,21 @@ export type ProjectCreateInput = {
   year?: Maybe<Scalars['Int']>;
   logo: AssetCreateOneInlineInput;
   link?: Maybe<ProjectLinkCreateManyInlineInput>;
-};
+}
 
-export type ProjectCreateManyInlineInput = {
+export interface ProjectCreateManyInlineInput {
   /** Create and connect multiple existing Project documents */
   create?: Maybe<Array<ProjectCreateInput>>;
   /** Connect multiple existing Project documents */
   connect?: Maybe<Array<ProjectWhereUniqueInput>>;
-};
+}
 
-export type ProjectCreateOneInlineInput = {
+export interface ProjectCreateOneInlineInput {
   /** Create and connect one Project document */
   create?: Maybe<ProjectCreateInput>;
   /** Connect one existing Project document */
   connect?: Maybe<ProjectWhereUniqueInput>;
-};
+}
 
 /** An edge in a connection. */
 export type ProjectEdge = {
@@ -2268,12 +2259,12 @@ export type ProjectLinkHistoryArgs = {
   stageOverride?: Maybe<Stage>;
 };
 
-export type ProjectLinkConnectInput = {
+export interface ProjectLinkConnectInput {
   /** Document to connect */
   where: ProjectLinkWhereUniqueInput;
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
   position?: Maybe<ConnectPositionInput>;
-};
+}
 
 /** A connection to a list of items. */
 export type ProjectLinkConnection = {
@@ -2285,27 +2276,27 @@ export type ProjectLinkConnection = {
   aggregate: Aggregate;
 };
 
-export type ProjectLinkCreateInput = {
+export interface ProjectLinkCreateInput {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
   url: Scalars['String'];
   project?: Maybe<ProjectCreateOneInlineInput>;
   type?: Maybe<ProjectType>;
-};
+}
 
-export type ProjectLinkCreateManyInlineInput = {
+export interface ProjectLinkCreateManyInlineInput {
   /** Create and connect multiple existing ProjectLink documents */
   create?: Maybe<Array<ProjectLinkCreateInput>>;
   /** Connect multiple existing ProjectLink documents */
   connect?: Maybe<Array<ProjectLinkWhereUniqueInput>>;
-};
+}
 
-export type ProjectLinkCreateOneInlineInput = {
+export interface ProjectLinkCreateOneInlineInput {
   /** Create and connect one ProjectLink document */
   create?: Maybe<ProjectLinkCreateInput>;
   /** Connect one existing ProjectLink document */
   connect?: Maybe<ProjectLinkWhereUniqueInput>;
-};
+}
 
 /** An edge in a connection. */
 export type ProjectLinkEdge = {
@@ -2317,7 +2308,7 @@ export type ProjectLinkEdge = {
 };
 
 /** Identifies documents */
-export type ProjectLinkManyWhereInput = {
+export interface ProjectLinkManyWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -2420,7 +2411,7 @@ export type ProjectLinkManyWhereInput = {
   type_in?: Maybe<Array<ProjectType>>;
   /** All values that are not contained in given list. */
   type_not_in?: Maybe<Array<ProjectType>>;
-};
+}
 
 export enum ProjectLinkOrderByInput {
   IdAsc = 'id_ASC',
@@ -2437,13 +2428,13 @@ export enum ProjectLinkOrderByInput {
   TypeDesc = 'type_DESC'
 }
 
-export type ProjectLinkUpdateInput = {
+export interface ProjectLinkUpdateInput {
   url?: Maybe<Scalars['String']>;
   project?: Maybe<ProjectUpdateOneInlineInput>;
   type?: Maybe<ProjectType>;
-};
+}
 
-export type ProjectLinkUpdateManyInlineInput = {
+export interface ProjectLinkUpdateManyInlineInput {
   /** Create and connect multiple ProjectLink documents */
   create?: Maybe<Array<ProjectLinkCreateInput>>;
   /** Connect multiple existing ProjectLink documents */
@@ -2458,21 +2449,21 @@ export type ProjectLinkUpdateManyInlineInput = {
   disconnect?: Maybe<Array<ProjectLinkWhereUniqueInput>>;
   /** Delete multiple ProjectLink documents */
   delete?: Maybe<Array<ProjectLinkWhereUniqueInput>>;
-};
+}
 
-export type ProjectLinkUpdateManyInput = {
+export interface ProjectLinkUpdateManyInput {
   url?: Maybe<Scalars['String']>;
   type?: Maybe<ProjectType>;
-};
+}
 
-export type ProjectLinkUpdateManyWithNestedWhereInput = {
+export interface ProjectLinkUpdateManyWithNestedWhereInput {
   /** Document search */
   where: ProjectLinkWhereInput;
   /** Update many input */
   data: ProjectLinkUpdateManyInput;
-};
+}
 
-export type ProjectLinkUpdateOneInlineInput = {
+export interface ProjectLinkUpdateOneInlineInput {
   /** Create and connect one ProjectLink document */
   create?: Maybe<ProjectLinkCreateInput>;
   /** Update single ProjectLink document */
@@ -2485,31 +2476,31 @@ export type ProjectLinkUpdateOneInlineInput = {
   disconnect?: Maybe<Scalars['Boolean']>;
   /** Delete currently connected ProjectLink document */
   delete?: Maybe<Scalars['Boolean']>;
-};
+}
 
-export type ProjectLinkUpdateWithNestedWhereUniqueInput = {
+export interface ProjectLinkUpdateWithNestedWhereUniqueInput {
   /** Unique document search */
   where: ProjectLinkWhereUniqueInput;
   /** Document to update */
   data: ProjectLinkUpdateInput;
-};
+}
 
-export type ProjectLinkUpsertInput = {
+export interface ProjectLinkUpsertInput {
   /** Create document if it didn't exist */
   create: ProjectLinkCreateInput;
   /** Update document if it exists */
   update: ProjectLinkUpdateInput;
-};
+}
 
-export type ProjectLinkUpsertWithNestedWhereUniqueInput = {
+export interface ProjectLinkUpsertWithNestedWhereUniqueInput {
   /** Unique document search */
   where: ProjectLinkWhereUniqueInput;
   /** Upsert data */
   data: ProjectLinkUpsertInput;
-};
+}
 
 /** Identifies documents */
-export type ProjectLinkWhereInput = {
+export interface ProjectLinkWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -2612,15 +2603,15 @@ export type ProjectLinkWhereInput = {
   type_in?: Maybe<Array<ProjectType>>;
   /** All values that are not contained in given list. */
   type_not_in?: Maybe<Array<ProjectType>>;
-};
+}
 
 /** References ProjectLink record uniquely */
-export type ProjectLinkWhereUniqueInput = {
+export interface ProjectLinkWhereUniqueInput {
   id?: Maybe<Scalars['ID']>;
-};
+}
 
 /** Identifies documents */
-export type ProjectManyWhereInput = {
+export interface ProjectManyWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -2772,7 +2763,7 @@ export type ProjectManyWhereInput = {
   link_every?: Maybe<ProjectLinkWhereInput>;
   link_some?: Maybe<ProjectLinkWhereInput>;
   link_none?: Maybe<ProjectLinkWhereInput>;
-};
+}
 
 export enum ProjectOrderByInput {
   IdAsc = 'id_ASC',
@@ -2800,16 +2791,16 @@ export enum ProjectType {
   Web = 'Web'
 }
 
-export type ProjectUpdateInput = {
+export interface ProjectUpdateInput {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   role?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Int']>;
   logo?: Maybe<AssetUpdateOneInlineInput>;
   link?: Maybe<ProjectLinkUpdateManyInlineInput>;
-};
+}
 
-export type ProjectUpdateManyInlineInput = {
+export interface ProjectUpdateManyInlineInput {
   /** Create and connect multiple Project documents */
   create?: Maybe<Array<ProjectCreateInput>>;
   /** Connect multiple existing Project documents */
@@ -2824,22 +2815,22 @@ export type ProjectUpdateManyInlineInput = {
   disconnect?: Maybe<Array<ProjectWhereUniqueInput>>;
   /** Delete multiple Project documents */
   delete?: Maybe<Array<ProjectWhereUniqueInput>>;
-};
+}
 
-export type ProjectUpdateManyInput = {
+export interface ProjectUpdateManyInput {
   description?: Maybe<Scalars['String']>;
   role?: Maybe<Scalars['String']>;
   year?: Maybe<Scalars['Int']>;
-};
+}
 
-export type ProjectUpdateManyWithNestedWhereInput = {
+export interface ProjectUpdateManyWithNestedWhereInput {
   /** Document search */
   where: ProjectWhereInput;
   /** Update many input */
   data: ProjectUpdateManyInput;
-};
+}
 
-export type ProjectUpdateOneInlineInput = {
+export interface ProjectUpdateOneInlineInput {
   /** Create and connect one Project document */
   create?: Maybe<ProjectCreateInput>;
   /** Update single Project document */
@@ -2852,31 +2843,31 @@ export type ProjectUpdateOneInlineInput = {
   disconnect?: Maybe<Scalars['Boolean']>;
   /** Delete currently connected Project document */
   delete?: Maybe<Scalars['Boolean']>;
-};
+}
 
-export type ProjectUpdateWithNestedWhereUniqueInput = {
+export interface ProjectUpdateWithNestedWhereUniqueInput {
   /** Unique document search */
   where: ProjectWhereUniqueInput;
   /** Document to update */
   data: ProjectUpdateInput;
-};
+}
 
-export type ProjectUpsertInput = {
+export interface ProjectUpsertInput {
   /** Create document if it didn't exist */
   create: ProjectCreateInput;
   /** Update document if it exists */
   update: ProjectUpdateInput;
-};
+}
 
-export type ProjectUpsertWithNestedWhereUniqueInput = {
+export interface ProjectUpsertWithNestedWhereUniqueInput {
   /** Unique document search */
   where: ProjectWhereUniqueInput;
   /** Upsert data */
   data: ProjectUpsertInput;
-};
+}
 
 /** Identifies documents */
-export type ProjectWhereInput = {
+export interface ProjectWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -3028,20 +3019,20 @@ export type ProjectWhereInput = {
   link_every?: Maybe<ProjectLinkWhereInput>;
   link_some?: Maybe<ProjectLinkWhereInput>;
   link_none?: Maybe<ProjectLinkWhereInput>;
-};
+}
 
 /** References Project record uniquely */
-export type ProjectWhereUniqueInput = {
+export interface ProjectWhereUniqueInput {
   id?: Maybe<Scalars['ID']>;
   title?: Maybe<Scalars['String']>;
-};
+}
 
-export type PublishLocaleInput = {
+export interface PublishLocaleInput {
   /** Locales to publish */
   locale: Locale;
   /** Stages to publish selected locales to */
   stages: Array<Stage>;
-};
+}
 
 export type Query = {
   __typename?: 'Query';
@@ -3334,15 +3325,13 @@ export type Rgba = {
   a: Scalars['RGBATransparency'];
 };
 
-
 /** Input type representing a RGBA color value: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba() */
-export type RgbaInput = {
+export interface RgbaInput {
   r: Scalars['RGBAHue'];
   g: Scalars['RGBAHue'];
   b: Scalars['RGBAHue'];
   a: Scalars['RGBATransparency'];
-};
-
+}
 
 export type Recommendation = Node & {
   __typename?: 'Recommendation';
@@ -3406,12 +3395,12 @@ export type RecommendationHistoryArgs = {
   stageOverride?: Maybe<Stage>;
 };
 
-export type RecommendationConnectInput = {
+export interface RecommendationConnectInput {
   /** Document to connect */
   where: RecommendationWhereUniqueInput;
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
   position?: Maybe<ConnectPositionInput>;
-};
+}
 
 /** A connection to a list of items. */
 export type RecommendationConnection = {
@@ -3423,28 +3412,28 @@ export type RecommendationConnection = {
   aggregate: Aggregate;
 };
 
-export type RecommendationCreateInput = {
+export interface RecommendationCreateInput {
   createdAt?: Maybe<Scalars['DateTime']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
   name: Scalars['String'];
   title?: Maybe<Scalars['String']>;
   content: Scalars['String'];
   photo: AssetCreateOneInlineInput;
-};
+}
 
-export type RecommendationCreateManyInlineInput = {
+export interface RecommendationCreateManyInlineInput {
   /** Create and connect multiple existing Recommendation documents */
   create?: Maybe<Array<RecommendationCreateInput>>;
   /** Connect multiple existing Recommendation documents */
   connect?: Maybe<Array<RecommendationWhereUniqueInput>>;
-};
+}
 
-export type RecommendationCreateOneInlineInput = {
+export interface RecommendationCreateOneInlineInput {
   /** Create and connect one Recommendation document */
   create?: Maybe<RecommendationCreateInput>;
   /** Connect one existing Recommendation document */
   connect?: Maybe<RecommendationWhereUniqueInput>;
-};
+}
 
 /** An edge in a connection. */
 export type RecommendationEdge = {
@@ -3456,7 +3445,7 @@ export type RecommendationEdge = {
 };
 
 /** Identifies documents */
-export type RecommendationManyWhereInput = {
+export interface RecommendationManyWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -3590,7 +3579,7 @@ export type RecommendationManyWhereInput = {
   updatedBy?: Maybe<UserWhereInput>;
   publishedBy?: Maybe<UserWhereInput>;
   photo?: Maybe<AssetWhereInput>;
-};
+}
 
 export enum RecommendationOrderByInput {
   IdAsc = 'id_ASC',
@@ -3609,14 +3598,14 @@ export enum RecommendationOrderByInput {
   ContentDesc = 'content_DESC'
 }
 
-export type RecommendationUpdateInput = {
+export interface RecommendationUpdateInput {
   name?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
   photo?: Maybe<AssetUpdateOneInlineInput>;
-};
+}
 
-export type RecommendationUpdateManyInlineInput = {
+export interface RecommendationUpdateManyInlineInput {
   /** Create and connect multiple Recommendation documents */
   create?: Maybe<Array<RecommendationCreateInput>>;
   /** Connect multiple existing Recommendation documents */
@@ -3631,21 +3620,21 @@ export type RecommendationUpdateManyInlineInput = {
   disconnect?: Maybe<Array<RecommendationWhereUniqueInput>>;
   /** Delete multiple Recommendation documents */
   delete?: Maybe<Array<RecommendationWhereUniqueInput>>;
-};
+}
 
-export type RecommendationUpdateManyInput = {
+export interface RecommendationUpdateManyInput {
   title?: Maybe<Scalars['String']>;
   content?: Maybe<Scalars['String']>;
-};
+}
 
-export type RecommendationUpdateManyWithNestedWhereInput = {
+export interface RecommendationUpdateManyWithNestedWhereInput {
   /** Document search */
   where: RecommendationWhereInput;
   /** Update many input */
   data: RecommendationUpdateManyInput;
-};
+}
 
-export type RecommendationUpdateOneInlineInput = {
+export interface RecommendationUpdateOneInlineInput {
   /** Create and connect one Recommendation document */
   create?: Maybe<RecommendationCreateInput>;
   /** Update single Recommendation document */
@@ -3658,31 +3647,31 @@ export type RecommendationUpdateOneInlineInput = {
   disconnect?: Maybe<Scalars['Boolean']>;
   /** Delete currently connected Recommendation document */
   delete?: Maybe<Scalars['Boolean']>;
-};
+}
 
-export type RecommendationUpdateWithNestedWhereUniqueInput = {
+export interface RecommendationUpdateWithNestedWhereUniqueInput {
   /** Unique document search */
   where: RecommendationWhereUniqueInput;
   /** Document to update */
   data: RecommendationUpdateInput;
-};
+}
 
-export type RecommendationUpsertInput = {
+export interface RecommendationUpsertInput {
   /** Create document if it didn't exist */
   create: RecommendationCreateInput;
   /** Update document if it exists */
   update: RecommendationUpdateInput;
-};
+}
 
-export type RecommendationUpsertWithNestedWhereUniqueInput = {
+export interface RecommendationUpsertWithNestedWhereUniqueInput {
   /** Unique document search */
   where: RecommendationWhereUniqueInput;
   /** Upsert data */
   data: RecommendationUpsertInput;
-};
+}
 
 /** Identifies documents */
-export type RecommendationWhereInput = {
+export interface RecommendationWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -3816,13 +3805,13 @@ export type RecommendationWhereInput = {
   updatedBy?: Maybe<UserWhereInput>;
   publishedBy?: Maybe<UserWhereInput>;
   photo?: Maybe<AssetWhereInput>;
-};
+}
 
 /** References Recommendation record uniquely */
-export type RecommendationWhereUniqueInput = {
+export interface RecommendationWhereUniqueInput {
   id?: Maybe<Scalars['ID']>;
   name?: Maybe<Scalars['String']>;
-};
+}
 
 /** Custom type representing a rich text value comprising of raw rich text ast, html, markdown and text values */
 export type RichText = {
@@ -3836,7 +3825,6 @@ export type RichText = {
   /** Returns plain-text contents of RichText */
   text: Scalars['String'];
 };
-
 
 /** Stage system enumeration */
 export enum Stage {
@@ -3852,12 +3840,12 @@ export enum SystemDateTimeFieldVariation {
   Combined = 'COMBINED'
 }
 
-export type UnpublishLocaleInput = {
+export interface UnpublishLocaleInput {
   /** Locales to unpublish */
   locale: Locale;
   /** Stages to unpublish selected locales from */
   stages: Array<Stage>;
-};
+}
 
 /** User system model */
 export type User = Node & {
@@ -3892,12 +3880,12 @@ export type UserDocumentInStagesArgs = {
   inheritLocale?: Scalars['Boolean'];
 };
 
-export type UserConnectInput = {
+export interface UserConnectInput {
   /** Document to connect */
   where: UserWhereUniqueInput;
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
   position?: Maybe<ConnectPositionInput>;
-};
+}
 
 /** A connection to a list of items. */
 export type UserConnection = {
@@ -3909,15 +3897,15 @@ export type UserConnection = {
   aggregate: Aggregate;
 };
 
-export type UserCreateManyInlineInput = {
+export interface UserCreateManyInlineInput {
   /** Connect multiple existing User documents */
   connect?: Maybe<Array<UserWhereUniqueInput>>;
-};
+}
 
-export type UserCreateOneInlineInput = {
+export interface UserCreateOneInlineInput {
   /** Connect one existing User document */
   connect?: Maybe<UserWhereUniqueInput>;
-};
+}
 
 /** An edge in a connection. */
 export type UserEdge = {
@@ -3937,7 +3925,7 @@ export enum UserKind {
 }
 
 /** Identifies documents */
-export type UserManyWhereInput = {
+export interface UserManyWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -4058,7 +4046,7 @@ export type UserManyWhereInput = {
   kind_in?: Maybe<Array<UserKind>>;
   /** All values that are not contained in given list. */
   kind_not_in?: Maybe<Array<UserKind>>;
-};
+}
 
 export enum UserOrderByInput {
   IdAsc = 'id_ASC',
@@ -4079,24 +4067,24 @@ export enum UserOrderByInput {
   KindDesc = 'kind_DESC'
 }
 
-export type UserUpdateManyInlineInput = {
+export interface UserUpdateManyInlineInput {
   /** Connect multiple existing User documents */
   connect?: Maybe<Array<UserConnectInput>>;
   /** Override currently-connected documents with multiple existing User documents */
   set?: Maybe<Array<UserWhereUniqueInput>>;
   /** Disconnect multiple User documents */
   disconnect?: Maybe<Array<UserWhereUniqueInput>>;
-};
+}
 
-export type UserUpdateOneInlineInput = {
+export interface UserUpdateOneInlineInput {
   /** Connect existing User document */
   connect?: Maybe<UserWhereUniqueInput>;
   /** Disconnect currently connected User document */
   disconnect?: Maybe<Scalars['Boolean']>;
-};
+}
 
 /** Identifies documents */
-export type UserWhereInput = {
+export interface UserWhereInput {
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars['String']>;
   /** Logical AND on all given filters. */
@@ -4217,12 +4205,12 @@ export type UserWhereInput = {
   kind_in?: Maybe<Array<UserKind>>;
   /** All values that are not contained in given list. */
   kind_not_in?: Maybe<Array<UserKind>>;
-};
+}
 
 /** References User record uniquely */
-export type UserWhereUniqueInput = {
+export interface UserWhereUniqueInput {
   id?: Maybe<Scalars['ID']>;
-};
+}
 
 export type Version = {
   __typename?: 'Version';
@@ -4232,11 +4220,11 @@ export type Version = {
   createdAt: Scalars['DateTime'];
 };
 
-export type VersionWhereInput = {
+export interface VersionWhereInput {
   id: Scalars['ID'];
   stage: Stage;
   revision: Scalars['Int'];
-};
+}
 
 export enum _FilterKind {
   Search = 'search',
@@ -4320,62 +4308,24 @@ export type GetLinkQueryVariables = Exact<{
 }>;
 
 
-export type GetLinkQuery = (
-  { __typename?: 'Query' }
-  & { link?: Maybe<(
-    { __typename?: 'Link' }
-    & Pick<Link, 'id' | 'url' | 'title'>
-  )> }
-);
+export type GetLinkQuery = { __typename?: 'Query', link?: Maybe<{ __typename?: 'Link', id: string, url: string, title?: Maybe<string> }> };
 
 export type GetLinksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetLinksQuery = (
-  { __typename?: 'Query' }
-  & { links: Array<(
-    { __typename?: 'Link' }
-    & Pick<Link, 'id' | 'slug' | 'title' | 'url'>
-  )> }
-);
+export type GetLinksQuery = { __typename?: 'Query', links: Array<{ __typename?: 'Link', id: string, slug: string, title?: Maybe<string>, url: string }> };
 
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = (
-  { __typename?: 'Query' }
-  & { projects: Array<(
-    { __typename?: 'Project' }
-    & Pick<Project, 'id' | 'title' | 'description' | 'role' | 'year'>
-    & { logo: (
-      { __typename?: 'Asset' }
-      & Pick<Asset, 'url'>
-    ), link: Array<(
-      { __typename?: 'ProjectLink' }
-      & LinkBaseFragment
-    )> }
-  )> }
-);
+export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', id: string, title: string, description: string, role: string, year?: Maybe<number>, logo: { __typename?: 'Asset', url: string }, link: Array<{ __typename?: 'ProjectLink', id: string, type?: Maybe<ProjectType>, url: string }> }> };
 
-export type LinkBaseFragment = (
-  { __typename?: 'ProjectLink' }
-  & Pick<ProjectLink, 'id' | 'type' | 'url'>
-);
+export type LinkBaseFragment = { __typename?: 'ProjectLink', id: string, type?: Maybe<ProjectType>, url: string };
 
 export type GetRecommendationsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetRecommendationsQuery = (
-  { __typename?: 'Query' }
-  & { recommendations: Array<(
-    { __typename?: 'Recommendation' }
-    & Pick<Recommendation, 'id' | 'title' | 'name' | 'content'>
-    & { photo: (
-      { __typename?: 'Asset' }
-      & Pick<Asset, 'url'>
-    ) }
-  )> }
-);
+export type GetRecommendationsQuery = { __typename?: 'Query', recommendations: Array<{ __typename?: 'Recommendation', id: string, title?: Maybe<string>, name: string, content: string, photo: { __typename?: 'Asset', url: string } }> };
 
 export const LinkBaseFragmentDoc = `
     fragment linkBase on ProjectLink {
