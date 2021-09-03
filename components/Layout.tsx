@@ -1,7 +1,6 @@
 import { ReactNode } from "react"
 import Head from "next/head"
 import Sidebar from "components/Sidebar"
-import { useDarkMode } from "components/DarkMode"
 import { DefaultSeo } from "next-seo"
 
 interface Props {
@@ -19,35 +18,28 @@ const classNames = (isHome: boolean = false) => {
   return classes
 }
 
-const Layout = ({ title, children, isHome }: Props) => {
-  const { darkMode } = useDarkMode()
-  return (
-    <>
-      <DefaultSeo
-        openGraph={{
-          type: "website",
-          locale: "en_US",
-          url: "https://gusfune.com/",
-          site_name: "Gus Fune",
-        }}
-        twitter={{
-          handle: "@gusfune",
-          cardType: "summary_large_image",
-        }}
-      />
-      <Head>
-        <title>{title ?? "Gus Fune"}</title>
-      </Head>
-      <div
-        className={`flex flex-col sm:flex-row font-body ${
-          darkMode ? "dark" : "light"
-        }`}
-      >
-        <div className={classNames(isHome)}>{children}</div>
-        {isHome && <Sidebar />}
-      </div>
-    </>
-  )
-}
+const Layout = ({ title, children, isHome }: Props) => (
+  <>
+    <DefaultSeo
+      openGraph={{
+        type: "website",
+        locale: "en_US",
+        url: "https://gusfune.com/",
+        site_name: "Gus Fune",
+      }}
+      twitter={{
+        handle: "@gusfune",
+        cardType: "summary_large_image",
+      }}
+    />
+    <Head>
+      <title>{title ?? "Gus Fune"}</title>
+    </Head>
+    <div className="flex flex-col sm:flex-row font-body">
+      <div className={classNames(isHome)}>{children}</div>
+      {isHome && <Sidebar />}
+    </div>
+  </>
+)
 
 export default Layout

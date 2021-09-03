@@ -1,9 +1,5 @@
-import dynamic from "next/dynamic"
 import Image from "next/image"
 import Footnotes from "components/Footnotes"
-const DarkModeToggle = dynamic(() => import("components/DarkMode"), {
-  ssr: false,
-})
 import faGithub from "../public/icons/github-brands.svg"
 import faTwitter from "../public/icons/twitter-brands.svg"
 import faLinkedin from "../public/icons/linkedin-brands.svg"
@@ -67,7 +63,6 @@ const LinksSidebar = () => (
   <div id="sidebar-links">
     <div className="flex flex-row justify-between">
       <Links />
-      <DarkModeToggle />
     </div>
     <Footnotes />
   </div>
