@@ -29,7 +29,6 @@
     "@headlessui/react": "^1.4.1",
     "@next/bundle-analyzer": "^11.1.2",
     "@segment/snippet": "^4.14.2",
-    "@sentry/nextjs": "^6.12.0",
     "@tailwindcss/forms": "^0.3.3",
     "@types/react": "17.0.19",
     "autoprefixer": "^10.3.4",

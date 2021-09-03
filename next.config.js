@@ -1,14 +1,4 @@
-const { withSentryConfig } = require("@sentry/nextjs")
-
-const SentryWebpackPluginOptions = {
-  silent: true,
-  // For all available options, see:
-  // https://github.com/getsentry/sentry-webpack-plugin#options.
-}
-
-withSentryConfig
-
-const moduleExports = {
+module.exports = {
   reactStrictMode: true,
   images: {
     domains: ["media.graphcms.com"],
@@ -18,5 +8,3 @@ const moduleExports = {
     defaultLocale: "en",
   },
 }
-
-module.exports = withSentryConfig(moduleExports, SentryWebpackPluginOptions)
