@@ -15,10 +15,10 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/free-brands-svg-icons": "^5.15.4",
-    "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@fortawesome/fontawesome-svg-core": "next",
+    "@fortawesome/free-brands-svg-icons": "next",
+    "@fortawesome/free-solid-svg-icons": "next",
+    "@fortawesome/react-fontawesome": "latest",
     "@graphql-codegen/cli": "2.2.0",
     "@graphql-codegen/typescript": "2.2.2",
     "@graphql-codegen/typescript-document-nodes": "2.1.4",

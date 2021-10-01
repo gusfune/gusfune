@@ -61,7 +61,7 @@ const Links = ({ small }: Props) => (
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-white"
+          className="hover:opacity-70"
           title={title}
         >
           <FontAwesomeIcon icon={icon} width={small ? 16 : 22} />
