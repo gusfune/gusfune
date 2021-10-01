@@ -1,9 +1,9 @@
-interface Props {
+export interface LinkItemProps {
   link: string
   title: string
 }
 
-const LinkItem = ({ link, title }: Props) => (
+const LinkItem = ({ link, title }: LinkItemProps) => (
   <a
     href={link}
     className="flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-gray-100 rounded-md group hover:bg-gray-50 hover:text-gray-900"

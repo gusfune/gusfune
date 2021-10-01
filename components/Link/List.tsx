@@ -1,8 +1,9 @@
+import dynamic from "next/dynamic"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSpinner } from "@fortawesome/free-solid-svg-icons"
-import { LinkItem } from "./Item"
 import { useGetLinksQuery, GetLinksQuery } from "lib/graphql"
 import { client } from "lib/graphql-client"
+const LinkItem = dynamic(() => import("./Item"))
 
 interface Props {
   initialData: GetLinksQuery

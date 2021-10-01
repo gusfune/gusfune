@@ -8,4 +8,15 @@ generates:
       - "typescript-operations"
       - "typescript-react-query"
     config:
+      declarationKind:
+        input: "interface"
       fetcher: graphql-request
+      scalars:
+        Date: string
+        DateTime: string
+        Hex: string
+        Json: object
+        Long: number
+        RGBAHue: string
+        RGBATransparency: string
+        RichTextAST: string
