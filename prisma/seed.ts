@@ -81,12 +81,65 @@ const projectData: Prisma.ProjectCreateInput[] = [
   },
 ]
 
+const recommendationData: Prisma.RecommendationCreateInput[] = [
+  {
+    name: "Tom Huggins",
+    title: "CEO of VersusFC",
+    content:
+      "Gus is not only a talented designer and programmer he really excels at organization and project management and creates a really supportive work environment for his team, a skill that is invaluable in today’s industry. He is also dedicated and driven going above and beyond for his projects.",
+    photo:
+      "https://gusfune.com/_next/image?url=https%3A%2F%2Fmedia.graphcms.com%2FCm4DPwQlKbIcuFGzhALA&w=256&q=75",
+  },
+  {
+    name: "Ryan Materson",
+    title: "CEO and Co-Founder of Green Hat Web Solutions",
+    content:
+      "Gus takes pride in being a fast and talented worker. Gus has an expert knowledge of WordPress. He is very skilled, and completes tasks quickly. He is a team player and knows how to manage others. I am very thankful to have Gus on my team!",
+    photo:
+      "https://gusfune.com/_next/image?url=https%3A%2F%2Fmedia.graphcms.com%2FGmOQjEguSr64gdZytmfY&w=256&q=75",
+  },
+  {
+    name: "Leslie Orsioli",
+    title: "Client",
+    content:
+      "Gus was our chosen supplier for various projects. He presented us detailed solutions in record time, with excellent cost benefit and meeting all necessary requirements. During execution, we never had issues that were not promptly addressed. His level of service was beyond effective, as he's always very professional and attentive. I'd certainly recommend him to anyone in my network.",
+    photo:
+      "https://gusfune.com/_next/image?url=https%3A%2F%2Fmedia.graphcms.com%2FIrBEkRMBRJeXmxMTkCWS&w=256&q=75",
+  },
+  {
+    name: "Eden Wiedemann",
+    title: "CEO at Talkative",
+    content:
+      "Gus is a different kind of professional. Forget the tech leader full of energy who spend a significant lot of time trying to look cool, the kind of face so common at the startup universe. He is a lot better than this. I had the honor to work with him some times, the last one as a partner in Wololo, where Gus was our CTO. Focus, responsibility, a huge capacity of quickly study a problem and give us the best tech solutions and, i must say, organized as hell. If you need someone to figure as the revolutionary and engaged tech leader he may not be your guy, but you need someone that does what needs to be done and can't be stopped until doing it, someone who is a fast learner and don't know what means \"impossible\", he is your man.",
+    photo:
+      "https://gusfune.com/_next/image?url=https%3A%2F%2Fmedia.graphcms.com%2FByRHVT8mRmmh8dq0TF2v&w=256&q=75",
+  },
+]
+
+const linkData: Prisma.LinkCreateInput[] = [
+  {
+    title: "Off Script",
+    url: "https://offscript.io",
+    featured: true,
+  },
+]
+
 async function main() {
   console.log("Start seeding...")
   // Create projectLinks
   for (const p of projectData) {
-    const link = await prisma.project.create({ data: p })
-    console.log(`Created project: ${link.id}`)
+    const project = await prisma.project.create({ data: p })
+    console.log(`Created project: ${project.id}`)
+  }
+  // Create recommendations
+  for (const r of recommendationData) {
+    const recommendation = await prisma.recommendation.create({ data: r })
+    console.log(`Created recommendation: ${recommendation.id}`)
+  }
+  // Create links
+  for (const l of linkData) {
+    const link = await prisma.link.create({ data: l })
+    console.log(`Created link: ${link.id}`)
   }
 }
 
@@ -98,3 +151,5 @@ main()
   .finally(async () => {
     await prisma.$disconnect()
   })
+
+module.exports = {}
