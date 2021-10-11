@@ -121,6 +121,7 @@ const linkData: Prisma.LinkCreateInput[] = [
     title: "Off Script",
     url: "https://offscript.io",
     featured: true,
+    slug: "offscript",
   },
 ]
 

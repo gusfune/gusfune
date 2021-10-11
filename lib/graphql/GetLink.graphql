@@ -1,5 +1,5 @@
 query GetLink($slug: String!) {
-  link(where: { slug: $slug }) {
+  link(slug: $slug) {
     id
     url
     title

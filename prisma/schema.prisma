@@ -45,7 +45,7 @@ model Link {
   title    String  @db.VarChar(255)
   url      String  @db.Text
   featured Boolean @default(false) @db.TinyInt
-  slug     String? @db.VarChar(255)
+  slug     String  @unique @db.VarChar(255)
 }
 
 model Recommendation {

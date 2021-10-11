@@ -1,9 +1,7 @@
 import Image from "next/image"
-import { Asset, Recommendation } from "lib/graphql"
+import { Recommendation } from "lib/graphql"
 
-type Props = Pick<Recommendation, "id" | "title" | "name" | "content"> & {
-  photo: { __typename?: "Asset" } & Pick<Asset, "url">
-}
+type Props = Pick<Recommendation, "id" | "title" | "name" | "content" | "photo">
 
 const RecommendationItem = ({ id, photo, name, title, content }: Props) => (
   <article
@@ -11,9 +9,9 @@ const RecommendationItem = ({ id, photo, name, title, content }: Props) => (
     id={`recommendation-${id.toString()}`}
   >
     <div className="w-3/12 p-2 lg:w-1/12">
-      {photo && photo.url && (
+      {photo && (
         <Image
-          src={photo.url}
+          src={photo}
           alt={name}
           width={180}
           height={180}

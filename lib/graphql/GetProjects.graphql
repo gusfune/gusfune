@@ -1,14 +1,12 @@
 query GetProjects {
-  projects(orderBy: year_DESC) {
+  projects {
     id
     title
     description
-    logo {
-      url
-    }
+    logo
     role
     year
-    link {
+    links {
       ...linkBase
     }
   }
