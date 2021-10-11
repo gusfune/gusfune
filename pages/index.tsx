@@ -1,24 +1,29 @@
 import { GetStaticProps } from "next"
+import { PrismaClient } from "@prisma/client"
 import Image from "next/image"
 import { NextSeo } from "next-seo"
 import Layout from "components/Layout"
 import {
   useGetProjectsQuery,
-  GetProjectsDocument,
   GetProjectsQuery,
   GetRecommendationsQuery,
-  GetRecommendationsDocument,
   useGetRecommendationsQuery,
 } from "lib/graphql"
-import { client, requestGql } from "lib/graphql-client"
+import { client } from "lib/graphql-client"
 import { ProjectList } from "components/Project"
 import { RecommendationList } from "components/Recommendation"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = await requestGql<GetProjectsQuery>(GetProjectsDocument)
-  const recommendations = await requestGql<GetRecommendationsQuery>(
-    GetRecommendationsDocument
-  )
+  const prisma = new PrismaClient()
+  const projects = await prisma.project.findMany({
+    orderBy: { year: "desc" },
+    select: {
+      createdAt: false,
+      updatedAt: false,
+      links: true,
+    },
+  })
+  const recommendations = await prisma.recommendation.findMany()
   return {
     props: {
       initialData: {

@@ -1,11 +1,15 @@
 import { GetStaticProps } from "next"
+import { PrismaClient } from "@prisma/client"
 import Link from "next/link"
 import Layout from "components/Layout"
-import { useGetLinksQuery, GetLinksQuery, GetLinksDocument } from "lib/graphql"
-import { client, requestGql } from "lib/graphql-client"
+import { useGetLinksQuery, GetLinksQuery } from "lib/graphql"
+import { client } from "lib/graphql-client"
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const links = await requestGql<GetLinksQuery>(GetLinksDocument)
+export const getStaticProps: GetStaticProps = async () => {
+  const prisma = new PrismaClient()
+  const links = await prisma.link.findMany({
+    where: { featured: true },
+  })
   return {
     props: {
       initialData: {

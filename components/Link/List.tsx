@@ -23,6 +23,7 @@ const LinkList = ({ initialData }: Props) => {
   return (
     <nav className="space-y-1" aria-label="Sidebar">
       {data &&
+        data.links &&
         data.links.map((link, i) => (
           <LinkItem key={i} link={link.url} title={link.title as string} />
         ))}
