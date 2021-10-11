@@ -42,6 +42,7 @@ model ProjectLink {
 
 model Link {
   id       Int     @id @default(autoincrement())
+  title    String  @db.VarChar(255)
   url      String  @db.Text
   featured Boolean @default(false) @db.TinyInt
 }
