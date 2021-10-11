@@ -4,6 +4,8 @@ import { gql, ApolloServer } from "apollo-server-micro"
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core"
 
 const typeDefs = gql`
+  scalar DateTime
+
   enum ProjectType {
     iOS
     Android
@@ -27,6 +29,8 @@ const typeDefs = gql`
     role: String!
     year: Int!
     links: [ProjectLink!]
+    createdAt: DateTime!
+    updatedAt: DateTime!
   }
 
   type Query {
