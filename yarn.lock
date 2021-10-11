@@ -1502,6 +1502,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/client@npm:3.2.1":
+  version: 3.2.1
+  resolution: "@prisma/client@npm:3.2.1"
+  dependencies:
+    "@prisma/engines-version": 3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c
+  peerDependencies:
+    prisma: "*"
+  peerDependenciesMeta:
+    prisma:
+      optional: true
+  checksum: f602e2bfb08d4af5c751fc7c8ee7322be6fa74da6442e4028ee4d04dafff4bc6f4a14eb518f5483b70166fc40643faae1b8b7501f0c50994832325ccb6ee0ea9
+  languageName: node
+  linkType: hard
+
+"@prisma/engines-version@npm:3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c":
+  version: 3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c
+  resolution: "@prisma/engines-version@npm:3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c"
+  checksum: ab6a798ac36f8ef4b7b5a897d365953a5a2f00c651433e01c5a0af5c7963a567e4a8db30ab57e43d70238f87a0856805a7bb159a28fc4ef054228aeb39dddaad
+  languageName: node
+  linkType: hard
+
+"@prisma/engines@npm:3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c":
+  version: 3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c
+  resolution: "@prisma/engines@npm:3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c"
+  checksum: ea3cd834f7e7e3757bb86677168969422e27489b672eb434cac901e981ac2e74e81a6ba3b68035e79cd08bcd3093fe5ca77a877b75008cabe509614269d57458
+  languageName: node
+  linkType: hard
+
 "@rushstack/eslint-patch@npm:^1.0.6":
   version: 1.0.7
   resolution: "@rushstack/eslint-patch@npm:1.0.7"
@@ -4802,6 +4830,7 @@ __metadata:
     "@graphql-codegen/typescript-operations": ^2.1.6
     "@graphql-codegen/typescript-react-query": ^3.0.1
     "@headlessui/react": ^1.4.1
+    "@prisma/client": 3.2.1
     "@segment/snippet": ^4.15.3
     "@sentry/nextjs": ^6.13.3
     "@tailwindcss/forms": ^0.3.4
@@ -4815,6 +4844,7 @@ __metadata:
     next-seo: ^4.28.1
     postcss: ^8.3.9
     prettier: ^2.4.1
+    prisma: 3.2.1
     react: 17.0.2
     react-content-loader: ^6.0.3
     react-cookie: ^4.1.1
@@ -7823,6 +7853,18 @@ __metadata:
   version: 1.0.3
   resolution: "pretty-hrtime@npm:1.0.3"
   checksum: bae0e6832fe13c3de43d1a3d43df52bf6090499d74dc65a17f5552cb1a94f1f8019a23284ddf988c3c408a09678d743901e1d8f5b7a71bec31eeeac445bef371
+  languageName: node
+  linkType: hard
+
+"prisma@npm:3.2.1":
+  version: 3.2.1
+  resolution: "prisma@npm:3.2.1"
+  dependencies:
+    "@prisma/engines": 3.2.1-1.b71d8cb16c4ddc7e3e9821f42fd09b0f82d7934c
+  bin:
+    prisma: build/index.js
+    prisma2: build/index.js
+  checksum: e05b09ceb42c6247828f7b32004f253897b20e874c18cb7eb837034a7dd7d92146607a76c0f777381d1767fc525b6f973bd6aba34a706147510fb3648b6b0d72
   languageName: node
   linkType: hard
 
