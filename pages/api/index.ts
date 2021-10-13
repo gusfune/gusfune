@@ -100,6 +100,7 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+  introspection: true,
 })
 
 export const config = {
