@@ -5,7 +5,7 @@ import { ProjectItem } from "./Item"
 import { ProjectLoader } from "./Loader"
 
 interface Props {
-  initialData?: GetProjectsQuery
+  initialData?: GetProjectsQuery | null
 }
 
 const ProjectList = ({ initialData }: Props) => {
@@ -13,10 +13,10 @@ const ProjectList = ({ initialData }: Props) => {
     client,
     {},
     {
-      initialData,
+      initialData: initialData ?? undefined,
     }
   )
-  if (isLoading) {
+  if (isLoading || !data) {
     return <ProjectLoader />
   }
   return (

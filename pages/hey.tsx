@@ -8,16 +8,27 @@ import { GetLinksQuery } from "lib/graphql"
 import MeHat from "components/MeHat"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prisma = new PrismaClient()
-  const links = await prisma.link.findMany({
-    where: { featured: true },
-  })
-  return {
-    props: {
-      initialData: {
-        links,
+  try {
+    const prisma = new PrismaClient()
+    const links = await prisma.link.findMany({
+      where: { featured: true },
+    })
+    return {
+      props: {
+        initialData: {
+          links,
+        },
       },
-    },
+    }
+  } catch (e) {
+    console.error(e)
+    return {
+      props: {
+        initialData: {
+          links: null,
+        },
+      },
+    }
   }
 }
 

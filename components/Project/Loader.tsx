@@ -1,7 +1,7 @@
 import ContentLoader from "react-content-loader"
 import Section from "components/Section"
 
-const ProjectLoaderItem = (props: any) => (
+const ProjectLoaderItem = (props: unknown) => (
   <ContentLoader
     speed={2}
     width={260}

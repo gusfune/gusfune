@@ -14,30 +14,42 @@ import { ProjectList } from "components/Project"
 import { RecommendationList } from "components/Recommendation"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const prisma = new PrismaClient()
-  const projects = await prisma.project.findMany({
-    orderBy: { year: "desc" },
-    select: {
-      createdAt: false,
-      updatedAt: false,
-      links: true,
-    },
-  })
-  const recommendations = await prisma.recommendation.findMany()
-  return {
-    props: {
-      initialData: {
-        projects,
-        recommendations,
+  try {
+    const prisma = new PrismaClient()
+    const projects = await prisma.project.findMany({
+      orderBy: { year: "desc" },
+      select: {
+        createdAt: false,
+        updatedAt: false,
+        links: true,
       },
-    },
+    })
+    const recommendations = await prisma.recommendation.findMany()
+    return {
+      props: {
+        initialData: {
+          projects,
+          recommendations,
+        },
+      },
+    }
+  } catch (e) {
+    console.error(e)
+    return {
+      props: {
+        initialData: {
+          projects: null,
+          recommendations: null,
+        },
+      },
+    }
   }
 }
 
 interface Props {
   initialData: {
-    projects: GetProjectsQuery
-    recommendations: GetRecommendationsQuery
+    projects?: GetProjectsQuery | null
+    recommendations?: GetRecommendationsQuery | null
   }
 }
 
@@ -46,7 +58,7 @@ const HomePage = ({ initialData }: Props) => {
     client,
     {},
     {
-      initialData: initialData.projects,
+      initialData: initialData.projects ?? undefined,
     }
   )
   const { data: recommendations } =
@@ -54,7 +66,7 @@ const HomePage = ({ initialData }: Props) => {
       client,
       {},
       {
-        initialData: initialData.recommendations,
+        initialData: initialData.recommendations ?? undefined,
       }
     )
   return (

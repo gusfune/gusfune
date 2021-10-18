@@ -6,15 +6,24 @@ import {
 import { client } from "lib/graphql-client"
 import { RecommendationItem } from "./Item"
 import { ReadMore } from "./ReadMore"
+import { RecommendationLoader } from "./Loader"
 
-const RecommendationList = ({ initialData }: any) => {
-  const { data } = useGetRecommendationsQuery<GetRecommendationsQuery>(
-    client,
-    {},
-    {
-      initialData: initialData.recommendations,
-    }
-  )
+interface Props {
+  initialData?: GetRecommendationsQuery | null
+}
+
+const RecommendationList = ({ initialData }: Props) => {
+  const { data, isLoading } =
+    useGetRecommendationsQuery<GetRecommendationsQuery>(
+      client,
+      {},
+      {
+        initialData: initialData ?? undefined,
+      }
+    )
+  if (isLoading || !data) {
+    return <RecommendationLoader />
+  }
   return (
     <Section title="This is what some people said about working with me">
       {data &&
