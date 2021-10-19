@@ -1,5 +1,5 @@
 query GetLinks {
-  links(where: { featured: true }) {
+  links(featured: true) {
     id
     slug
     title

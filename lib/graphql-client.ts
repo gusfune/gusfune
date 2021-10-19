@@ -1,7 +1,11 @@
 import { request, GraphQLClient } from "graphql-request"
 import { DocumentNode } from "graphql"
 
-const endpoint = process.env.NEXT_PUBLIC_GRAPHQL_URL as string
+const protocol = process.env.NODE_ENV === "production" ? "https" : "http"
+
+const endpoint = `${protocol}://${
+  process.env.NEXT_PUBLIC_VERCEL_URL as string
+}/api`
 
 const client = new GraphQLClient(endpoint, { headers: {} })
 

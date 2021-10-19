@@ -6,7 +6,7 @@ import { client } from "lib/graphql-client"
 const LinkItem = dynamic(() => import("./Item"))
 
 interface Props {
-  initialData: GetLinksQuery
+  initialData?: GetLinksQuery | null
 }
 
 const LinkList = ({ initialData }: Props) => {
@@ -14,7 +14,7 @@ const LinkList = ({ initialData }: Props) => {
     client,
     {},
     {
-      initialData: initialData,
+      initialData: initialData ?? undefined,
     }
   )
   if (isLoading) {
@@ -23,6 +23,7 @@ const LinkList = ({ initialData }: Props) => {
   return (
     <nav className="space-y-1" aria-label="Sidebar">
       {data &&
+        data.links &&
         data.links.map((link, i) => (
           <LinkItem key={i} link={link.url} title={link.title as string} />
         ))}

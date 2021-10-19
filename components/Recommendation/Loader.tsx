@@ -2,7 +2,7 @@ import ContentLoader from "react-content-loader"
 import Section from "components/Section"
 import { ReadMore } from "./ReadMore"
 
-const RecommendationLoaderItem = (props: any) => (
+const RecommendationLoaderItem = (props: unknown) => (
   <ContentLoader
     speed={2}
     width={550}

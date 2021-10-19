@@ -1,20 +1,34 @@
 import { GetStaticProps } from "next"
+import { PrismaClient } from "@prisma/client"
 import { NextSeo } from "next-seo"
 import Layout from "components/Layout"
 import Panel from "components/Panel"
 import LinkList from "components/Link/List"
-import { GetLinksQuery, GetLinksDocument } from "lib/graphql"
-import { requestGql } from "lib/graphql-client"
+import { GetLinksQuery } from "lib/graphql"
 import MeHat from "components/MeHat"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const links = await requestGql<GetLinksQuery>(GetLinksDocument)
-  return {
-    props: {
-      initialData: {
-        links,
+  try {
+    const prisma = new PrismaClient()
+    const links = await prisma.link.findMany({
+      where: { featured: true },
+    })
+    return {
+      props: {
+        initialData: {
+          links,
+        },
       },
-    },
+    }
+  } catch (e) {
+    console.error(e)
+    return {
+      props: {
+        initialData: {
+          links: null,
+        },
+      },
+    }
   }
 }
 

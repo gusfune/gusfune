@@ -6,27 +6,38 @@ import {
 import { client } from "lib/graphql-client"
 import { RecommendationItem } from "./Item"
 import { ReadMore } from "./ReadMore"
+import { RecommendationLoader } from "./Loader"
 
-const RecommendationList = ({ initialData }: any) => {
-  const { data } = useGetRecommendationsQuery<GetRecommendationsQuery>(
-    client,
-    {},
-    {
-      initialData: initialData.recommendations,
-    }
-  )
+interface Props {
+  initialData?: GetRecommendationsQuery | null
+}
+
+const RecommendationList = ({ initialData }: Props) => {
+  const { data, isLoading } =
+    useGetRecommendationsQuery<GetRecommendationsQuery>(
+      client,
+      {},
+      {
+        initialData: initialData ?? undefined,
+      }
+    )
+  if (isLoading || !data) {
+    return <RecommendationLoader />
+  }
   return (
     <Section title="This is what some people said about working with me">
-      {data?.recommendations.map((recommendation) => (
-        <RecommendationItem
-          id={recommendation.id}
-          key={recommendation.id}
-          photo={recommendation.photo}
-          name={recommendation.name}
-          title={recommendation.title as string}
-          content={recommendation.content}
-        />
-      ))}
+      {data &&
+        data.recommendations &&
+        data.recommendations.map((recommendation) => (
+          <RecommendationItem
+            id={recommendation.id}
+            key={recommendation.id}
+            photo={recommendation.photo}
+            name={recommendation.name}
+            title={recommendation.title as string}
+            content={recommendation.content}
+          />
+        ))}
       <ReadMore />
     </Section>
   )

@@ -1,4 +1,4 @@
-schema: "https://api-eu-central-1.graphcms.com/v2/ckrtey7h91nga01xs4csh28co/master"
+schema: http://localhost:3000/api
 overwrite: true
 documents: "lib/graphql/**/*.graphql"
 generates:
@@ -14,9 +14,4 @@ generates:
       scalars:
         Date: string
         DateTime: string
-        Hex: string
         Json: object
-        Long: number
-        RGBAHue: string
-        RGBATransparency: string
-        RichTextAST: string

@@ -4,8 +4,6 @@ query GetRecommendations {
     title
     name
     content
-    photo {
-      url
-    }
+    photo
   }
 }
