@@ -13,12 +13,8 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "esnext"
-    /*
-    "paths": {
-      "components/*": ["components/*"],
-    }
-    */
+    "target": "esnext",
+    "incremental": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

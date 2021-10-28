@@ -1,5 +1,6 @@
 import Image from "next/image"
 import ImgAWS from "../public/seal-aws.png"
+import ImgAzure from "../public/seal-azure.png"
 import ImgCSPO from "../public/seal-cspo.png"
 
 const About = () => (
@@ -36,7 +37,6 @@ const About = () => (
         alt="AWS Certified Solutions Architect Associate"
         width={100}
         height={100}
-        className="rounded-full"
         placeholder="blur"
       />
     </a>
@@ -50,7 +50,19 @@ const About = () => (
         alt="Certified Scrum Product Owner®"
         width={100}
         height={100}
-        className="rounded-full"
+        placeholder="blur"
+      />
+    </a>
+    <a
+      href="https://www.credly.com/badges/b84b5185-a521-469b-b43f-3774dc956fdf"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <Image
+        src={ImgAzure}
+        alt="Microsoft Certified: Azure Fundamentals"
+        width={100}
+        height={100}
         placeholder="blur"
       />
     </a>
