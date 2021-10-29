@@ -5199,10 +5199,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:^15.7.2":
-  version: 15.7.2
-  resolution: "graphql@npm:15.7.2"
-  checksum: eacb746e2981d0c346ef7365601873963af5356f64ce4d890ab89d213c67bf5bc1ae957b93c3902198798774c842b55dff219f38bad858691765e4debc265750
+"graphql@npm:^16.0.0":
+  version: 16.0.0
+  resolution: "graphql@npm:16.0.0"
+  checksum: 6b7c09cbafdcafde7bf69e84fb35abc5641bd923cd3b4894f12bbb6ee412478a959906937a63c8ad7cf37b3e5b980c26001f89be90ac9bcf4cefade3a4efd21f
   languageName: node
   linkType: hard
 
@@ -5230,7 +5230,7 @@ __metadata:
     autoprefixer: ^10.4.0
     eslint: ^8.1.0
     eslint-config-next: ^12.0.1
-    graphql: ^15.7.2
+    graphql: ^16.0.0
     graphql-request: ^3.6.1
     micro: ^9.3.4
     next: 12.0.1
@@ -5247,7 +5247,7 @@ __metadata:
     sitemap: ^7.0.0
     store2: ^2.12.0
     tailwind-dracula: ^1.0.5
-    tailwindcss: ^2.2.17
+    tailwindcss: ^2.2.18
     ts-node: ^10.4.0
     typeface-open-sans: ^1.1.13
     typescript: 4.4.4
@@ -9711,9 +9711,9 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^2.2.17":
-  version: 2.2.17
-  resolution: "tailwindcss@npm:2.2.17"
+"tailwindcss@npm:^2.2.18":
+  version: 2.2.18
+  resolution: "tailwindcss@npm:2.2.18"
   dependencies:
     arg: ^5.0.1
     bytes: ^3.0.0
@@ -9753,7 +9753,7 @@ resolve@^2.0.0-next.3:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: a0bff1a014f5283676faca321a60c6e97c5512d42f3fe89aae04dffde2b1425c47b7cc3562ee16a9d748fb5cb3a2b8782845c6d8c815de293c4ed6c035b024b0
+  checksum: e6a64fbf69402b2ded873273722a5264562af874b3072940f2e16d957d6e0df2162923424a1a50200612a1386039881ca900fb473ad13da0c70a0546f58b7da0
   languageName: node
   linkType: hard
 
