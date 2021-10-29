@@ -2,6 +2,26 @@ import Image from "next/image"
 import ImgAWS from "../public/seal-aws.png"
 import ImgAzure from "../public/seal-azure.png"
 import ImgCSPO from "../public/seal-cspo.png"
+import ImgGoogle from "../public/seal-gcp.png"
+
+interface CertificationProps {
+  image: StaticImageData
+  link: string
+  title: string
+}
+
+const Certification = ({ link, image, title }: CertificationProps) => (
+  <a href={link} target="_blank" rel="noreferrer">
+    <Image
+      src={image}
+      alt={title}
+      width={100}
+      height={100}
+      placeholder="blur"
+      title={title}
+    />
+  </a>
+)
 
 const About = () => (
   <section className="flex-grow-1">
@@ -27,45 +47,28 @@ const About = () => (
         center.
       </p>
     </div>
-    <a
-      href="https://www.credly.com/badges/bc06b2fd-b44f-4ff9-987b-e94e82064f6b/public_url"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <Image
-        src={ImgAWS}
-        alt="AWS Certified Solutions Architect Associate"
-        width={100}
-        height={100}
-        placeholder="blur"
+    <div className="grid grid-cols-2 gap-2 xl:grid-cols-4">
+      <Certification
+        link="https://www.credly.com/badges/bc06b2fd-b44f-4ff9-987b-e94e82064f6b/public_url"
+        image={ImgAWS}
+        title="AWS Certified Solutions Architect Associate"
       />
-    </a>
-    <a
-      href="https://bcert.me/bc/html/show-badge.html?b=tcnftnbq"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <Image
-        src={ImgCSPO}
-        alt="Certified Scrum Product Owner®"
-        width={100}
-        height={100}
-        placeholder="blur"
+      <Certification
+        link="https://bcert.me/bc/html/show-badge.html?b=tcnftnbq"
+        image={ImgCSPO}
+        title="Certified Scrum Product Owner®"
       />
-    </a>
-    <a
-      href="https://www.credly.com/badges/b84b5185-a521-469b-b43f-3774dc956fdf"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <Image
-        src={ImgAzure}
-        alt="Microsoft Certified: Azure Fundamentals"
-        width={100}
-        height={100}
-        placeholder="blur"
+      <Certification
+        link="https://www.credly.com/badges/b84b5185-a521-469b-b43f-3774dc956fdf"
+        image={ImgAzure}
+        title="Microsoft Certified: Azure Fundamentals"
       />
-    </a>
+      <Certification
+        link="https://www.credential.net/39b70852-bffe-4c9f-86c3-37724b2ab895?key=db3a4c7f9d9e69fab34f1e9661a3c2b39d02b21e1a60a9ceccea9b4113645e10"
+        image={ImgGoogle}
+        title="Google Cloud Certified Cloud Digital Leader"
+      />
+    </div>
   </section>
 )
 
