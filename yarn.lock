@@ -2278,6 +2278,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/use-sync-external-store@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@types/use-sync-external-store@npm:0.0.3"
+  checksum: 161ddb8eec5dbe7279ac971531217e9af6b99f7783213566d2b502e2e2378ea19cf5e5ea4595039d730aa79d3d35c6567d48599f69773a02ffcff1776ec2a44e
+  languageName: node
+  linkType: hard
+
 "@types/websocket@npm:1.0.4":
   version: 1.0.4
   resolution: "@types/websocket@npm:1.0.4"
@@ -4979,7 +4986,7 @@ fsevents@~2.3.2:
     react-cookie: ^4.1.1
     react-dom: 18.0.0
     react-markdown: ^8.0.2
-    react-query: ^3.34.19
+    react-query: ^v4.0.0-beta.2
     sitemap: ^7.1.1
     store2: ^2.13.2
     tailwind-dracula: ^1.1.0
@@ -7842,21 +7849,23 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-query@npm:^3.34.19":
-  version: 3.34.19
-  resolution: "react-query@npm:3.34.19"
+"react-query@npm:^v4.0.0-beta.2":
+  version: 4.0.0-beta.2
+  resolution: "react-query@npm:4.0.0-beta.2"
   dependencies:
     "@babel/runtime": ^7.5.5
+    "@types/use-sync-external-store": ^0.0.3
     broadcast-channel: ^3.4.1
     match-sorter: ^6.0.2
+    use-sync-external-store: ^1.0.0
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
   peerDependenciesMeta:
     react-dom:
       optional: true
     react-native:
       optional: true
-  checksum: 765bec81e521a78ef04a8feb6710041ce838ef82bf6e1d35c7e9327cc242b232b242fd89f3604adf6747dce2df055d12b15e8e4208687cc5eb493c1c0bf71d34
+  checksum: f8f5bdf877ee550c124744541a1234a9dd8fb76a926a3940be6508786fce69a46d3e58cc892be95ec8c0dc4c1bdd95f237e5ff2a391e61d15ac1d577628db136
   languageName: node
   linkType: hard
 
@@ -9295,6 +9304,15 @@ resolve@^2.0.0-next.3:
   dependencies:
     prepend-http: ^2.0.0
   checksum: 1040e357750451173132228036aff1fd04abbd43eac1fb3e4fca7495a078bcb8d33cb765fe71ad7e473d9c94d98fd67adca63bd2716c815a2da066198dd37217
+  languageName: node
+  linkType: hard
+
+"use-sync-external-store@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "use-sync-external-store@npm:1.0.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0-rc
+  checksum: f3df10af62625169d6a8cd8d4f38942dc6817aa27398fa7f474421fd574b0c4c83679b9d15f983f482c396ee1183416eb146814c81f44241e1480acd701ef018
   languageName: node
   linkType: hard
 
