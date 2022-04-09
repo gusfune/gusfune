@@ -1,14 +1,25 @@
 import "../styles/globals.css"
 import "typeface-open-sans"
 import { useState } from "react"
+import dynamic from "next/dynamic"
 import Head from "next/head"
 import type { AppProps } from "next/app"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { useCookies } from "react-cookie"
 import * as snippet from "@segment/snippet"
-import CookieConsent from "components/CookieConsent"
 
-const client = new QueryClient()
+const CookieConsent = dynamic(() => import("components/CookieConsent"), {
+  suspense: false,
+  ssr: false,
+})
+
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+    },
+  },
+})
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const [cookies, _setCookie] = useCookies(["consent"])
@@ -26,6 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   }
 
   return (
+    // @ts-ignore
     <QueryClientProvider client={client}>
       <Head>
         <link rel="icon" type="image/png" href="/favicon-32x32.png" />

@@ -1,4 +1,5 @@
 import Image from "next/image"
+import type { StaticImageData } from "next/image"
 import Footnotes from "components/Footnotes"
 import faGithub from "../public/icons/github-brands.svg"
 import faTwitter from "../public/icons/twitter-brands.svg"

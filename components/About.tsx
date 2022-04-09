@@ -1,4 +1,5 @@
 import Image from "next/image"
+import type { StaticImageData } from "next/image"
 import ImgAWS from "../public/seal-aws.png"
 import ImgAzure from "../public/seal-azure.png"
 import ImgCSPO from "../public/seal-cspo.png"
