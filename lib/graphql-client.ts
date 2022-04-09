@@ -1,7 +1,8 @@
 import { request, GraphQLClient } from "graphql-request"
 import { DocumentNode } from "graphql"
 
-const endpoint = "/api"
+const endpoint =
+  process.env.NODE_ENV === "production" ? "/api" : "http://localhost:3000/api"
 
 const client = new GraphQLClient(endpoint, { headers: {} })
 

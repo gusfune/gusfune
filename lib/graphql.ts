@@ -2,6 +2,7 @@ import { GraphQLClient } from 'graphql-request';
 import { RequestInit } from 'graphql-request/dist/types.dom';
 import { useQuery, UseQueryOptions } from 'react-query';
 export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -76,7 +77,7 @@ export type QueryLinkArgs = {
 
 
 export type QueryLinksArgs = {
-  featured?: Maybe<Scalars['Boolean']>;
+  featured?: InputMaybe<Scalars['Boolean']>;
 };
 
 
@@ -103,17 +104,17 @@ export type GetLinkQueryVariables = Exact<{
 }>;
 
 
-export type GetLinkQuery = { __typename?: 'Query', link?: { __typename?: 'Link', id: string, url: string, title: string } | null | undefined };
+export type GetLinkQuery = { __typename?: 'Query', link?: { __typename?: 'Link', id: string, url: string, title: string } | null };
 
 export type GetLinksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetLinksQuery = { __typename?: 'Query', links: Array<{ __typename?: 'Link', id: string, slug?: string | null | undefined, title: string, url: string }> };
+export type GetLinksQuery = { __typename?: 'Query', links: Array<{ __typename?: 'Link', id: string, slug?: string | null, title: string, url: string }> };
 
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', id: string, title: string, description: string, logo?: string | null | undefined, role: string, year: number, links?: Array<{ __typename?: 'ProjectLink', id: string, type: ProjectType, url: string }> | null | undefined }> };
+export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', id: string, title: string, description: string, logo?: string | null, role: string, year: number, links?: Array<{ __typename?: 'ProjectLink', id: string, type: ProjectType, url: string }> | null }> };
 
 export type LinkBaseFragment = { __typename?: 'ProjectLink', id: string, type: ProjectType, url: string };
 
@@ -142,11 +143,11 @@ export const useGetLinkQuery = <
       TData = GetLinkQuery,
       TError = unknown
     >(
-      client: GraphQLClient, 
-      variables: GetLinkQueryVariables, 
+      client: GraphQLClient,
+      variables: GetLinkQueryVariables,
       options?: UseQueryOptions<GetLinkQuery, TError, TData>,
       headers?: RequestInit['headers']
-    ) => 
+    ) =>
     useQuery<GetLinkQuery, TError, TData>(
       ['GetLink', variables],
       fetcher<GetLinkQuery, GetLinkQueryVariables>(client, GetLinkDocument, variables, headers),
@@ -166,11 +167,11 @@ export const useGetLinksQuery = <
       TData = GetLinksQuery,
       TError = unknown
     >(
-      client: GraphQLClient, 
-      variables?: GetLinksQueryVariables, 
+      client: GraphQLClient,
+      variables?: GetLinksQueryVariables,
       options?: UseQueryOptions<GetLinksQuery, TError, TData>,
       headers?: RequestInit['headers']
-    ) => 
+    ) =>
     useQuery<GetLinksQuery, TError, TData>(
       variables === undefined ? ['GetLinks'] : ['GetLinks', variables],
       fetcher<GetLinksQuery, GetLinksQueryVariables>(client, GetLinksDocument, variables, headers),
@@ -195,11 +196,11 @@ export const useGetProjectsQuery = <
       TData = GetProjectsQuery,
       TError = unknown
     >(
-      client: GraphQLClient, 
-      variables?: GetProjectsQueryVariables, 
+      client: GraphQLClient,
+      variables?: GetProjectsQueryVariables,
       options?: UseQueryOptions<GetProjectsQuery, TError, TData>,
       headers?: RequestInit['headers']
-    ) => 
+    ) =>
     useQuery<GetProjectsQuery, TError, TData>(
       variables === undefined ? ['GetProjects'] : ['GetProjects', variables],
       fetcher<GetProjectsQuery, GetProjectsQueryVariables>(client, GetProjectsDocument, variables, headers),
@@ -220,11 +221,11 @@ export const useGetRecommendationsQuery = <
       TData = GetRecommendationsQuery,
       TError = unknown
     >(
-      client: GraphQLClient, 
-      variables?: GetRecommendationsQueryVariables, 
+      client: GraphQLClient,
+      variables?: GetRecommendationsQueryVariables,
       options?: UseQueryOptions<GetRecommendationsQuery, TError, TData>,
       headers?: RequestInit['headers']
-    ) => 
+    ) =>
     useQuery<GetRecommendationsQuery, TError, TData>(
       variables === undefined ? ['GetRecommendations'] : ['GetRecommendations', variables],
       fetcher<GetRecommendationsQuery, GetRecommendationsQueryVariables>(client, GetRecommendationsDocument, variables, headers),

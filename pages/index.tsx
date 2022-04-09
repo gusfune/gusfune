@@ -4,8 +4,12 @@ import Image from "next/image"
 import { NextSeo } from "next-seo"
 import Layout from "components/Layout"
 import { GetProjectsQuery } from "lib/graphql"
-import { ProjectList } from "components/Project"
-import { RecommendationList } from "components/Recommendation"
+import { ProjectList, ProjectLoader } from "components/Project"
+import {
+  RecommendationList,
+  RecommendationLoader,
+} from "components/Recommendation"
+import { Suspense } from "react"
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
@@ -77,8 +81,12 @@ const HomePage = ({}: Props) => (
       </div>
     </header>
     <section role="main">
-      <ProjectList />
-      <RecommendationList />
+      <Suspense fallback={<ProjectLoader />}>
+        <ProjectList />
+      </Suspense>
+      <Suspense fallback={<RecommendationLoader />}>
+        <RecommendationList />
+      </Suspense>
     </section>
   </Layout>
 )
