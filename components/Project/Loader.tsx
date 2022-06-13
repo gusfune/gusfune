@@ -10,7 +10,6 @@ const ProjectLoaderItem = (props: unknown) => (
     backgroundColor="#e7e7e7"
     foregroundColor="#d6d6d6"
     className="w-full p-2"
-    {...props}
   >
     <path d="M 0.5 0.5 h 259 v 127 H 0.5 z M 0.5 144.5 h 259 v 27 H 0.5 z M 0.5 188.5 h 259 v 79 H 0.5 z M 0.5 284.5 h 63 v 39 H 0.5 z M 0.5 340.5 h 129 v 39 H 0.5 z" />
   </ContentLoader>
