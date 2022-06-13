@@ -39,16 +39,14 @@ const About = () => (
         team-building, and even accounting.
       </p>
       <p className="mb-4">
-        I am currently focused in,{" "}
-        <a href="https://offscript.io" target="_blank" rel="noreferrer">
-          Off Script
+        I am currently based in Edinburgh 🏴󠁧󠁢󠁳󠁣󠁴󠁿 and I am working as CTO for{" "}
+        <a href="https://div-brands.com" target="_blank" rel="noreferrer">
+          Divbrands
         </a>
-        , a Stockholm 🇸🇪 based startup which I am CTO and Founder. We&apos;re
-        working to reinvent e-commerce with a new take: putting people in the
-        center.
+        .
       </p>
     </div>
-    <div className="grid grid-cols-2 gap-2 xl:grid-cols-4">
+    <div className="grid grid-cols-2 gap-2 mt-2 xl:grid-cols-4">
       <Certification
         link="https://www.credly.com/badges/bc06b2fd-b44f-4ff9-987b-e94e82064f6b/public_url"
         image={ImgAWS}
