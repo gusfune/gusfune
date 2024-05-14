@@ -1,5 +1,2 @@
-.gitkeep
-.env*
-*.ico
-*.lock
-.next
+# MSW generated files
+mockServiceWorker.js
