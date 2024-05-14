@@ -61,11 +61,26 @@ export default function Page() {
             />
             <p>
               I&apos;m <strong>CTO and Managing Partner</strong> at{" "}
-              <a href="https://div-brands.com/" target="_blank">
-                MACH Alliance
+              <a
+                href="https://div-brands.com/"
+                target="_blank"
+                className="underline"
+              >
+                Div Brands
               </a>
-              , an e-commerce holding group for brands such as BÆRskin tactical,
-              Hyper Arch Motion and Cozi Slides.
+              , an e-commerce holding group for brands such as{" "}
+              <a href="https://baerskintactical.com" target="_blank">
+                BÆRskin tactical
+              </a>
+              ,
+              <a href="https://hyperarchmotion.com" target="_blank">
+                Hyper Arch Motion
+              </a>{" "}
+              and{" "}
+              <a href="https://cozislides.com" target="_blank">
+                Cozi Slides
+              </a>
+              .
             </p>
           </div>
           <div className="space-y-4">
@@ -78,7 +93,11 @@ export default function Page() {
             />
             <p>
               I&apos;m also an <strong>Ambassador</strong> at{" "}
-              <a href="https://machalliance.org/" target="_blank">
+              <a
+                href="https://machalliance.org/"
+                target="_blank"
+                className="underline"
+              >
                 MACH Alliance
               </a>
               where I help advocate for open and best-of-breed enterprise
