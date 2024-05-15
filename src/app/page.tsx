@@ -7,6 +7,9 @@ import { Metadata, Viewport } from "next"
 import { Skeleton } from "@/components/ui/skeleton"
 import dynamic from "next/dynamic"
 import Construction from "@assets/construction.gif"
+import { Source_Code_Pro } from "next/font/google"
+
+const code = Source_Code_Pro({ subsets: ["latin"] })
 
 const Excuses = dynamic(() => import("@/components/Excuses"), {
   loading: () => <Skeleton className="w-full h-[48px]" />,
@@ -36,7 +39,7 @@ export const viewport: Viewport = {
 
 export default function Page() {
   return (
-    <main className="space-y-8 max-w-2xl">
+    <main className="space-y-12 max-w-2xl">
       <section id="intro">
         <h2 className="text-2xl">
           Hi, I&apos;m <strong>Gus Fune</strong>
@@ -61,18 +64,14 @@ export default function Page() {
             />
             <p>
               I&apos;m <strong>CTO and Managing Partner</strong> at{" "}
-              <a
-                href="https://div-brands.com/"
-                target="_blank"
-                className="underline"
-              >
+              <a href="https://div-brands.com/" target="_blank">
                 Div Brands
               </a>
               , an e-commerce holding group for brands such as{" "}
               <a href="https://baerskintactical.com" target="_blank">
-                BÆRskin tactical
+                BÆRskin Tactical
               </a>
-              ,
+              ,{" "}
               <a href="https://hyperarchmotion.com" target="_blank">
                 Hyper Arch Motion
               </a>{" "}
@@ -99,7 +98,7 @@ export default function Page() {
                 className="underline"
               >
                 MACH Alliance
-              </a>
+              </a>{" "}
               where I help advocate for open and best-of-breed enterprise
               technology in e-commerce ecosystems.
             </p>
@@ -116,7 +115,7 @@ export default function Page() {
           or{" "}
           <a href="https://useflow.tech/" target="_blank">
             might not
-          </a>
+          </a>{" "}
           heard of), a lot of consulting work for companies in many different
           fields, from small ones to large enterprises, including Banks,
           Airlines, Consumer Goods, Car Makers, NGOs, Gov, etc.
@@ -125,9 +124,7 @@ export default function Page() {
 
       <section id="certifications">
         <h3 className="text-xl font-semibold mb-2">Do you have badges?</h3>
-        <p className="text-sm font-light mb-4">
-          YES! Everyone likes a cool certification badge!
-        </p>
+        <p className="mb-8">YES! Everyone likes a cool certification badge!</p>
         <CertificationList />
       </section>
 
@@ -186,7 +183,7 @@ export default function Page() {
           </li>
         </ol>
 
-        <p className="mt-2">
+        <p className="mt-4">
           I&apos;ve also jonined some podcasts and other events that I no longer
           have links. Those are &ldquo;the lost files&rdquo;:
         </p>
@@ -217,8 +214,9 @@ export default function Page() {
           </li>
         </ul>
 
-        <p className="my-2">
-          I am available for speaking at events and conferences.
+        <p className="my-4">
+          I am available for speaking at events and conferences. Contact for
+          more information.
         </p>
       </section>
 
@@ -227,13 +225,15 @@ export default function Page() {
           What&apos;s the correct way to spell &ldquo;e-commerce&rdquo;?
         </h3>
         <p className="mb-1">
-          Pascal case &ldquo;ECommerce&rdquo;, camel case
-          &ldquo;eCommerce&rdquo; or kebab &ldquo;e-commerce&rdquo; are all
-          correct.
+          Pascal case &ldquo;<code className={code.className}>ECommerce</code>
+          &rdquo;, camel case &ldquo;
+          <code className={code.className}>eCommerce</code>&rdquo; or kebab
+          &ldquo; <code className={code.className}>e-commerce</code>
+          &rdquo; are all correct.
           <br />
-          Snake case &ldquo;e_commerce&rdquo; is definitively wrong.
+          Snake case &ldquo;<code className={code.className}>e_commerce</code>
+          &rdquo; is definitively wrong.
         </p>
-        <p>Just be consistent, that&apos;s all that matters.</p>
       </section>
 
       <section id="writing">

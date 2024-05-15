@@ -14,7 +14,12 @@ interface CertificationProps {
 }
 
 export const Certification = ({ link, image, title }: CertificationProps) => (
-  <a href={link} target="_blank" rel="noreferrer">
+  <a
+    href={link}
+    target="_blank"
+    rel="noreferrer"
+    className="hover:rounded-lg hover:bg-slate-100"
+  >
     <Image
       src={image}
       alt={title}
