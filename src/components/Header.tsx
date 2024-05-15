@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export const Header = () => {
   return (
-    <header className="flex flex-row sm:flex-col justify-center items-center gap-4 ">
+    <header className="flex flex-row sm:flex-col justify-center items-center gap-4">
       <Image
         src="/photo.jpg"
         alt="Gus Fune"

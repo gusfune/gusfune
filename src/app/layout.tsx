@@ -17,11 +17,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={source.className}>
-        <div className="grid grid-cols-12 p-4 gap-4">
-          <div className="static col-span-12 sm:col-span-2">
+        <div className="grid grid-cols-12 gap-4 relative">
+          <aside
+            className={cn(
+              "col-span-12 p-2 bg-[#fbca3c] text-black relative z-10",
+              code.className
+            )}
+          >
+            <p className="text-sm uppercase text-center">
+              <a
+                href="https://machalliance.org/events/mach-three"
+                className="no-underline hover:underline"
+              >
+                Join me for <strong>MACH THREE</strong> in NYC from Jun 17-18!
+                Click here for details
+              </a>
+            </p>
+          </aside>
+          <div className="static col-span-12 sm:col-span-2 z-0">
             <div
               className={cn(
-                "sm:fixed sm:top-8 sm:left-0 sm:w-2/12 w-full text-center flex flex-row sm:flex-col gap-4 justify-between items-center sm:justify-start sm:items-center",
+                "sm:fixed sm:top-8 sm:left-0 sm:w-2/12 w-full text-center flex flex-row sm:flex-col gap-4 justify-between items-center sm:justify-start sm:items-center z-0",
                 code.className
               )}
             >
