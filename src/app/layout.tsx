@@ -3,6 +3,8 @@ import "./globals.css"
 import { cn } from "@/utils"
 import { Header } from "@/components/Header"
 import { Nav } from "@/components/Nav"
+import { Analytics } from "@vercel/analytics/react"
+import Script from "next/script"
 
 const source = Source_Sans_3({ subsets: ["latin"] })
 const code = Source_Code_Pro({ subsets: ["latin"] })
@@ -46,6 +48,50 @@ export default function RootLayout({
           . All stuff that have owners, are owned by their owners, the ones that
           are free, are part of the collective mind.
         </p>
+        <Analytics />
+        <Script
+          strategy="beforeInteractive"
+          id="iubenda-cookie-solution"
+          type="text/javascript"
+        >
+          {`
+var _iub = _iub || [];
+_iub.csConfiguration = {"askConsentAtCookiePolicyUpdate":true,"enableFadp":true,"enableLgpd":true,"enableUspr":true,"fadpApplies":true,"floatingPreferencesButtonDisplay":"anchored-center-right","lang":"en-GB","perPurposeConsent":true,"preferenceCookie":{"expireAfter":180},"siteId":3634966,"usprApplies":true,"whitelabel":false,"cookiePolicyId":82859734, "banner":{ "acceptButtonDisplay":true,"closeButtonDisplay":false,"customizeButtonDisplay":true,"explicitWithdrawal":true,"listPurposes":true,"ownerName":"Gus Fune","position":"bottom","rejectButtonDisplay":true,"showTitle":false,"showTotalNumberOfProviders":true }};
+`}
+        </Script>
+        <Script
+          strategy="beforeInteractive"
+          id="iubenda-cookie-autoblock"
+          type="text/javascript"
+          src="https://cs.iubenda.com/autoblocking/3634966.js"
+        />
+        <Script
+          strategy="beforeInteractive"
+          id="iubenda-cookie-stub"
+          type="text/javascript"
+          src="//cdn.iubenda.com/cs/gpp/stub.js"
+        />
+        <Script
+          strategy="beforeInteractive"
+          id="iubenda-cookie-js"
+          type="text/javascript"
+          src="//cdn.iubenda.com/cs/iubenda_cs.js"
+          async
+        />
+        <Script
+          id="simple-analytics"
+          async
+          defer
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+        />
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://queue.simpleanalyticscdn.com/noscript.gif"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </body>
     </html>
   )
