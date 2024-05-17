@@ -45,8 +45,9 @@ export default function Page() {
           Hi, I&apos;m <strong>Gus Fune</strong>
         </h2>
         <p>
-          I&apos;m a CTO based in Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿 who delivered over 100 products to
-          scale, some, before the cloud.
+          I&apos;m a CTO based in Scotland :flag-scotland: who has delivered
+          over 100 products to scale. Some of these products were even developed
+          before the cloud!
         </p>
         <p>I talk about management, leadership, e-commerce and tech.</p>
       </section>
@@ -63,11 +64,11 @@ export default function Page() {
               className="mx-auto block aspect-square"
             />
             <p>
-              I&apos;m <strong>CTO and Managing Partner</strong> at{" "}
+              I&apos;m the <strong>CTO and Managing Partner</strong> at{" "}
               <a href="https://div-brands.com/" target="_blank">
                 Div Brands
               </a>
-              , an e-commerce holding group for brands such as{" "}
+              , an e-commerce holding group for brands like
               <a href="https://baerskintactical.com" target="_blank">
                 BÆRskin Tactical
               </a>
@@ -91,21 +92,21 @@ export default function Page() {
               className="mx-auto block aspect-square"
             />
             <p>
-              I&apos;m also an <strong>Ambassador</strong> at{" "}
+              I&apos;m also an <strong>Ambassador</strong> at the
               <a
                 href="https://machalliance.org/"
                 target="_blank"
                 className="underline"
               >
                 MACH Alliance
-              </a>{" "}
-              where I help advocate for open and best-of-breed enterprise
+              </a>
+              , where I help advocate for open and best-of-breed enterprise
               technology in e-commerce ecosystems.
             </p>
           </div>
         </div>
         <p className="font-light">
-          Previous work includes some startups (
+          My previous roles include working at a few startups (
           <a
             href="https://www.wired.com/story/europe-hottest-startups-2021/"
             target="_blank"
@@ -114,9 +115,9 @@ export default function Page() {
           </a>{" "}
           or{" "}
           <a href="https://useflow.tech/" target="_blank">
-            might not
+            might not heard of
           </a>{" "}
-          heard of), a lot of consulting work for companies in many different
+          ). I have also done a lot of consulting work for companies in various
           fields, from small ones to large enterprises, including Banks,
           Airlines, Consumer Goods, Car Makers, NGOs, Gov, etc.
         </p>
@@ -124,7 +125,10 @@ export default function Page() {
 
       <section id="certifications">
         <h3 className="text-xl font-semibold mb-2">Do you have badges?</h3>
-        <p className="mb-8">YES! Everyone likes a cool certification badge!</p>
+        <p className="mb-8">
+          I GOT BADGES! Everyone loves a certification badge, here are a few of
+          my favourite ones.
+        </p>
         <CertificationList />
       </section>
 
@@ -184,8 +188,9 @@ export default function Page() {
         </ol>
 
         <p className="mt-4">
-          I&apos;ve also jonined some podcasts and other events that I no longer
-          have links. Those are &ldquo;the lost files&rdquo;:
+          I&apos;ve also jonined joined in on some podcasts and other events
+          that I, sadly, no longer have links for. These are known as “the lost
+          files”
         </p>
         <ul className="space-y-2 mt-1">
           <li>
