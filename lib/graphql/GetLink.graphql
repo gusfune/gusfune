@@ -1,7 +1,0 @@
-query GetLink($slug: String!) {
-  link(slug: $slug) {
-    id
-    url
-    title
-  }
-}

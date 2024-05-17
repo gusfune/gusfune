@@ -1,8 +1,0 @@
-query GetLinks {
-  links(featured: true) {
-    id
-    slug
-    title
-    url
-  }
-}

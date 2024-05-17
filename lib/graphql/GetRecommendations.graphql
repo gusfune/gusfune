@@ -1,9 +1,0 @@
-query GetRecommendations {
-  recommendations {
-    id
-    title
-    name
-    content
-    photo
-  }
-}
