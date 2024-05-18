@@ -1,7 +1,7 @@
 import Image from "next/image"
 import BaerImage from "@assets/baerskin.svg"
 import DivImage from "@assets/divbrands.svg"
-import MachImage from "@assets/mach.svg"
+// import MachImage from "@assets/mach.svg"
 import MachAmbassadorImage from "@assets/ambassador-certified-24-black.svg"
 import { CertificationList } from "@/components/Certification"
 import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
@@ -102,13 +102,13 @@ export default function Page() {
                 height={64}
                 className="sm:mx-auto block aspect-square"
               />
-              <Image
+              {/* <Image
                 src={MachImage}
                 alt="MACH Alliance"
                 width={120}
                 height={64}
                 className="mx-auto hidden sm:block aspect-square"
-              />
+              /> */}
             </div>
             <p>
               I&apos;m also an <strong>Ambassador</strong> at the{" "}
