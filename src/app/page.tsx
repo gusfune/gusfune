@@ -47,9 +47,8 @@ export default function Page() {
           Hi, I&apos;m <strong>Gus Fune</strong>
         </h2>
         <p>
-          I&apos;m a CTO based in Scotland :flag-scotland: who has delivered
-          over 100 products to scale. Some of these products were even developed
-          before the cloud!
+          I&apos;m a CTO who has delivered over 100 products to scale. Some of
+          these products were even developed before the cloud!
         </p>
         <p>I talk about management, leadership, e-commerce and tech.</p>
       </section>
@@ -112,7 +111,7 @@ export default function Page() {
               />
             </div>
             <p>
-              I&apos;m also an <strong>Ambassador</strong> at the
+              I&apos;m also an <strong>Ambassador</strong> at the{" "}
               <a
                 href="https://machalliance.org/"
                 target="_blank"
@@ -172,6 +171,16 @@ export default function Page() {
         <ol className="space-y-2 mb-4">
           <li>
             <a
+              href="https://machalliance.org/events/mach-three"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>MACH Three (New York City, 🇺🇸 - June &apos;24)</strong> -
+              TBA
+            </a>
+          </li>
+          <li>
+            <a
               href="https://turingfest.com/videos/gus-fune-development-setup-how-an-important-part-of-your-toolset-is-often-overlooked/"
               target="_blank"
               className="underline hover:opacity-75"
@@ -179,8 +188,8 @@ export default function Page() {
               <strong>
                 Turing Fest 2022 (Edinburgh, 🏴󠁧󠁢󠁳󠁣󠁴󠁿🇬🇧 - July &apos;22)
               </strong>{" "}
-              - Gus Fune – Development Setup: How An Important Part of Your
-              Toolset Is Often Overlooked (long version)
+              - Development Setup: How An Important Part of Your Toolset Is
+              Often Overlooked (long version)
             </a>
           </li>
           <li>
@@ -252,13 +261,13 @@ export default function Page() {
         </h3>
         <p className="mb-1">
           Pascal case &ldquo;<code className={code.className}>ECommerce</code>
-          &rdquo;, camel case &ldquo;
-          <code className={code.className}>eCommerce</code>&rdquo; or kebab
-          &ldquo; <code className={code.className}>e-commerce</code>
-          &rdquo; are all correct.
-          <br />
-          Snake case &ldquo;<code className={code.className}>e_commerce</code>
-          &rdquo; is definitively wrong.
+          &rdquo; ✅<br />
+          camelCase &ldquo;<code className={code.className}>eCommerce</code>
+          &rdquo; ✅<br />
+          kebab-case &ldquo; <code className={code.className}>e-commerce</code>
+          &rdquo; ✅<br />
+          snake_case &ldquo;<code className={code.className}>e_commerce</code>
+          &rdquo; 👎
         </p>
       </section>
 
@@ -318,7 +327,9 @@ export default function Page() {
         </div>
         <p className="text-sm font-light">
           BUT, I am not interested in buying anything. Really, don&apos;t spam
-          me.
+          me. I have already enough SaaS tools, inherited 2 principalities from
+          distant cousins (just need the wire to come in) and definitively am
+          not looking for staffing solutions.
         </p>
       </section>
     </main>

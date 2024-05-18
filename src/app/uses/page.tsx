@@ -64,6 +64,11 @@ export default function Page() {
       url: "https://apps.apple.com/us/app/pikka-color-picker/id1195076754?mt=12",
       text: "for color picking everywhere",
     },
+    {
+      name: "Superhuman",
+      url: "https://superhuman.com/refer/zh9hjjcy",
+      text: "saves me a ton of hours with emailing",
+    },
   ]
 
   const dev = [
