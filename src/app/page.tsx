@@ -1,6 +1,8 @@
 import Image from "next/image"
-import MachImage from "@assets/mach.svg"
+import BaerImage from "@assets/baerskin.svg"
 import DivImage from "@assets/divbrands.svg"
+import MachImage from "@assets/mach.svg"
+import MachAmbassadorImage from "@assets/ambassador-certified-24-black.svg"
 import { CertificationList } from "@/components/Certification"
 import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
 import { Metadata, Viewport } from "next"
@@ -19,15 +21,15 @@ export const metadata: Metadata = {
   title: "Gus Fune",
   description: "e-commerce, tech and stuff...",
   creator: "Gus Fune",
-  // icons: {
-  //   icon: '/icon.png',
-  //   shortcut: '/shortcut-icon.png',
-  //   apple: '/apple-icon.png',
-  //   other: {
-  //     rel: 'apple-touch-icon-precomposed',
-  //     url: '/apple-touch-icon-precomposed.png',
-  //   },
-  // },
+  icons: {
+    icon: "/favicon-32x32.png",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon.png",
+    },
+  },
 }
 
 export const viewport: Viewport = {
@@ -56,13 +58,22 @@ export default function Page() {
         <h3 className="text-xl font-semibold mb-2">What do you do?</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 mb-4 gap-4 my-4">
           <div className="space-y-4">
-            <Image
-              src={DivImage}
-              alt="Div Brands"
-              width={120}
-              height={120}
-              className="mx-auto block aspect-square"
-            />
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              <Image
+                src={BaerImage}
+                alt="BÆRSkin Tactical Supply Co."
+                width={120}
+                height={64}
+                className="sm:mx-auto block aspect-square"
+              />
+              <Image
+                src={DivImage}
+                alt="Div Brands"
+                width={120}
+                height={120}
+                className="mx-auto aspect-square hidden sm:block"
+              />
+            </div>
             <p>
               I&apos;m the <strong>CTO and Managing Partner</strong> at{" "}
               <a href="https://div-brands.com/" target="_blank">
@@ -84,13 +95,22 @@ export default function Page() {
             </p>
           </div>
           <div className="space-y-4">
-            <Image
-              src={MachImage}
-              alt="MACH Alliance"
-              width={120}
-              height={64}
-              className="mx-auto block aspect-square"
-            />
+            <div className="grid grid-cols-1 sm:grid-cols-2">
+              <Image
+                src={MachAmbassadorImage}
+                alt="MACH Alliance Ambassador"
+                width={120}
+                height={64}
+                className="sm:mx-auto block aspect-square"
+              />
+              <Image
+                src={MachImage}
+                alt="MACH Alliance"
+                width={120}
+                height={64}
+                className="mx-auto hidden sm:block aspect-square"
+              />
+            </div>
             <p>
               I&apos;m also an <strong>Ambassador</strong> at the
               <a
@@ -105,6 +125,7 @@ export default function Page() {
             </p>
           </div>
         </div>
+        <hr className="w-1/3 mb-4 bg-slate-700 mx-auto" />
         <p className="font-light">
           My previous roles include working at a few startups (
           <a
