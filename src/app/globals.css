@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: 95% 100% 98%;
-    --foreground: 180 100% 25%;
+    --background: rgb(248 255 243);
+    --foreground: rgb(0 128 128);
 
-    --card: 95% 100% 98%;
-    --card-foreground: 180 100% 25%;
+    --card: rgb(248 255 243);
+    --card-foreground: rgb(0 128 128);
 
-    --popover: 95% 100% 98%;
-    --popover-foreground: 180 100% 25%;
+    --popover: rgb(248 255 243);
+    --popover-foreground: rgb(0 128 128);
 
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
@@ -30,7 +30,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 180 100% 25%;
+    --ring: rgb(0 128 128);
 
     --radius: 0.5rem;
   }
@@ -71,7 +71,7 @@
     @apply border-border;
   }
   body {
-    @apply text-[#008080] bg-[#f8fff3];
+    @apply text-[--foreground] bg-[--background];
   }
   a {
     @apply underline hover:opacity-75;

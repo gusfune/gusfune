@@ -99,7 +99,7 @@ export const Excuses = async () => {
     "I'm afraid not",
   ]
 
-  await new Promise((resolve) => setTimeout(resolve, 2000))
+  await new Promise((resolve) => setTimeout(resolve, 1400))
 
   const randomNo = noVariations[Math.floor(Math.random() * noVariations.length)]
   const randomEntry = data[Math.floor(Math.random() * data.length)]

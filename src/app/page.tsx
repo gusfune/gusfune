@@ -15,6 +15,7 @@ const code = Source_Code_Pro({ subsets: ["latin"] })
 
 const Excuses = dynamic(() => import("@/components/Excuses"), {
   loading: () => <Skeleton className="w-full h-[48px]" />,
+  ssr: false,
 })
 
 export const metadata: Metadata = {
@@ -78,7 +79,7 @@ export default function Page() {
               <a href="https://div-brands.com/" target="_blank">
                 Div Brands
               </a>
-              , an e-commerce holding group for brands like
+              , an e-commerce holding group for brands like{" "}
               <a href="https://baerskintactical.com" target="_blank">
                 BÆRskin Tactical
               </a>

@@ -24,10 +24,10 @@ export const Nav = () => {
       <NavigationMenu className="block sm:hidden">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="px-8">
+            <NavigationMenuTrigger className="px-4">
               <Menu />
             </NavigationMenuTrigger>
-            <NavigationMenuContent className="overflow-auto">
+            <NavigationMenuContent className="overflow-auto relative bg-[--background] z-10">
               <ul className="grid grid-cols-1 p-2 space-y-2">
                 {links.map(([key, value]) => (
                   <li key={`menu-mobile-item-${key}`} className="text-lg">
