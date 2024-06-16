@@ -177,7 +177,21 @@ export default function Page() {
               className="underline hover:opacity-75"
             >
               <strong>MACH Three (New York City, 🇺🇸 - June &apos;24)</strong> -
-              TBA
+              Co-hosted 3 workshops: The Developer Hero Culture... How to Manage
+              & Balance; The Truth & Lies Around Low-Code (as an Enabler of
+              Customer Experience); When to Build—When to Buy.
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://evolutionjobs.com/exchange/evo-inspires-gus-fune-chief-technology-officer-divbrands-episode-1/"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>
+                Evolution Jobs - Evo Inspire (Podcast - June &apos;24)
+              </strong>{" "}
+              - Episode 1
             </a>
           </li>
           <li>
