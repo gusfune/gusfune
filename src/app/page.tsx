@@ -172,6 +172,18 @@ export default function Page() {
         <ol className="space-y-2 mb-4">
           <li>
             <a
+              href="https://evolutionjobs.com/exchange/evo-inspires-gus-fune-chief-technology-officer-divbrands-episode-2/"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>
+                Evolution Jobs - Evo Inspire (Podcast - July &apos;24)
+              </strong>{" "}
+              - Episode 2
+            </a>
+          </li>
+          <li>
+            <a
               href="https://machalliance.org/events/mach-three"
               target="_blank"
               className="underline hover:opacity-75"
@@ -192,6 +204,16 @@ export default function Page() {
                 Evolution Jobs - Evo Inspire (Podcast - June &apos;24)
               </strong>{" "}
               - Episode 1
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://sentry.io/resources/session-replay-troubleshooting/"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>Sentry Webinar (Remote - May &apos;23)</strong> - Session
+              Replay for Developers: Your Shortcut to Faster Troubleshooting
             </a>
           </li>
           <li>
