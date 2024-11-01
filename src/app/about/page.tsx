@@ -29,14 +29,19 @@ export default function Page() {
         <h1 className="text-2xl font-bold">About</h1>
         <p>
           If you are here, you probably know something about me. I&#39;m Gus, a
-          tech/business person that likes buinding things, and companies. I have
-          no technical background, like a CS or engineering degree, but, I am
-          &quot;self-taught&quot; or at least &quot;home-schooled&quot; into
-          programming, as since I remember, I always had computers, internet
-          and, watched my dad programming and asked a ton of annoying questions
-          (or maybe I was raised as a Rubber Duck, who knows?). I&#39;ve bult a
-          few companies, some did well, some didn&#39;t. Moved countries, twice,
-          and in the last few years focused into e-commerce and retail.
+          tech/business person that likes buinding things, and companies.
+        </p>
+        <p>
+          I have no formal technical background, like a CS or engineering
+          degree, but, I am &quot;self-taught&quot; or at least
+          &quot;home-schooled&quot; into programming. I always had computers,
+          internet and, watched my dad programming and asked a ton of annoying
+          questions (or maybe I was raised as a Rubber Duck, who knows?).
+        </p>
+        <p>
+          I&#39;ve bult a few companies, some did well, some didn&#39;t. Moved
+          countries, twice, and in the last few years focused into e-commerce
+          and retail.
         </p>
         <p className="font-light italic">
           *So if you didn&#39;t study CS or engineering, what did you do? Oh, I
@@ -53,7 +58,7 @@ export default function Page() {
             cat Bilbo
           </li>
           <li>I am an avid gamer 🕹️ and collector of Lego</li>
-          <li>I also am a 3rd kyu judoka 🥋.</li>
+          <li>I also am a 2rd kyu (blue belt) judoka 🥋.</li>
         </ul>
       </section>
       <section>
@@ -62,7 +67,7 @@ export default function Page() {
           If you want a timeline of where I worked, you better check Linkedin
           for that. For the &quot;director&#39;s cut&quot;, here is the gist:
         </p>
-        <ul className="list-inside list-disc">
+        <ul className="list-inside list-disc space-y-1">
           <li>
             2007: Co-founded{" "}
             <a href="https://papodehomem.com.br">Papo de Homem</a>, a magazine

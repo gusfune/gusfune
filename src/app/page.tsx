@@ -2,7 +2,7 @@ import Image from "next/image"
 import BaerImage from "@assets/baerskin.svg"
 import DivImage from "@assets/divbrands.svg"
 // import MachImage from "@assets/mach.svg"
-import MachAmbassadorImage from "@assets/ambassador-certified-24-black.svg"
+import MachAmbassadorImage from "@assets/ambassador-certified.svg"
 import { CertificationList } from "@/components/Certification"
 import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
 import { Metadata, Viewport } from "next"
@@ -15,7 +15,6 @@ const code = Source_Code_Pro({ subsets: ["latin"] })
 
 const Excuses = dynamic(() => import("@/components/Excuses"), {
   loading: () => <Skeleton className="w-full h-[48px]" />,
-  ssr: false,
 })
 
 export const metadata: Metadata = {
@@ -170,6 +169,19 @@ export default function Page() {
         </p>
 
         <ol className="space-y-2 mb-4">
+          <li>
+            <a
+              href="https://machalliance.org/events/business-value-of-mach-technologies"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>
+                Business Value of MACH Technologies (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - October
+                &apos;24)
+              </strong>{" "}
+              - Panelist
+            </a>
+          </li>
           <li>
             <a
               href="https://evolutionjobs.com/exchange/evo-inspires-gus-fune-chief-technology-officer-divbrands-episode-2/"
