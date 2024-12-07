@@ -10,6 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import dynamic from "next/dynamic"
 import Construction from "@assets/construction.gif"
 import { Source_Code_Pro } from "next/font/google"
+import Link from "next/link"
 
 const code = Source_Code_Pro({ subsets: ["latin"] })
 
@@ -184,18 +185,6 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://evolutionjobs.com/exchange/evo-inspires-gus-fune-chief-technology-officer-divbrands-episode-2/"
-              target="_blank"
-              className="underline hover:opacity-75"
-            >
-              <strong>
-                Evolution Jobs - Evo Inspire (Podcast - July &apos;24)
-              </strong>{" "}
-              - Episode 2
-            </a>
-          </li>
-          <li>
-            <a
               href="https://machalliance.org/events/mach-three"
               target="_blank"
               className="underline hover:opacity-75"
@@ -204,28 +193,6 @@ export default function Page() {
               Co-hosted 3 workshops: The Developer Hero Culture... How to Manage
               & Balance; The Truth & Lies Around Low-Code (as an Enabler of
               Customer Experience); When to Build—When to Buy.
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://evolutionjobs.com/exchange/evo-inspires-gus-fune-chief-technology-officer-divbrands-episode-1/"
-              target="_blank"
-              className="underline hover:opacity-75"
-            >
-              <strong>
-                Evolution Jobs - Evo Inspire (Podcast - June &apos;24)
-              </strong>{" "}
-              - Episode 1
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://sentry.io/resources/session-replay-troubleshooting/"
-              target="_blank"
-              className="underline hover:opacity-75"
-            >
-              <strong>Sentry Webinar (Remote - May &apos;23)</strong> - Session
-              Replay for Developers: Your Shortcut to Faster Troubleshooting
             </a>
           </li>
           <li>
@@ -254,53 +221,13 @@ export default function Page() {
               often overlooked (short version)
             </a>
           </li>
-          <li>
-            <a
-              href="https://hasura.io/events/hasura-con-2021/speakers/gus-fune/"
-              target="_blank"
-              className="underline hover:opacity-75"
-            >
-              <strong>HasuraCon&apos;21 (remote - June &apos;21)</strong> -
-              Building Off Script on Hasura from day 0: what we learned
-            </a>
-          </li>
         </ol>
-
-        <p className="mt-4">
-          I&apos;ve also jonined joined in on some podcasts and other events
-          that I, sadly, no longer have links for. These are known as “the lost
-          files”
-        </p>
-        <ul className="space-y-2 mt-1">
-          <li>
-            <strong>Hasura Community Call (remote - Aug &apos;23)</strong> -
-            Showcasing usage of Hasura on MACH e-commerce
-          </li>
-          <li>
-            <strong>Hasura Community Call (remote - May &apos;21)</strong> -
-            Showcasing open-source contribution
-          </li>
-          <li>
-            <strong>Share Curitiba (Curitiba, 🇧🇷 - May &apos;14)</strong> -
-            Problems and Trends in Social Apps
-          </li>
-          <li>
-            <strong>SBGames 2022 (Brasília, 🇧🇷 - Nov &apos;11)</strong> - The
-            Brazilian Games Media
-          </li>
-          <li>
-            <strong>Ossobuco (Brasília, 🇧🇷 - Jun &apos;12)</strong> - Trip
-            Hacking, travel more, better and for less
-          </li>
-          <li>
-            <strong>Campus Party (São Paulo, 🇧🇷 - Jan &apos;11)</strong> -
-            Wordpress Optimization
-          </li>
-        </ul>
-
         <p className="my-4">
-          I am available for speaking at events and conferences. Contact for
-          more information.
+          <Link href="/speaking">
+            Full list of events is available in the speaking page
+          </Link>
+          . I am available for speaking at events and conferences.{" "}
+          <Link href="/#contact">Contact me</Link> for more information.
         </p>
       </section>
 
