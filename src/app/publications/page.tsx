@@ -28,8 +28,8 @@ export default function Page() {
       <section className="space-y-2">
         <h1 className="text-2xl font-bold">Publications</h1>
         <p>
-          Here are things that I've written collaborated or have been written
-          about me over the past few years.
+          Here are things that I&apos;ve written collaborated or have been
+          written about me over the past few years.
         </p>
         <ol className="space-y-2 mb-8">
           <li>
