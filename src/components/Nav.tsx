@@ -17,6 +17,7 @@ export const Nav = () => {
     ["About", "/about"],
     // ["Journal", "/#journal"],
     ["Speaking", "/#speaking"],
+    ["Writing", "/publications"],
     ["Uses", "/uses"],
     ["Contact", "/#contact"],
   ]
