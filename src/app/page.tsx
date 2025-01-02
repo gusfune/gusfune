@@ -147,7 +147,7 @@ export default function Page() {
       <section id="certifications">
         <h3 className="text-xl font-semibold mb-2">Do you have badges?</h3>
         <p className="mb-8">
-          I GOT BADGES! Everyone loves a certification badge, here are a few of
+          I GOT BADGES! Everyone loves a certification/credential badge, here are a few of
           my favourite ones.
         </p>
         <CertificationList />
