@@ -1,4 +1,6 @@
 import { Metadata, Viewport } from "next"
+import Link from "next/link"
+import { getBlogPosts } from "./utils"
 
 export const metadata: Metadata = {
   title: "Publications | Gus Fune",
@@ -22,9 +24,11 @@ export const viewport: Viewport = {
   userScalable: false,
 }
 
-export default function Page() {
+export default async function Page() {
+  const posts = await getBlogPosts()
+
   return (
-    <main className="space-y-4 max-w-2xl">
+    <div className="space-y-4 max-w-2xl">
       <section className="space-y-2">
         <h1 className="text-2xl font-bold">Publications</h1>
         <p>
@@ -99,6 +103,22 @@ export default function Page() {
           </li>
         </ol>
       </section>
-    </main>
+      <section className="space-y-2">
+        <h2 className="text-2xl font-bold">Journal</h2>
+        <p>And here a few things I&apos;ve written myself.</p>
+        <ol className="space-y-2 mb-8">
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link
+                href={`/journal/${post.slug}`}
+                className="underline hover:opacity-75"
+              >
+                {post.metadata.title}
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
+    </div>
   )
 }

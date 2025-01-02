@@ -44,7 +44,7 @@ export default function Page() {
   return (
     <main className="space-y-12 max-w-2xl">
       <section id="intro">
-        <h2 className="text-2xl">
+        <h2 className="text-2xl pb-4">
           Hi, I&apos;m <strong>Gus Fune</strong>
         </h2>
         <p>

@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
   poweredByHeader: false,
+  redirects: async () => {
+    return [
+      {
+        source: "/publications",
+        destination: "/journal",
+        permanent: true,
+      },
+    ]
+  },
 }
 
 const withMDX = createMDX({
