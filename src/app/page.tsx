@@ -2,7 +2,7 @@ import Image from "next/image"
 import BaerImage from "@assets/baerskin.svg"
 import DivImage from "@assets/divbrands.svg"
 // import MachImage from "@assets/mach.svg"
-import MachAmbassadorImage from "@assets/ambassador-certified.svg"
+import MachAmbassadorImage from "@assets/ambassador-certified-25.svg"
 import { CertificationList } from "@/components/Certification"
 import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
 import { Metadata, Viewport } from "next"
@@ -147,8 +147,8 @@ export default function Page() {
       <section id="certifications">
         <h3 className="text-xl font-semibold mb-2">Do you have badges?</h3>
         <p className="mb-8">
-          I GOT BADGES! Everyone loves a certification/credential badge, here are a few of
-          my favourite ones.
+          I GOT BADGES! Everyone loves a certification/credential badge, here
+          are a few of my favourite ones.
         </p>
         <CertificationList />
       </section>
