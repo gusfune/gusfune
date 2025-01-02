@@ -49,7 +49,7 @@ export default function RootLayout({
         </div>
 
         <p className="text-xs text-center my-4">
-          Copyright &copy; 2024 - Gus Fune. All rights reserved
+          Copyright &copy; 2020-2025 - Gus Fune. All rights reserved
           <br />
           Source-code for this site is published under MIT license. You&apos;re
           free to use the code, not the content.

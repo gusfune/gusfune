@@ -1,0 +1,49 @@
+---
+title: "Our e-commerce architecture standards"
+publishedAt: "2023-04-19"
+summary: "I’ve researched the primary standards and best practices on e-commerce, and we ended up with our Frankenstein monster taking the best of each different approach out there."
+---
+
+As part of our recent re-platforming process, we looked at our infrastructure and made significant changes. The aim was to build a more robust foundation to support our business needs now and in the future. To achieve this, I’ve researched the primary standards and best practices on e-commerce, and we ended up with our Frankenstein monster taking the best of each different approach out there.
+
+## The “div standard”
+
+We’ve defined the pillars of our “composable commerce” solution needing:
+
+- **Maintainability**: It’s easy to maintain and expand. Also, it needs to ensure a good developer experience when working with any systems. Because we also have a small team, anyone needs to rapidly be able to jump into it without necessarily having developed any specific piece, service or aspect of it.
+- **Agility**: We can iterate fast with new features or changes.
+- **Scalability**: It can handle a massive amount of users.
+- **Security**: It’s secure and protected against data breaches.
+- **Performance**: It’s fast and needs to be quick for customers.
+- **Readable**: It’s the best name we found for extracting data from anywhere, chucking it into a warehouse and leveraging insights, as we’re pretty much data-driven.
+- **Unopinionated**: We could plug any vendor, any system and be far off vendor-lock-ins. If we want to change any part of our systems, it should take at most a few weeks to repurpose, retool or re-platform.
+
+Part of it was influenced by [AWS Well-Architected framework](https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc&wa-guidance-whitepapers.sort-by=item.additionalFields.sortDate&wa-guidance-whitepapers.sort-order=desc) and [Google Cloud Architecture Framework](https://cloud.google.com/architecture/framework), which are excellent frameworks for anything in the cloud. So, what are the current e-commerce standards we could take inspiration from?
+
+## MACH
+
+MACH is the most popular framework for the architecture of e-commerce tech nowadays, at least on the enterprise-level landscape. According to the [Mach Alliance](http://machalliance.org/) website, it is:
+
+> MACH is an industry tech standard describing modern technology. The prerequisites to achieve this standard are Microservices based, API-first, Cloud-native SaaS and Headless. Our MACH Certification gives enterprises confidence they are choosing best-in-class vendors that can deliver future-proof technology.
+> Interesting, it fits exactly what we are looking for, but at the same time, it’s very generic. It feels like just a counter-act of old legacy monolithic enterprise systems. At the same time, it feels like just a way to establish a marketable term for making apps nowadays.
+
+## PCI-DSS
+
+This is known by everyone in e-commerce. It’s the payment industry standards, and any merchant needs to adhere to them. No need to go much in-depth into [what PCI-DSS is](https://www.pcisecuritystandards.org/), but it’s the primary standard for security with payments, not only e-commerce.
+
+## The missing pieces
+
+So, considering our pillars, we could fulfil some of them by drinking the kool-aid of different aspects.
+
+- MACH provides us with the aspects of Scalability, to some extent, Unopionated and Readability.
+- PCI-DSS is suitable for compliance.
+
+But, no standard took into consideration the performance. That is probably the number one most crucial piece of e-commerce implementation. The customer doesn’t care about monoliths or headless. They care about a good experience. So, to achieve the performance, we defined a few parameters as our north star:
+
+- **Edge whenever possible**: By adopting edge or faux-edge (which I’ve written about here), we can make some parts faster, or at least seems faster enough to delight the customer.
+- **Bundle sizes**: We try to avoid bundle bloat, which is common in headless, so we need to be mindful about not putting too much.
+- **Speed and Web Vitals metrics**: We ensure that we always keep good scores on our websites and do constant improvements and maintenance of unoptimised parts.
+- **Small data footprint**: To avoid transferring a lot of data and overhead, we try to filter out or keep things to a minimum. We even reduced GraphQL usage to a minimum due to the overhead of data, even by filtering what needs to be transmitted.
+- **Static Generation everywhere**: Except where utterly impossible, we try to make everything pre-rendered, generated, and even preloaded for customers to ensure it’s fast.
+
+So, in the end, to make e-commerce unique and have an excellent experience for our customers, we had to drink the kool-aid from different standards and come up with something special that would establish what we believe to be the best standard and practices for a modern commerce stack.
