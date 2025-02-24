@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 }
 
 export default async function Page() {
-  const posts = await getBlogPosts()
+  const posts = getBlogPosts()
 
   return (
     <div className="space-y-4 max-w-2xl">
