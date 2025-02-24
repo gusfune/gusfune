@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 }
 
 export default async function Page() {
-  const posts = await getBlogPosts()
+  const posts = getBlogPosts()
 
   return (
     <div className="space-y-4 max-w-2xl">
@@ -36,6 +36,30 @@ export default async function Page() {
           written about me over the past few years.
         </p>
         <ol className="space-y-2 mb-8">
+          <li>
+            <a
+              href="https://xiatech.io/resources/get-the-2024-business-value-of-mach-technologies-report"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              QUOTE:&nbsp;
+              <strong>
+                2024 Business Value of Mach Technologies Global Report
+              </strong>
+              &apos; -Xiatech & OneStock - January &apos;25
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://open.substack.com/pub/pragmaticengineer/p/bug-management-that-works-part-2"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              QUOTE:&nbsp;
+              <strong>Bug management that works (part 2)</strong>
+              &apos; -The Pragmatic Engineer - January &apos;25
+            </a>
+          </li>
           <li>
             <a
               href="https://leaddev.com/technical-direction/migrating-microservices-mach-speed"
