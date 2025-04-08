@@ -122,7 +122,7 @@ export default function Page() {
           Over the years I managed to work with a ton of cool brands and
           companies. Here are a few companies from my selection:
         </p>
-        <dl className="flex flex-row flex-shrink-0 flex-wrap gap-2 font-light">
+        <dl className="flex flex-row shrink-0 flex-wrap gap-2 font-light">
           <dt>3M</dt>
           <dt>Absolut Vodka</dt>
           <dt>AmBev</dt>

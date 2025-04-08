@@ -33,7 +33,7 @@ export default function TypingAnimation({
   }, [duration, i, text])
 
   return (
-    <span className={cn("tracking-[-0.02em] drop-shadow-sm", className)}>
+    <span className={cn("tracking-[-0.02em] drop-shadow-xs", className)}>
       {displayedText ? displayedText : text}
     </span>
   )
