@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const sitemap: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(2025, 0, 2),
+    lastModified: new Date(2025, 3, 8),
     changeFrequency: "weekly",
   }))
 
