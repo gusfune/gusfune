@@ -82,16 +82,7 @@ export default function Page() {
               , an e-commerce holding group for brands like{" "}
               <a href="https://baerskintactical.com" target="_blank">
                 BÆRskin Tactical
-              </a>
-              ,{" "}
-              <a href="https://hyperarchmotion.com" target="_blank">
-                Hyper Arch Motion
-              </a>{" "}
-              and{" "}
-              <a href="https://cozislides.com" target="_blank">
-                Cozi Slides
-              </a>
-              .
+              </a>.
             </p>
           </div>
           <div className="space-y-4">
@@ -103,13 +94,6 @@ export default function Page() {
                 height={64}
                 className="sm:mx-auto block aspect-square"
               />
-              {/* <Image
-                src={MachImage}
-                alt="MACH Alliance"
-                width={120}
-                height={64}
-                className="mx-auto hidden sm:block aspect-square"
-              /> */}
             </div>
             <p>
               I&apos;m also an <strong>Ambassador</strong> at the{" "}
