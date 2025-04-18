@@ -82,7 +82,8 @@ export default function Page() {
               , an e-commerce holding group for brands like{" "}
               <a href="https://baerskintactical.com" target="_blank">
                 BÆRskin Tactical
-              </a>.
+              </a>
+              .
             </p>
           </div>
           <div className="space-y-4">
@@ -154,6 +155,19 @@ export default function Page() {
         </p>
 
         <ol className="space-y-2 mb-4">
+          <li>
+            <a
+              href="https://machalliance.org/mach-annual-conference"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>
+                The Composable Conference 2025 (Chicago, 🇺🇸 - April &apos;25)
+              </strong>{" "}
+              - Co-hosted workshop: Workshop: Remaining Committed How to stay
+              true to your mission and member of Jury for the MACH Impact Awards
+            </a>
+          </li>
           <li>
             <a
               href="https://machalliance.org/events/business-value-of-mach-technologies"

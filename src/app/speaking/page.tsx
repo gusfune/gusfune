@@ -32,6 +32,19 @@ export default function Page() {
         <ol className="space-y-2 mb-8">
           <li>
             <a
+              href="https://machalliance.org/mach-annual-conference"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>
+                The Composable Conference 2025 (Chicago, 🇺🇸 - April &apos;25)
+              </strong>{" "}
+              - Co-hosted workshop: Workshop: Remaining Committed How to stay
+              true to your mission and member of Jury for the MACH Impact Awards
+            </a>
+          </li>
+          <li>
+            <a
               href="https://machalliance.org/events/business-value-of-mach-technologies"
               target="_blank"
               className="underline hover:opacity-75"
