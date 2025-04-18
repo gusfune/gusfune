@@ -4,8 +4,7 @@ import ImgAWS from "@assets/seal-aws.png"
 import ImgAzure from "@assets/seal-azure.png"
 import ImgCSPO from "@assets/seal-cspo.png"
 import ImgGoogle from "@assets/seal-gcp.png"
-import ImgMach1 from "@assets/seal-mach-1.png"
-import ImgMach2 from "@assets/seal-mach-2.png"
+import ImgMach3 from "@assets/mach-certification-expert.png"
 
 interface CertificationProps {
   image: StaticImageData
@@ -32,8 +31,8 @@ export const Certification = ({ link, image, title }: CertificationProps) => (
 )
 
 export const CertificationList = () => (
-  <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 my-2">
-    <Certification
+  <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 my-2">
+    {/* <Certification
       link="https://www.credly.com/badges/c6db605a-d099-482d-b348-7baba3518070/public_url"
       image={ImgMach1}
       title="Modern Technology with MACH - Beta Tester"
@@ -42,6 +41,11 @@ export const CertificationList = () => (
       link="https://www.credly.com/badges/3a38a64f-14e8-4991-a159-b855688b50f2/public_url"
       image={ImgMach2}
       title="The MACH Mindset - Beta Tester"
+    /> */}
+    <Certification
+      link="https://www.credly.com/badges/9b9201c7-dd59-481e-b505-07e6a212621a/public_url"
+      image={ImgMach3}
+      title="MACH Certification Expert"
     />
     <Certification
       link="https://www.credly.com/badges/bc06b2fd-b44f-4ff9-987b-e94e82064f6b/public_url"
