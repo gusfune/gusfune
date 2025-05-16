@@ -33,9 +33,9 @@ export default function Page() {
           <li>
             <strong>
               Participation on The Ecommerce Toolbox: Expert Perspectives (🔈
-              Podcast - May '25)
+              Podcast - May &apos;25)
             </strong>{" "}
-            - From Chaos to Composable: Inside Baerskin's Tactical Rebuild
+            - From Chaos to Composable: Inside Baerskin&apos;s Tactical Rebuild
             <ul className="list-disc list-inside ml-4">
               <li>
                 <a
@@ -178,8 +178,8 @@ export default function Page() {
 
         <p className="mt-4">
           I&apos;ve also jonined joined in on some podcasts and other events
-          that I, sadly, no longer have links for. These are known as "the lost
-          files"
+          that I, sadly, no longer have links for. These are known as &quot;the
+          lost files&quot;
         </p>
         <ul className="space-y-2 mt-1">
           <li>

@@ -158,9 +158,9 @@ export default function Page() {
           <li>
             <strong>
               Participation on The Ecommerce Toolbox: Expert Perspectives (🔈
-              Podcast - May '25)
+              Podcast - May &apos;25)
             </strong>{" "}
-            - From Chaos to Composable: Inside Baerskin's Tactical Rebuild
+            - From Chaos to Composable: Inside Baerskin&apos;s Tactical Rebuild
             <ul className="list-disc list-inside ml-4">
               <li>
                 <a
