@@ -31,6 +31,42 @@ export default function Page() {
         <p>Here are a few of the events I have spoken at over the years.</p>
         <ol className="space-y-2 mb-8">
           <li>
+            <strong>
+              Participation on The Ecommerce Toolbox: Expert Perspectives (🔈
+              Podcast - May '25)
+            </strong>{" "}
+            - From Chaos to Composable: Inside Baerskin's Tactical Rebuild
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <a
+                  href="https://podcasts.apple.com/us/podcast/from-chaos-to-composable-inside-baerskin-tacticals/id1695871656?i=1000708443380"
+                  target="_blank"
+                  className="underline hover:opacity-75"
+                >
+                  Apple Podcasts
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://open.spotify.com/episode/2KMiwIPgpDq3OY0KxDGxjj"
+                  target="_blank"
+                  className="underline hover:opacity-75"
+                >
+                  Spotify
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=ZKX3LMIZZSc"
+                  target="_blank"
+                  className="underline hover:opacity-75"
+                >
+                  YouTube
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
             <a
               href="https://machalliance.org/mach-annual-conference"
               target="_blank"
@@ -142,8 +178,8 @@ export default function Page() {
 
         <p className="mt-4">
           I&apos;ve also jonined joined in on some podcasts and other events
-          that I, sadly, no longer have links for. These are known as “the lost
-          files”
+          that I, sadly, no longer have links for. These are known as "the lost
+          files"
         </p>
         <ul className="space-y-2 mt-1">
           <li>
