@@ -286,15 +286,8 @@ export default function Page() {
           Do you write about the things you talk about?
         </h3>
         <p className=" mb-4">
-          Yes, but not enough. And I haven&apos;t finished this part of the site
-          yet. So here, a throwback to 1998.
+          Yes check the <Link href="/journal">journal</Link> page.
         </p>
-        <Image
-          src={Construction}
-          alt="Under construction"
-          width={459}
-          height={28}
-        />
       </section>
 
       <section id="contact">

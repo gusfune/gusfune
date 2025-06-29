@@ -38,6 +38,31 @@ export default async function Page() {
         <ol className="space-y-2 mb-8">
           <li>
             <a
+              href="https://leaddev.com/uncategorized/how-get-most-out-ai-tooling"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              QUOTE:&nbsp;
+              <strong>How to get the most out of AI tooling</strong>- Lead Dev -
+              June &apos;25
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://machalliance.org/interoperability-for-business"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              QUOTE:&nbsp;
+              <strong>
+                Interoperability: Removing the barriers to business impact
+              </strong>
+              - Mach Alliance - June &apos;25
+            </a>
+          </li>
+
+          <li>
+            <a
               href="https://xiatech.io/resources/get-the-2024-business-value-of-mach-technologies-report"
               target="_blank"
               className="underline hover:opacity-75"

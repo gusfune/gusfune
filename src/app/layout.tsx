@@ -52,17 +52,7 @@ export default function RootLayout({
           Copyright &copy; 2020-2025 - Gus Fune. All rights reserved
           <br />
           Source-code for this site is published under MIT license. You&apos;re
-          free to use the code, not the content.
-          <br />
-          Construction Gif is borrowed from{" "}
-          <a
-            href="http://textfiles.com/underconstruction/"
-            className="underline"
-          >
-            textfiles.com
-          </a>
-          . All stuff that have owners, are owned by their owners, the ones that
-          are free, are part of the collective mind.
+          free to use the code, not the content, that&apos;s all mine.
         </p>
         <Analytics />
         <Script id="ketch-analytics">
