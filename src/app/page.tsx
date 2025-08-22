@@ -1,6 +1,5 @@
 import Image from "next/image"
 import BaerImage from "@assets/baerskin.svg"
-import DivImage from "@assets/divbrands.svg"
 // import MachImage from "@assets/mach.svg"
 import MachAmbassadorImage from "@assets/ambassador-certified-25.svg"
 import { CertificationList } from "@/components/Certification"
@@ -8,7 +7,6 @@ import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
 import { Metadata, Viewport } from "next"
 import { Skeleton } from "@/components/ui/skeleton"
 import dynamic from "next/dynamic"
-import Construction from "@assets/construction.gif"
 import { Source_Code_Pro } from "next/font/google"
 import Link from "next/link"
 
@@ -51,7 +49,7 @@ export default function Page() {
           I&apos;m a CTO who has delivered over 100 products to scale. Some of
           these products were even developed before the cloud!
         </p>
-        <p>I talk about management, leadership, e-commerce and tech.</p>
+        <p>I talk about management, leadership, e-commerce, AI and tech.</p>
       </section>
 
       <section id="work">
@@ -66,24 +64,14 @@ export default function Page() {
                 height={64}
                 className="sm:mx-auto block aspect-square"
               />
-              <Image
-                src={DivImage}
-                alt="Div Brands"
-                width={120}
-                height={120}
-                className="mx-auto aspect-square hidden sm:block"
-              />
             </div>
             <p>
               I&apos;m the <strong>CTO and Managing Partner</strong> at{" "}
-              <a href="https://div-brands.com/" target="_blank">
-                Div Brands
-              </a>
-              , an e-commerce holding group for brands like{" "}
               <a href="https://baerskintactical.com" target="_blank">
                 BÆRskin Tactical
               </a>
-              .
+              , been here building the tools, tech and people since the brand
+              early days in 2021. .
             </p>
           </div>
           <div className="space-y-4">
