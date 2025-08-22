@@ -55,10 +55,14 @@ export default function Page() {
           <li>I&#39;m from Brasília, capital of Brazil 🇧🇷.</li>
           <li>
             I live in Scotland 🏴󠁧󠁢󠁳󠁣󠁴󠁿, in the Kingdom of Fife with my wife and my
-            cat Bilbo
+            cats Bilbo and Tabasco.
           </li>
           <li>I am an avid gamer 🕹️ and collector of Lego</li>
-          <li>I also am a 2rd kyu (blue belt) judoka 🥋.</li>
+          <li>I also am a 1st kyu (brown belt) judoka 🥋.</li>
+          <li>
+            Also learning how to pilot (planes) and building up hours for a PPL
+            ✈️
+          </li>
         </ul>
       </section>
       <section>
@@ -110,6 +114,14 @@ export default function Page() {
             2024: In parallel to my work at Div Brands, I also became an
             ambassador for the{" "}
             <a href="https://machalliance.org/">MACH Alliance</a>
+          </li>
+          <li>
+            2025: I was part of the first subject matter expert group that
+            developed the certification for{" "}
+            <a href="https://machalliance.org/mach-architect-certification">
+              Certified MACH Architect Professional
+            </a>
+            .
           </li>
         </ul>
       </section>
