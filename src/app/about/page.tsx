@@ -115,6 +115,14 @@ export default function Page() {
             ambassador for the{" "}
             <a href="https://machalliance.org/">MACH Alliance</a>
           </li>
+          <li>
+            2025: I was part of the first subject matter expert group that
+            developed the certification for{" "}
+            <a href="https://machalliance.org/mach-architect-certification">
+              Certified MACH Architect Professional
+            </a>
+            .
+          </li>
         </ul>
       </section>
       <section>

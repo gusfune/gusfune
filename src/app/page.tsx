@@ -71,7 +71,7 @@ export default function Page() {
                 BÆRskin Tactical
               </a>
               , been here building the tools, tech and people since the brand
-              early days in 2021. .
+              early days in 2021.
             </p>
           </div>
           <div className="space-y-4">
