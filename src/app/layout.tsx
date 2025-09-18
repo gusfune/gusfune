@@ -48,12 +48,25 @@ export default function RootLayout({
           <main className="col-span-12 sm:col-span-10 p-4">{children}</main>
         </div>
 
-        <p className="text-xs text-center my-4">
-          Copyright &copy; 2020-2025 - Gus Fune. All rights reserved
-          <br />
-          Source-code for this site is published under MIT license. You&apos;re
-          free to use the code, not the content, that&apos;s all mine.
-        </p>
+        <div className="text-xs text-center my-4">
+          <p className="">
+            Copyright &copy; 2020-2025 - Gus Fune. All rights reserved
+            <br />
+            Photography by{" "}
+            <a
+              href="https://www.juliebee.co.uk/"
+              target="_blank"
+              className="underline"
+            >
+              Julie Broadfoot
+            </a>{" "}
+            © 2025
+            <br />
+            Source-code for this site is published under MIT license.
+            You&apos;re free to use the code, not the content, that&apos;s all
+            mine.
+          </p>
+        </div>
         <Analytics />
         <Script id="ketch-analytics">
           {`
