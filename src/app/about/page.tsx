@@ -1,4 +1,5 @@
 import { Metadata, Viewport } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "About | Gus Fune",
@@ -27,28 +28,41 @@ export default function Page() {
     <main className="space-y-4 max-w-2xl">
       <section className="space-y-2">
         <h1 className="text-2xl font-bold">About</h1>
-        <p>
-          If you are here, you probably know something about me. I&#39;m Gus, a
-          tech/business person that likes buinding things, and companies.
-        </p>
-        <p>
-          I have no formal technical background, like a CS or engineering
-          degree, but, I am &quot;self-taught&quot; or at least
-          &quot;home-schooled&quot; into programming. I always had computers,
-          internet and, watched my dad programming and asked a ton of annoying
-          questions (or maybe I was raised as a Rubber Duck, who knows?).
-        </p>
-        <p>
-          I&#39;ve bult a few companies, some did well, some didn&#39;t. Moved
-          countries, twice, and in the last few years focused into e-commerce
-          and retail.
-        </p>
-        <p className="font-light italic">
-          *So if you didn&#39;t study CS or engineering, what did you do? Oh, I
-          studied Advertising and Film Production in college. Later on, I did
-          study game design and development and did an MBA. But, most of things
-          I learned, were from hands-on experience.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 space-y-2">
+          <Image
+            src="/GusFune2025-005-small.jpg"
+            alt="Gus Fune"
+            width={300}
+            height={450}
+            className="w-full mx-auto block"
+          />
+          <div className="space-y-2">
+            <p>
+              If you are here, you probably know something about me. I&#39;m
+              Gus, a tech/business person that likes buinding things, and
+              companies.
+            </p>
+            <p>
+              I have no formal technical background, like a CS or engineering
+              degree, but, I am &quot;self-taught&quot; or at least
+              &quot;home-schooled&quot; into programming. I always had
+              computers, internet and, watched my dad programming and asked a
+              ton of annoying questions (or maybe I was raised as a Rubber Duck,
+              who knows?).
+            </p>
+            <p>
+              I&#39;ve bult a few companies, some did well, some didn&#39;t.
+              Moved countries, twice, and in the last few years focused into
+              e-commerce and retail.
+            </p>
+            <p className="font-light italic">
+              *So if you didn&#39;t study CS or engineering, what did you do?
+              Oh, I studied Advertising and Film Production in college. Later
+              on, I did study game design and development and did an MBA. But,
+              most of things I learned, were from hands-on experience.
+            </p>
+          </div>
+        </div>
         <br />
         <p>On the non-professional side:</p>
         <ul className="list-disc list-inside">
