@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={source.className}>
         <div className="grid grid-cols-12 gap-4 relative">
-          {/* <aside
+          <aside
             className={cn(
               "col-span-12 p-2 bg-[#fbca3c] text-black relative z-10",
               code.className
@@ -26,14 +26,14 @@ export default function RootLayout({
           >
             <p className="text-sm uppercase text-center">
               <a
-                href="https://machalliance.org/mach-annual-conference"
+                href="https://machalliance.org/events/mach-x-2025-london"
                 className="no-underline hover:underline"
               >
-                Join me for <strong>The Composable Conference</strong> in
-                Chicago - Apr 22-24! Click for details
+                Join me for <strong>MACH X</strong> in London - Oct 21-22! Click
+                for details
               </a>
             </p>
-          </aside> */}
+          </aside>
           <div className="static col-span-12 sm:col-span-2 z-0">
             <div
               className={cn(
