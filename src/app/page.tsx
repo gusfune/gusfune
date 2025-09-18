@@ -115,6 +115,33 @@ export default function Page() {
           fields, from small ones to large enterprises, including Banks,
           Airlines, Consumer Goods, Car Makers, NGOs, Gov, etc.
         </p>
+        <p className="font-light mt-4">
+          I&apos;m also a mentor for{" "}
+          <a
+            href="https://thisiscodebase.com/"
+            target="_blank"
+            className="underline"
+          >
+            Codebase
+          </a>
+          , mentoring startups in the{" "}
+          <a
+            href="https://techscaler.org/"
+            target="_blank"
+            className="underline"
+          >
+            TechScaler
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://labs.uk.barclays/"
+            target="_blank"
+            className="underline"
+          >
+            Barclays Eagle Labs
+          </a>{" "}
+          programs across Scotland and the UK.
+        </p>
       </section>
 
       <section id="certifications">
@@ -143,6 +170,21 @@ export default function Page() {
         </p>
 
         <ol className="space-y-2 mb-4">
+          <li>
+            <strong>BetterTech (🔈 Podcast - Sep &apos;25)</strong> - The Brave
+            New World of eCommerce
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=y7BdVVP4ay4"
+                  target="_blank"
+                  className="underline hover:opacity-75"
+                >
+                  YouTube
+                </a>
+              </li>
+            </ul>
+          </li>
           <li>
             <strong>
               Participation on The Ecommerce Toolbox: Expert Perspectives (🔈
