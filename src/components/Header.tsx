@@ -8,9 +8,10 @@ export const Header = () => {
         borderRadius={9999}
         color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
         borderWidth={1}
+        className="hidden sm:block"
       >
         <Image
-          src="/photo.jpg"
+          src="/GusFune2025-004-small.jpg"
           alt="Gus Fune"
           width={128}
           height={128}

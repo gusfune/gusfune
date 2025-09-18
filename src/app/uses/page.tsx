@@ -35,9 +35,9 @@ export const viewport: Viewport = {
 export default function Page() {
   const apps = [
     {
-      name: "Arc",
-      url: "https://arc.net/gift/a5b15a5b",
-      text: "I simply love this broswer. I'd pay for it",
+      name: "Comet",
+      url: "https://www.perplexity.ai/comet",
+      text: "Since ARC became JIRA... Comet became my superpowered browser",
     },
     {
       name: "1Password",
@@ -60,14 +60,19 @@ export default function Page() {
       text: 'better than your regular calculator. Useful for "the mathz"',
     },
     {
-      name: "Pikka",
-      url: "https://apps.apple.com/us/app/pikka-color-picker/id1195076754?mt=12",
-      text: "for color picking everywhere",
+      name: "Raycast",
+      url: "https://www.raycast.com/",
+      text: "replacement for spotlight with superpowers",
     },
     {
       name: "Superhuman",
       url: "https://superhuman.com/refer/zh9hjjcy",
       text: "saves me a ton of hours with emailing",
+    },
+    {
+      name: "Granola",
+      url: "https://www.granola.so/",
+      text: "AI-powered note taking for meetings and calls",
     },
   ]
 
@@ -91,6 +96,62 @@ export default function Page() {
       name: "JetBrains Mono",
       url: "https://www.jetbrains.com/lp/mono/",
       text: "is my choice of font in editors and terminals",
+    },
+    {
+      name: "Claude Code",
+      url: "https://claude.com/product/claude-code",
+      text: "you are absolutely right!",
+    },
+  ]
+
+  const hardware = [
+    {
+      name: "2x ASUS ProArt Display PA329CV Professional Monitor 32\"",
+      text: "dual 32-inch professional monitors for design and development work",
+    },
+    {
+      name: "Macbook M4 Pro 16\"",
+      text: "my main development machine",
+    },
+    {
+      name: "Herman Miller Flo X Large Dual Monitor Arm",
+      text: "for optimal monitor positioning and desk space",
+    },
+    {
+      name: "Fuller Standing Desk",
+      text: "height-adjustable desk for better ergonomics",
+    },
+    {
+      name: "Logitech MX Vertical",
+      text: "ergonomic vertical mouse for better wrist positioning",
+    },
+    {
+      name: "Keyboard Keycron Q6 MAX with custom Red and Blue Gatreon switches specially positioned",
+      text: "custom mechanical keyboard with strategically placed switches",
+    },
+    {
+      name: "Herman Miller Aeron chair",
+      text: "ergonomic office chair for long coding sessions",
+    },
+    {
+      name: "Upsy Desk modifier to remote control desk",
+      text: "remote control upgrade for standing desk automation",
+    },
+    {
+      name: "Insta360 Link camera",
+      text: "AI-powered webcam for video calls and streaming",
+    },
+    {
+      name: "PreSonus Eris 3.5BT Gen 2 Studio Monitor",
+      text: "professional studio monitors for audio quality",
+    },
+    {
+      name: "Belkin Thunderbolt 4 Dock Pro",
+      text: "high-performance docking station for connectivity",
+    },
+    {
+      name: "Elgato Stream Deck Neo",
+      text: "customizable control pad for shortcuts and automation",
     },
   ]
 
@@ -132,6 +193,17 @@ export default function Page() {
               >
                 <strong>{item.name}</strong> – {item.text}
               </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h3 className="text-xl font-semibold mb-2">Hardware</h3>
+        <ul className="space-y-2">
+          {hardware.map((item, i) => (
+            <li key={`hardware-item-${i}`}>
+              <strong>{item.name}</strong> – {item.text}
             </li>
           ))}
         </ul>
