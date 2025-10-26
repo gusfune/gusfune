@@ -31,6 +31,17 @@ export default function Page() {
         <p>Here are a few of the events I have spoken at over the years.</p>
         <ol className="space-y-2 mb-8">
           <li>
+            <a
+              href="https://machalliance.org/events/mach-x-2025-london"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>MACH X (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - Oct &apos;25)</strong> - Panelist
+              in 3 panels and keynote speaker on Engineering track: "Harder,
+              Better, Faster, Stronger – BÆRSkin's FAFO playbook for AI success"
+            </a>
+          </li>
+          <li>
             <strong>
               Participation on The Ecommerce Toolbox: Expert Perspectives (🔈
               Podcast - May &apos;25)

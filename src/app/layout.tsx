@@ -18,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={source.className}>
         <div className="grid grid-cols-12 gap-4 relative">
+          {/*
           <aside
             className={cn(
               "col-span-12 p-2 bg-[#fbca3c] text-black relative z-10",
@@ -34,6 +35,7 @@ export default function RootLayout({
               </a>
             </p>
           </aside>
+          */}
           <div className="static col-span-12 sm:col-span-2 z-0">
             <div
               className={cn(

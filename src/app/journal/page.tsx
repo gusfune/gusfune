@@ -38,6 +38,20 @@ export default async function Page() {
         <ol className="space-y-2 mb-8">
           <li>
             <a
+              href="https://cmscritic.com/the-x-factor-is-ai-mach-alliances-mach-x-and-ai-exchange-hackathon-help-enterprises-face-the-future"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              QUOTE:&nbsp;
+              <strong>
+                The AI X-Factor: MACH Alliance’s 'MACH X' and AI Exchange
+                Hackathon Help Enterprises Face the Future
+              </strong>
+              - CMS Critic - October &apos;25
+            </a>
+          </li>
+          <li>
+            <a
               href="https://leaddev.com/uncategorized/how-get-most-out-ai-tooling"
               target="_blank"
               className="underline hover:opacity-75"
