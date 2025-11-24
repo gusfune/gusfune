@@ -35,11 +35,6 @@ export const viewport: Viewport = {
 export default function Page() {
   const apps = [
     {
-      name: "Comet",
-      url: "https://www.perplexity.ai/comet",
-      text: "Since ARC became JIRA... Comet became my superpowered browser",
-    },
-    {
       name: "1Password",
       url: "https://1password.com/",
       text: "sudo I am the network administrator, my voice is my password, verify me*",
@@ -106,11 +101,11 @@ export default function Page() {
 
   const hardware = [
     {
-      name: "2x ASUS ProArt Display PA329CV Professional Monitor 32\"",
+      name: '2x ASUS ProArt Display PA329CV Professional Monitor 32"',
       text: "dual 32-inch professional monitors for design and development work",
     },
     {
-      name: "Macbook M4 Pro 16\"",
+      name: 'Macbook M4 Pro 16"',
       text: "my main development machine",
     },
     {
