@@ -1,0 +1,74 @@
+# Gus Fune - Personal Website
+
+> This file provides context about gusfune.com for large language models.
+
+## About
+
+Gus Fune is a CTO and Managing Partner at BÆRSkin Tactical Supply Co., where he has been building tools, tech, and teams since 2021. He is also an Ambassador at the MACH Alliance, advocating for open and best-of-breed enterprise technology in e-commerce ecosystems.
+
+## Background
+
+- Originally from Brasília, Brazil
+- Currently lives in Scotland, UK (Kingdom of Fife)
+- Self-taught programmer with a background in Advertising and Film Production
+- Later studied game design/development and completed an MBA
+- Brown belt (1st kyu) in Judo
+- Learning to pilot aircraft (working toward PPL)
+
+## Professional Experience
+
+- CTO and Managing Partner at BÆRSkin Tactical / Div Brands (2021-present)
+- MACH Alliance Ambassador (2024-present)
+- Subject Matter Expert for Certified MACH Architect Professional certification (2025)
+- Co-founded Off-Script (2020) - Named one of top startups by Wired UK
+- Co-founded Wololo (2017) - Raised Pre-seed
+- Founded Epic Awesome development agency (2011)
+- Co-founded Papo de Homem magazine (2007) - Grew to 2.5 million readers
+
+## Expertise
+
+- E-commerce and retail technology
+- MACH architecture (Microservices, API-first, Cloud-native, Headless)
+- Team leadership and management
+- Composable commerce
+- AI integration in e-commerce
+
+## Speaking
+
+Gus is an active speaker at technology conferences and events including:
+- MACH X (London, 2025) - Keynote and panels
+- The Composable Conference (Chicago, 2025)
+- MACH Three (New York City, 2024)
+- LeadDev London (2022)
+- Turing Fest (Edinburgh, 2022)
+- HasuraCon (2021)
+
+## Certifications
+
+- MACH Certified Architect Professional
+- AWS Certified
+- Azure Certified
+- Google Cloud Certified
+- Certified Scrum Product Owner (CSPO)
+
+## Site Structure
+
+- / - Home page with introduction and overview
+- /about - Detailed biography and work history
+- /journal - Publications, articles, and blog posts
+- /speaking - Complete list of speaking engagements
+- /uses - Tools, apps, and hardware setup
+
+## Contact
+
+- Email: gus@fune.uk
+- LinkedIn: linkedin.com/in/gusfune
+- Twitter/X: twitter.com/gusfune
+- GitHub: github.com/gusfune
+
+Note: For BÆRSkin Tactical customer support, contact support@baerskintactical.com
+
+## Website
+
+- URL: https://gusfune.com
+- Built with: Next.js, React, TypeScript, Tailwind CSS

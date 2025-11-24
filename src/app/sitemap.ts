@@ -9,12 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.metadata.publishedAt,
   }))
 
-  // Define your routes here
-  const routes = ["", "/about", "/journal", "/speaking", "/contact"]
+  const routes = ["", "/about", "/journal", "/speaking", "/uses"]
 
   const sitemap: MetadataRoute.Sitemap = routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(2025, 3, 8),
+    lastModified: new Date(2025, 10, 24),
     changeFrequency: "weekly",
   }))
 
