@@ -32,6 +32,19 @@ export default function Page() {
         <ol className="space-y-2 mb-8">
           <li>
             <a
+              href="https://community.machalliance.org/home/events/ask-an-ambassador-ai-in-action-mach-x-takeaways-z6bnp1oqsr"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>
+                Ask an Ambassador: AI in Action — MACH X Takeaways (Remote - Nov
+                &apos;25)
+              </strong>{" "}
+              - Hosted Ambassador panel discussion
+            </a>
+          </li>
+          <li>
+            <a
               href="https://machalliance.org/events/mach-x-2025-london"
               target="_blank"
               className="underline hover:opacity-75"
@@ -40,6 +53,21 @@ export default function Page() {
               in 3 panels and keynote speaker on Engineering track: "Harder,
               Better, Faster, Stronger – BÆRSkin's FAFO playbook for AI success"
             </a>
+          </li>
+          <li>
+            <strong>BetterTech (🔈 Podcast - Sep &apos;25)</strong> - The Brave
+            New World of eCommerce
+            <ul className="list-disc list-inside ml-4">
+              <li>
+                <a
+                  href="https://www.youtube.com/watch?v=y7BdVVP4ay4"
+                  target="_blank"
+                  className="underline hover:opacity-75"
+                >
+                  YouTube
+                </a>
+              </li>
+            </ul>
           </li>
           <li>
             <strong>
@@ -188,9 +216,9 @@ export default function Page() {
         </ol>
 
         <p className="mt-4">
-          I&apos;ve also jonined joined in on some podcasts and other events
-          that I, sadly, no longer have links for. These are known as &quot;the
-          lost files&quot;
+          I&apos;ve also joined in on some podcasts and other events that I,
+          sadly, no longer have links for. These are known as &quot;the lost
+          files&quot;
         </p>
         <ul className="space-y-2 mt-1">
           <li>

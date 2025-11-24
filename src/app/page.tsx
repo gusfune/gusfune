@@ -171,6 +171,17 @@ export default function Page() {
 
         <ol className="space-y-2 mb-4">
           <li>
+            <a
+              href="https://machalliance.org/events/mach-x-2025-london"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>MACH X (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - Oct &apos;25)</strong> - Panelist
+              in 3 panels and keynote speaker on Engineering track: "Harder,
+              Better, Faster, Stronger – BÆRSkin's FAFO playbook for AI success"
+            </a>
+          </li>
+          <li>
             <strong>BetterTech (🔈 Podcast - Sep &apos;25)</strong> - The Brave
             New World of eCommerce
             <ul className="list-disc list-inside ml-4">
@@ -223,32 +234,6 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://machalliance.org/mach-annual-conference"
-              target="_blank"
-              className="underline hover:opacity-75"
-            >
-              <strong>
-                The Composable Conference 2025 (Chicago, 🇺🇸 - April &apos;25)
-              </strong>{" "}
-              - Co-hosted workshop: Workshop: Remaining Committed How to stay
-              true to your mission and member of Jury for the MACH Impact Awards
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://machalliance.org/events/business-value-of-mach-technologies"
-              target="_blank"
-              className="underline hover:opacity-75"
-            >
-              <strong>
-                Business Value of MACH Technologies (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - October
-                &apos;24)
-              </strong>{" "}
-              - Panelist
-            </a>
-          </li>
-          <li>
-            <a
               href="https://machalliance.org/events/mach-three"
               target="_blank"
               className="underline hover:opacity-75"
@@ -283,6 +268,16 @@ export default function Page() {
               </strong>{" "}
               - Development setup: how an important part of your toolset is
               often overlooked (short version)
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://hasura.io/events/hasura-con-2021/speakers/gus-fune/"
+              target="_blank"
+              className="underline hover:opacity-75"
+            >
+              <strong>HasuraCon&apos;21 (remote - June &apos;21)</strong> -
+              Building Off Script on Hasura from day 0: what we learned
             </a>
           </li>
         </ol>
