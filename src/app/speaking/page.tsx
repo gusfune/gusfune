@@ -254,6 +254,13 @@ export default function Page() {
           I am available for speaking at events and conferences.{" "}
           <Link href="/#contact">Contact me</Link> for more information.
         </p>
+        <p className="font-semibold">
+          Note: For BÆRSkin Tactical customer support or product issues, please
+          use the official channel:{" "}
+          <a href="mailto:support@baerskintactical.com">
+            support@baerskintactical.com
+          </a>
+        </p>
       </section>
     </main>
   )

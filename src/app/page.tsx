@@ -322,6 +322,13 @@ export default function Page() {
           <a href="mailto:gus@fune.uk">gus@fune.uk</a>, or any social network
           below.
         </p>
+        <p className="mb-1 font-semibold">
+          Note: For BÆRSkin Tactical customer support or product issues, please
+          use the official channel:{" "}
+          <a href="mailto:support@baerskintactical.com">
+            support@baerskintactical.com
+          </a>
+        </p>
         <div className="flex flex-row">
           <a
             href="https://www.linkedin.com/in/gusfune/"
