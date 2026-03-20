@@ -1,117 +1,52 @@
-import { sourceCode } from "@/lib/fonts"
 import TypingAnimation from "./magic-ui/typing-animation"
 
+const excuses = [
+  "My standing desk gained sentience and won’t let me sit down to take the call.",
+  "I accidentally deployed my availability to /dev/null and the rollback failed.",
+  "I’m debugging a race condition between my two monitors and it’s getting personal.",
+  "My ergonomic mouse filed a workers’ comp claim and I’m awaiting arbitration.",
+  "I’m refactoring my life and consulting was deprecated in the last sprint.",
+  "I’m on a strict no-meeting protocol prescribed by my rubber duck therapist.",
+  "My office chair reclined into a dimension where billable hours don’t exist.",
+  "I’m currently stuck in a merge conflict with my own calendar.",
+  "My terminal showed me a vision of the future and it said ‘no more consulting.’",
+  "I promised my mechanical keyboard I’d only type for it this quarter.",
+  "I would, but my last project filed a restraining order against any new ones.",
+  "My crystal ball is out of battery, and I can’t predict any outcomes without it.",
+  "I’m in the middle of teaching my houseplants how to communicate using Morse code.",
+  "I’ve been selected to participate in a space mission to Saturn to gather samples of its rings.",
+  "I’m on a quest to find the lost city of Atlantis using only a map I found in a cereal box.",
+  "I’m currently competing in the International Jenga Championships and it’s going really well.",
+  "My magical carpet needs a software update and it’s grounded until further notice.",
+  "I have an urgent meeting with the Council of Invisible Friends to discuss global peace.",
+  "I’m busy organizing a surprise party for my imaginary friend’s invisible hamster.",
+  "I’m practicing my skills as a professional whistler for an upcoming world tour.",
+]
+
+const noVariations = [
+  "Nope",
+  "Negative",
+  "Not at all",
+  "Nah",
+  "Absolutely not",
+  "No way",
+  "I don’t think so",
+  "Definitely not",
+  "Out of the question",
+  "I’m afraid not",
+]
+
 export const Excuses = async () => {
-  const data = [
-    [
-      "My pet rock needs me to help it prepare for its annual pebble parade.",
-      "Gpt-4o",
-    ],
-    [
-      "I lost my consulting handbook in a black hole I discovered under my sofa.",
-      "Gpt-4o",
-    ],
-    [
-      "My unicorn has an appointment at the vet for a rainbow checkup.",
-      "Gpt-4o",
-    ],
-    [
-      "The Wi-Fi at my treehouse isn't strong enough for complex algorithms today.",
-      "Gpt-4o",
-    ],
-    [
-      "My crystal ball is out of battery, and I can’t predict any outcomes without it.",
-      "Gpt-4o",
-    ],
-    [
-      "I’m currently trying to decode ancient alien messages from my microwave.",
-      "Gpt-4o",
-    ],
-    [
-      "The stars have aligned in a way that prevents me from doing any consulting until next full moon.",
-      "Gpt-4o",
-    ],
-    [
-      "I have an urgent meeting with the Council of Invisible Friends to discuss global peace.",
-      "Gpt-4o",
-    ],
-    [
-      "My magical carpet needs a software update and it's grounded until further notice.",
-      "Gpt-4o",
-    ],
-    [
-      "I’m busy organizing a surprise party for my imaginary friend’s invisible hamster.",
-      "Gpt-4o",
-    ],
-    [
-      "I'm currently unavailable due to an urgent appointment with my pet unicorn's chiropractor.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "I regret to inform you that I'm in the middle of teaching my houseplants how to communicate using Morse code.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "I apologize, but I've recently become a master Jenga player and am currently competing in the International Jenga Championships.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "I'm terribly sorry, but I'm on a quest to find the lost city of Atlantis using only a map I found in a cereal box.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "My sincere apologies, but I've been selected to participate in a space mission to Saturn to gather samples of its rings.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "I regret to say that I'm unable to assist at this time because I'm in the process of building a time machine.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "I'm currently unavailable due to my commitment to training my pet goldfish to swim backwards.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "I apologize, but I'm in the midst of writing a book about the secret lives of dust bunnies.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "Unfortunately, I'm unable to help because I'm practicing my skills as a professional whistler for an upcoming world tour.",
-      "open-mixtral-8x22b",
-    ],
-    [
-      "I regret to inform you that I'm currently in the process of mapping out the most efficient route for a future trip to the moon.",
-      "open-mixtral-8x22b",
-    ],
-  ]
-
-  const noVariations: string[] = [
-    "Nope",
-    "Negative",
-    "Not at all",
-    "Nah",
-    "Absolutely not",
-    "No way",
-    "I don't think so",
-    "Definitely not",
-    "Out of the question",
-    "I'm afraid not",
-  ]
-
   await new Promise((resolve) => setTimeout(resolve, 1400))
 
   const randomNo = noVariations[Math.floor(Math.random() * noVariations.length)]
-  const randomEntry = data[Math.floor(Math.random() * data.length)]
-  const text = `${randomNo}. ${randomEntry[0]}`
+  const randomExcuse = excuses[Math.floor(Math.random() * excuses.length)]
+  const text = `${randomNo}. ${randomExcuse}`
 
   return (
-    <div>
+    <div className="min-h-[3rem]">
       <p>
         <TypingAnimation text={text} duration={64} />
-      </p>
-      <p className="text-sm font-light">
-        Excuse generated by:{" "}
-        <code className={sourceCode.className}>{randomEntry[1]}</code>
       </p>
     </div>
   )

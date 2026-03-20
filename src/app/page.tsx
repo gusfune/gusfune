@@ -9,7 +9,7 @@ import { sourceCode } from "@/lib/fonts"
 import Link from "next/link"
 
 const Excuses = dynamic(() => import("@/components/Excuses"), {
-  loading: () => <Skeleton className="w-full h-[48px]" />,
+  loading: () => <Skeleton className="w-full min-h-[3rem]" />,
 })
 
 export default function Page() {
