@@ -30,6 +30,8 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
+  --color-link: hsl(var(--link));
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -104,8 +106,10 @@
     --muted: 160 20% 93%;
     --muted-foreground: 176 30% 40%;
 
-    --accent: 160 30% 90%;
+    --accent: 160 25% 88%;
     --accent-foreground: 176 60% 12%;
+
+    --link: 176 80% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -145,6 +149,7 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+    --link: 180 60% 70%;
   }
 }
 
@@ -159,10 +164,10 @@
     color: hsl(var(--primary));
   }
   a {
-    @apply underline decoration-foreground/30 underline-offset-2 transition-colors duration-200;
+    @apply text-link underline decoration-link/30 underline-offset-2 transition-colors duration-200;
   }
   a:hover {
-    @apply decoration-foreground/80;
+    @apply decoration-link/80;
   }
 }
 

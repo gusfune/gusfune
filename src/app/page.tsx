@@ -14,31 +14,29 @@ const Excuses = dynamic(() => import("@/components/Excuses"), {
 
 export default function Page() {
   return (
-    <div className="space-y-16 max-w-2xl">
-      <section id="intro" className="pt-4 sm:pt-8">
+    <div className="max-w-2xl">
+      <section id="intro" className="pt-4 sm:pt-8 mb-20">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight pb-4 leading-tight">
           Hi, I&apos;m Gus Fune
         </h2>
-        <p className="text-lg">
+        <p className="text-lg leading-relaxed">
           I&apos;m a CTO who has delivered over 100 products to scale. Some of
           these products were even developed before the cloud!
         </p>
-        <p className="text-lg">I talk about management, leadership, e-commerce, AI and tech.</p>
+        <p className="text-lg mt-1">I talk about management, leadership, e-commerce, AI and tech.</p>
       </section>
 
-      <section id="work">
-        <h3 className="text-2xl font-bold tracking-tight mb-3">What do you do?</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 mb-4 gap-4 my-4">
+      <section id="work" className="mb-16">
+        <h3 className="text-2xl font-bold tracking-tight mb-5">What do you do?</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           <div className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2">
-              <Image
-                src={BaerImage}
-                alt="BÆRSkin Tactical Supply Co."
-                width={120}
-                height={64}
-                className="sm:mx-auto block aspect-square"
-              />
-            </div>
+            <Image
+              src={BaerImage}
+              alt="BÆRSkin Tactical Supply Co."
+              width={120}
+              height={64}
+              className="block aspect-square"
+            />
             <p>
               I&apos;m the <strong>CTO and Managing Partner</strong> at{" "}
               <a href="https://baerskintactical.com" target="_blank" rel="noopener noreferrer">
@@ -49,15 +47,13 @@ export default function Page() {
             </p>
           </div>
           <div className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2">
-              <Image
-                src={MachAmbassadorImage}
-                alt="MACH Alliance Ambassador"
-                width={120}
-                height={64}
-                className="sm:mx-auto block aspect-square"
-              />
-            </div>
+            <Image
+              src={MachAmbassadorImage}
+              alt="MACH Alliance Ambassador"
+              width={120}
+              height={64}
+              className="block aspect-square"
+            />
             <p>
               I&apos;m also an <strong>Ambassador</strong> at the{" "}
               <a
@@ -119,7 +115,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section id="certifications">
+      <section id="certifications" className="mb-16">
         <h3 className="text-2xl font-bold tracking-tight mb-3">Do you have badges?</h3>
         <p className="mb-8">
           I GOT BADGES! Everyone loves a certification/credential badge, here
@@ -128,23 +124,25 @@ export default function Page() {
         <CertificationList />
       </section>
 
-      <section id="services">
+      <section id="services" className="mb-16">
         <h3 className="text-2xl font-bold tracking-tight mb-3">
           Are you available for consulting work?
         </h3>
-        <Excuses />
+        <div className="bg-accent/50 rounded-lg p-4 sm:p-5">
+          <Excuses />
+        </div>
       </section>
 
-      <section id="speaking">
+      <section id="speaking" className="mb-16">
         <h3 className="text-2xl font-bold tracking-tight mb-3">
           What about public speaking?
         </h3>
-        <p className="mb-1">
+        <p className="mb-3">
           Yes, I have joined a couple of high-profile and cool events over the
           years. Here are the most recent ones with links:
         </p>
 
-        <ol className="space-y-2 mb-4">
+        <ol className="space-y-3 mb-4">
           <li>
             <a
               href="https://machalliance.org/events/mach-x-2025-london"
@@ -274,7 +272,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section id="ecommerce">
+      <section id="ecommerce" className="mb-12">
         <h3 className="text-2xl font-bold tracking-tight mb-3">
           What&apos;s the correct way to spell &ldquo;e-commerce&rdquo;?
         </h3>
@@ -290,7 +288,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section id="writing">
+      <section id="writing" className="mb-16">
         <h3 className="text-2xl font-bold tracking-tight mb-3">
           Do you write about the things you talk about?
         </h3>
@@ -299,7 +297,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section id="contact">
+      <section id="contact" className="mb-8">
         <h3 className="text-2xl font-bold tracking-tight mb-3">Can I get in touch?</h3>
         <p className="mb-1">
           Yes, you can contact me at{" "}
@@ -319,7 +317,7 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
+            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
             <Linkedin size={32} />
           </a>
@@ -328,7 +326,7 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
-            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
+            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
             <Twitter size={32} />
           </a>
@@ -337,7 +335,7 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
+            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
             <Github size={32} />
           </a>
@@ -346,7 +344,7 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
-            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
+            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
             <Youtube size={32} />
           </a>

@@ -10,7 +10,7 @@ export default function Page() {
     <div className="space-y-8 max-w-2xl">
       <section className="space-y-4">
         <h1 className="text-4xl font-extrabold tracking-tight">About</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 space-y-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Image
             src="/GusFune2025-005-small.jpg"
             alt="Gus Fune"
@@ -18,7 +18,7 @@ export default function Page() {
             height={450}
             className="w-full mx-auto block"
           />
-          <div className="space-y-2">
+          <div className="space-y-3">
             <p>
               If you are here, you probably know something about me. I&#39;m
               Gus, a tech/business person that likes buinding things, and
@@ -129,36 +129,9 @@ export default function Page() {
           Over the years I managed to work with a ton of cool brands and
           companies. Here are a few companies from my selection:
         </p>
-        <ul className="flex flex-row shrink-0 flex-wrap gap-2 font-light">
-          <li>3M</li>
-          <li>Absolut Vodka</li>
-          <li>AmBev</li>
-          <li>Behold Studios</li>
-          <li>BMW</li>
-          <li>Bradesco</li>
-          <li>Citibank</li>
-          <li>FIAT</li>
-          <li>GOL Airlines</li>
-          <li>Government of Brazil</li>
-          <li>Grupo Pão de Acúcar</li>
-          <li>HBO</li>
-          <li>Heineken</li>
-          <li>Huawei</li>
-          <li>Jack Daniels</li>
-          <li>John Deere</li>
-          <li>L’Occitane Cosmetics</li>
-          <li>McDonald&#39;s</li>
-          <li>MINI</li>
-          <li>Motorola</li>
-          <li>Nestlé</li>
-          <li>Peugeot</li>
-          <li>Rogue Snail</li>
-          <li>Scania</li>
-          <li>The Coca-Cola Company</li>
-          <li>Volkswagen</li>
-          <li>WWF</li>
-          <li>Xiaomi</li>
-        </ul>
+        <p className="leading-relaxed">
+          3M &middot; Absolut Vodka &middot; AmBev &middot; Behold Studios &middot; BMW &middot; Bradesco &middot; Citibank &middot; FIAT &middot; GOL Airlines &middot; Government of Brazil &middot; Grupo P&atilde;o de A&ccedil;&uacute;car &middot; HBO &middot; Heineken &middot; Huawei &middot; Jack Daniels &middot; John Deere &middot; L&#39;Occitane Cosmetics &middot; McDonald&#39;s &middot; MINI &middot; Motorola &middot; Nestl&eacute; &middot; Peugeot &middot; Rogue Snail &middot; Scania &middot; The Coca-Cola Company &middot; Volkswagen &middot; WWF &middot; Xiaomi
+        </p>
       </section>
     </div>
   )
