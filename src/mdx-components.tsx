@@ -8,7 +8,7 @@ import Image, { ImageProps } from "next/image"
 // components from other libraries, and more.
 
 const customComponents = {
-  h1: ({ children }) => <h1 className="text-4xl font-bold">{children}</h1>,
+  h1: ({ children }) => <h1 className="text-4xl font-extrabold tracking-tight">{children}</h1>,
   img: (props) => (
     <Image
       sizes="100vw"
@@ -16,12 +16,12 @@ const customComponents = {
       {...(props as ImageProps)}
     />
   ),
-  h2: ({ children }) => <h2 className="text-3xl font-bold py-2">{children}</h2>,
-  h3: ({ children }) => <h3 className="text-2xl font-bold">{children}</h3>,
+  h2: ({ children }) => <h2 className="text-3xl font-bold tracking-tight py-2">{children}</h2>,
+  h3: ({ children }) => <h3 className="text-2xl font-bold tracking-tight">{children}</h3>,
   p: ({ children }) => <p className="">{children}</p>,
   ul: ({ children }) => <ul className="list-disc list-inside">{children}</ul>,
   blockquote: ({ children }) => (
-    <blockquote className="border-l-2 border-gray-300 pl-4 italic text-lg">
+    <blockquote className="border-l-3 border-foreground/30 pl-5 italic text-lg">
       {children}
     </blockquote>
   ),

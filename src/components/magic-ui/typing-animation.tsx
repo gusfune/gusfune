@@ -1,7 +1,7 @@
 "use client"
 
 import { cn } from "@/lib/utils"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface TypingAnimationProps {
   text: string
@@ -15,13 +15,25 @@ export default function TypingAnimation({
   className,
 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = useState<string>("")
-  const [i, setI] = useState<number>(0)
+  const indexRef = useRef(0)
 
   useEffect(() => {
+    indexRef.current = 0
+    setDisplayedText("")
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+
+    if (prefersReducedMotion) {
+      setDisplayedText(text)
+      return
+    }
+
     const typingEffect = setInterval(() => {
-      if (i < text.length) {
-        setDisplayedText((prevState) => prevState + text.charAt(i))
-        setI(i + 1)
+      if (indexRef.current < text.length) {
+        setDisplayedText(text.substring(0, indexRef.current + 1))
+        indexRef.current += 1
       } else {
         clearInterval(typingEffect)
       }
@@ -30,11 +42,11 @@ export default function TypingAnimation({
     return () => {
       clearInterval(typingEffect)
     }
-  }, [duration, i, text])
+  }, [duration, text])
 
   return (
     <span className={cn("tracking-[-0.02em] drop-shadow-xs", className)}>
-      {displayedText ? displayedText : text}
+      {displayedText}
     </span>
   )
 }

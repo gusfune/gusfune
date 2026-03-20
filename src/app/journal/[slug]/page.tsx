@@ -89,16 +89,16 @@ export default async function Blog({ params }: PageProps) {
             "url": `${baseUrl}/journal/${post.slug}`,
             "author": {
               "@type": "Person",
-              "name": "My Portfolio",
+              "name": "Gus Fune",
             },
           }),
         }}
       />
-      <h1 className="title font-semibold text-4xl tracking-tighter">
+      <h1 className="font-extrabold text-4xl sm:text-5xl tracking-tight leading-tight">
         {post.metadata.title}
       </h1>
       <div className="flex justify-between items-center my-2">
-        <p className="text-sm text-neutral-600">
+        <p className="text-sm text-muted-foreground">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>

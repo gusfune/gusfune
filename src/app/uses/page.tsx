@@ -1,35 +1,7 @@
-import Image from "next/image"
-import { CertificationList } from "@/components/Certification"
-import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
-import { Metadata, Viewport } from "next"
-import { Skeleton } from "@/components/ui/skeleton"
-import dynamic from "next/dynamic"
-import Construction from "@assets/construction.gif"
-
-const Excuses = dynamic(() => import("@/components/Excuses"), {
-  loading: () => <Skeleton className="w-full h-[48px]" />,
-})
+import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Uses | Gus Fune",
-  description: "e-commerce, tech and stuff...",
-  creator: "Gus Fune",
-  // icons: {
-  //   icon: '/icon.png',
-  //   shortcut: '/shortcut-icon.png',
-  //   apple: '/apple-icon.png',
-  //   other: {
-  //     rel: 'apple-touch-icon-precomposed',
-  //     url: '/apple-touch-icon-precomposed.png',
-  //   },
-  // },
-}
-
-export const viewport: Viewport = {
-  themeColor: "white",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  title: "Uses",
 }
 
 export default function Page() {
@@ -151,22 +123,23 @@ export default function Page() {
   ]
 
   return (
-    <main className="space-y-8 max-w-2xl">
+    <div className="space-y-12 max-w-2xl">
       <section id="intro">
-        <h2 className="text-2xl">
-          Hi, I&apos;m <strong>Gus Fune</strong>
+        <h2 className="text-4xl font-extrabold tracking-tight">
+          Hi, I&apos;m Gus Fune
         </h2>
         <p>And these are the stuff I use...</p>
       </section>
 
       <section>
-        <h3 className="text-xl font-semibold mb-2">Apps</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">Apps</h3>
         <ul className="space-y-2">
           {apps.map((item, i) => (
             <li key={`dev-item-${i}`}>
               <a
                 href={item.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="underline hover:opacity-75"
               >
                 <strong>{item.name}</strong> – {item.text}
@@ -177,13 +150,14 @@ export default function Page() {
       </section>
 
       <section>
-        <h3 className="text-xl font-semibold mb-2">Dev Tools</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">Dev Tools</h3>
         <ul className="space-y-2">
           {dev.map((item, i) => (
             <li key={`dev-item-${i}`}>
               <a
                 href={item.url}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="underline hover:opacity-75"
               >
                 <strong>{item.name}</strong> – {item.text}
@@ -194,7 +168,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h3 className="text-xl font-semibold mb-2">Hardware</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">Hardware</h3>
         <ul className="space-y-2">
           {hardware.map((item, i) => (
             <li key={`hardware-item-${i}`}>
@@ -203,6 +177,6 @@ export default function Page() {
           ))}
         </ul>
       </section>
-    </main>
+    </div>
   )
 }

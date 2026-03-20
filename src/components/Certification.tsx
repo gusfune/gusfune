@@ -18,7 +18,7 @@ export const Certification = ({ link, image, title }: CertificationProps) => (
     href={link}
     target="_blank"
     rel="noreferrer"
-    className="hover:rounded-lg hover:bg-slate-100"
+    className="hover:rounded-lg hover:bg-accent"
   >
     <Image
       src={image}

@@ -1,13 +1,34 @@
-import { Source_Code_Pro, Source_Sans_3 } from "next/font/google"
 import "./globals.css"
-import { cn } from "@/utils"
+import { cn } from "@/lib/utils"
+import { sourceSans, sourceCode } from "@/lib/fonts"
 import { Header } from "@/components/Header"
 import { Nav } from "@/components/Nav"
 import { Analytics } from "@vercel/analytics/react"
+import { Metadata, Viewport } from "next"
 import Script from "next/script"
 
-const source = Source_Sans_3({ subsets: ["latin"] })
-const code = Source_Code_Pro({ subsets: ["latin"] })
+export const metadata: Metadata = {
+  title: {
+    default: "Gus Fune",
+    template: "%s | Gus Fune",
+  },
+  description: "e-commerce, tech and stuff...",
+  creator: "Gus Fune",
+  icons: {
+    icon: "/favicon-32x32.png",
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+    other: {
+      rel: "apple-touch-icon-precomposed",
+      url: "/apple-touch-icon.png",
+    },
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: "white",
+  initialScale: 1,
+}
 
 export default function RootLayout({
   children,
@@ -16,7 +37,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={source.className}>
+      <body className={sourceSans.className}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground"
+        >
+          Skip to main content
+        </a>
         <div className="grid grid-cols-12 gap-4 relative">
           {/*
           <aside
@@ -40,25 +67,25 @@ export default function RootLayout({
             <div
               className={cn(
                 "sm:fixed sm:top-8 sm:left-0 sm:w-2/12 w-full text-center flex flex-row sm:flex-col gap-4 justify-between items-center sm:justify-start sm:items-center z-0",
-                code.className
+                sourceCode.className
               )}
             >
               <Header />
               <Nav />
             </div>
           </div>
-          <main className="col-span-12 sm:col-span-10 p-4">{children}</main>
+          <main id="main-content" className="col-span-12 sm:col-span-10 px-4 py-6 sm:py-8">{children}</main>
         </div>
 
-        <div className="text-xs text-center my-4">
-          <p className="">
-            Copyright &copy; 2020-2025 - Gus Fune. All rights reserved
+        <div className="text-xs text-muted-foreground text-center py-8 mt-8 border-t border-border">
+          <p>
+            Copyright &copy; 2020-{new Date().getFullYear()} - Gus Fune. All rights reserved
             <br />
             Photography by{" "}
             <a
               href="https://www.juliebee.co.uk/"
               target="_blank"
-              className="underline"
+              rel="noopener noreferrer"
             >
               Julie Broadfoot
             </a>{" "}

@@ -1,59 +1,33 @@
 import Image from "next/image"
 import BaerImage from "@assets/baerskin.svg"
-// import MachImage from "@assets/mach.svg"
 import MachAmbassadorImage from "@assets/ambassador-certified-25.svg"
 import { CertificationList } from "@/components/Certification"
 import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
-import { Metadata, Viewport } from "next"
 import { Skeleton } from "@/components/ui/skeleton"
 import dynamic from "next/dynamic"
-import { Source_Code_Pro } from "next/font/google"
+import { sourceCode } from "@/lib/fonts"
 import Link from "next/link"
-
-const code = Source_Code_Pro({ subsets: ["latin"] })
 
 const Excuses = dynamic(() => import("@/components/Excuses"), {
   loading: () => <Skeleton className="w-full h-[48px]" />,
 })
 
-export const metadata: Metadata = {
-  title: "Gus Fune",
-  description: "e-commerce, tech and stuff...",
-  creator: "Gus Fune",
-  icons: {
-    icon: "/favicon-32x32.png",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon.png",
-    },
-  },
-}
-
-export const viewport: Viewport = {
-  themeColor: "white",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-}
-
 export default function Page() {
   return (
-    <main className="space-y-12 max-w-2xl">
-      <section id="intro">
-        <h2 className="text-2xl pb-4">
-          Hi, I&apos;m <strong>Gus Fune</strong>
+    <div className="space-y-16 max-w-2xl">
+      <section id="intro" className="pt-4 sm:pt-8">
+        <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight pb-4 leading-tight">
+          Hi, I&apos;m Gus Fune
         </h2>
-        <p>
+        <p className="text-lg">
           I&apos;m a CTO who has delivered over 100 products to scale. Some of
           these products were even developed before the cloud!
         </p>
-        <p>I talk about management, leadership, e-commerce, AI and tech.</p>
+        <p className="text-lg">I talk about management, leadership, e-commerce, AI and tech.</p>
       </section>
 
       <section id="work">
-        <h3 className="text-xl font-semibold mb-2">What do you do?</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">What do you do?</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 mb-4 gap-4 my-4">
           <div className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2">
@@ -67,7 +41,7 @@ export default function Page() {
             </div>
             <p>
               I&apos;m the <strong>CTO and Managing Partner</strong> at{" "}
-              <a href="https://baerskintactical.com" target="_blank">
+              <a href="https://baerskintactical.com" target="_blank" rel="noopener noreferrer">
                 BÆRskin Tactical
               </a>
               , been here building the tools, tech and people since the brand
@@ -89,7 +63,7 @@ export default function Page() {
               <a
                 href="https://machalliance.org/"
                 target="_blank"
-                className="underline"
+                rel="noopener noreferrer"
               >
                 MACH Alliance
               </a>
@@ -98,17 +72,18 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <hr className="w-1/3 mb-4 bg-slate-700 mx-auto" />
+        <hr className="w-16 h-0.5 my-6 bg-foreground/30 border-0 mx-0" />
         <p className="font-light">
           My previous roles include working at a few startups (
           <a
             href="https://www.wired.com/story/europe-hottest-startups-2021/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             that you might
           </a>{" "}
           or{" "}
-          <a href="https://useflow.tech/" target="_blank">
+          <a href="https://useflow.tech/" target="_blank" rel="noopener noreferrer">
             might not heard of
           </a>{" "}
           ). I have also done a lot of consulting work for companies in various
@@ -120,7 +95,7 @@ export default function Page() {
           <a
             href="https://thisiscodebase.com/"
             target="_blank"
-            className="underline"
+            rel="noopener noreferrer"
           >
             Codebase
           </a>
@@ -128,7 +103,7 @@ export default function Page() {
           <a
             href="https://techscaler.org/"
             target="_blank"
-            className="underline"
+            rel="noopener noreferrer"
           >
             TechScaler
           </a>{" "}
@@ -136,7 +111,7 @@ export default function Page() {
           <a
             href="https://labs.uk.barclays/"
             target="_blank"
-            className="underline"
+            rel="noopener noreferrer"
           >
             Barclays Eagle Labs
           </a>{" "}
@@ -145,7 +120,7 @@ export default function Page() {
       </section>
 
       <section id="certifications">
-        <h3 className="text-xl font-semibold mb-2">Do you have badges?</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">Do you have badges?</h3>
         <p className="mb-8">
           I GOT BADGES! Everyone loves a certification/credential badge, here
           are a few of my favourite ones.
@@ -154,14 +129,14 @@ export default function Page() {
       </section>
 
       <section id="services">
-        <h3 className="text-xl font-semibold mb-2">
+        <h3 className="text-2xl font-bold tracking-tight mb-3">
           Are you available for consulting work?
         </h3>
         <Excuses />
       </section>
 
       <section id="speaking">
-        <h3 className="text-xl font-semibold mb-2">
+        <h3 className="text-2xl font-bold tracking-tight mb-3">
           What about public speaking?
         </h3>
         <p className="mb-1">
@@ -174,6 +149,7 @@ export default function Page() {
             <a
               href="https://machalliance.org/events/mach-x-2025-london"
               target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:opacity-75"
             >
               <strong>MACH X (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - Oct &apos;25)</strong> - Panelist
@@ -189,6 +165,7 @@ export default function Page() {
                 <a
                   href="https://www.youtube.com/watch?v=y7BdVVP4ay4"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="underline hover:opacity-75"
                 >
                   YouTube
@@ -207,6 +184,7 @@ export default function Page() {
                 <a
                   href="https://podcasts.apple.com/us/podcast/from-chaos-to-composable-inside-baerskin-tacticals/id1695871656?i=1000708443380"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="underline hover:opacity-75"
                 >
                   Apple Podcasts
@@ -216,6 +194,7 @@ export default function Page() {
                 <a
                   href="https://open.spotify.com/episode/2KMiwIPgpDq3OY0KxDGxjj"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="underline hover:opacity-75"
                 >
                   Spotify
@@ -225,6 +204,7 @@ export default function Page() {
                 <a
                   href="https://www.youtube.com/watch?v=ZKX3LMIZZSc"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="underline hover:opacity-75"
                 >
                   YouTube
@@ -236,6 +216,7 @@ export default function Page() {
             <a
               href="https://machalliance.org/events/mach-three"
               target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:opacity-75"
             >
               <strong>MACH Three (New York City, 🇺🇸 - June &apos;24)</strong> -
@@ -248,6 +229,7 @@ export default function Page() {
             <a
               href="https://turingfest.com/videos/gus-fune-development-setup-how-an-important-part-of-your-toolset-is-often-overlooked/"
               target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:opacity-75"
             >
               <strong>
@@ -261,6 +243,7 @@ export default function Page() {
             <a
               href="https://leaddev.com/london/video/development-setup-how-important-part-your-toolset-often-overlooked"
               target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:opacity-75"
             >
               <strong>
@@ -274,6 +257,7 @@ export default function Page() {
             <a
               href="https://hasura.io/events/hasura-con-2021/speakers/gus-fune/"
               target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:opacity-75"
             >
               <strong>HasuraCon&apos;21 (remote - June &apos;21)</strong> -
@@ -290,33 +274,33 @@ export default function Page() {
         </p>
       </section>
 
-      <section id="contact">
-        <h3 className="text-xl font-semibold mb-2">
+      <section id="ecommerce">
+        <h3 className="text-2xl font-bold tracking-tight mb-3">
           What&apos;s the correct way to spell &ldquo;e-commerce&rdquo;?
         </h3>
         <p className="mb-1">
-          Pascal case &ldquo;<code className={code.className}>ECommerce</code>
+          Pascal case &ldquo;<code className={sourceCode.className}>ECommerce</code>
           &rdquo; ✅<br />
-          camelCase &ldquo;<code className={code.className}>eCommerce</code>
+          camelCase &ldquo;<code className={sourceCode.className}>eCommerce</code>
           &rdquo; ✅<br />
-          kebab-case &ldquo; <code className={code.className}>e-commerce</code>
+          kebab-case &ldquo; <code className={sourceCode.className}>e-commerce</code>
           &rdquo; ✅<br />
-          snake_case &ldquo;<code className={code.className}>e_commerce</code>
+          snake_case &ldquo;<code className={sourceCode.className}>e_commerce</code>
           &rdquo; 👎
         </p>
       </section>
 
       <section id="writing">
-        <h3 className="text-xl font-semibold mb-2">
+        <h3 className="text-2xl font-bold tracking-tight mb-3">
           Do you write about the things you talk about?
         </h3>
-        <p className=" mb-4">
+        <p className="mb-4">
           Yes check the <Link href="/journal">journal</Link> page.
         </p>
       </section>
 
       <section id="contact">
-        <h3 className="text-xl font-semibold mb-2">Can I get in touch?</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">Can I get in touch?</h3>
         <p className="mb-1">
           Yes, you can contact me at{" "}
           <a href="mailto:gus@fune.uk">gus@fune.uk</a>, or any social network
@@ -329,32 +313,40 @@ export default function Page() {
             support@baerskintactical.com
           </a>
         </p>
-        <div className="flex flex-row">
+        <div className="flex flex-row gap-1">
           <a
             href="https://www.linkedin.com/in/gusfune/"
             target="_blank"
-            className="p-2 hover:bg-slate-100 hover:rounded-lg"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
           >
             <Linkedin size={32} />
           </a>
           <a
             href="https://www.twitter.com/gusfune"
             target="_blank"
-            className="p-2 hover:bg-slate-100 hover:rounded-lg"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
           >
             <Twitter size={32} />
           </a>
           <a
             href="https://github.com/gusfune"
             target="_blank"
-            className="p-2 hover:bg-slate-100 hover:rounded-lg"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
           >
             <Github size={32} />
           </a>
           <a
             href="https://youtu.be/dQw4w9WgXcQ"
             target="_blank"
-            className="p-2 hover:bg-slate-100 hover:rounded-lg"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="p-2.5 rounded-lg transition-colors duration-200 hover:bg-foreground/10 no-underline"
           >
             <Youtube size={32} />
           </a>
@@ -367,6 +359,6 @@ export default function Page() {
           not looking for staffing solutions.
         </p>
       </section>
-    </main>
+    </div>
   )
 }

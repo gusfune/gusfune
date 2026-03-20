@@ -39,18 +39,18 @@
 
   @keyframes accordion-down {
     from {
-      height: 0;
+      grid-template-rows: 0fr;
     }
     to {
-      height: var(--radix-accordion-content-height);
+      grid-template-rows: 1fr;
     }
   }
   @keyframes accordion-up {
     from {
-      height: var(--radix-accordion-content-height);
+      grid-template-rows: 1fr;
     }
     to {
-      height: 0;
+      grid-template-rows: 0fr;
     }
   }
 }
@@ -86,33 +86,33 @@
 
 @layer base {
   :root {
-    --background: rgb(248 255 243);
-    --foreground: rgb(0 128 128);
+    --background: 105 100% 97.5%;
+    --foreground: 176 100% 20%;
 
-    --card: rgb(248 255 243);
-    --card-foreground: rgb(0 128 128);
+    --card: 105 100% 97.5%;
+    --card-foreground: 176 100% 20%;
 
-    --popover: rgb(248 255 243);
-    --popover-foreground: rgb(0 128 128);
+    --popover: 105 100% 97.5%;
+    --popover-foreground: 176 100% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 176 60% 12%;
+    --primary-foreground: 105 100% 97.5%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 160 20% 93%;
+    --secondary-foreground: 176 60% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 160 20% 93%;
+    --muted-foreground: 176 30% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 160 30% 90%;
+    --accent-foreground: 176 60% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: rgb(0 128 128);
+    --border: 160 20% 86%;
+    --input: 160 20% 86%;
+    --ring: 176 100% 20%;
 
     --radius: 0.5rem;
   }
@@ -155,7 +155,24 @@
   body {
     @apply text-(--foreground) bg-(--background);
   }
+  h1, h2, h3 {
+    color: hsl(var(--primary));
+  }
   a {
-    @apply underline hover:opacity-75;
+    @apply underline decoration-foreground/30 underline-offset-2 transition-colors duration-200;
+  }
+  a:hover {
+    @apply decoration-foreground/80;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
