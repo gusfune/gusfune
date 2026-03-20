@@ -1,34 +1,16 @@
-import { Metadata, Viewport } from "next"
+import { Metadata } from "next"
 import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: "About | Gus Fune",
-  description: "e-commerce, tech and stuff...",
-  creator: "Gus Fune",
-  icons: {
-    icon: "/favicon-32x32.png",
-    shortcut: "/favicon-32x32.png",
-    apple: "/apple-touch-icon.png",
-    other: {
-      rel: "apple-touch-icon-precomposed",
-      url: "/apple-touch-icon.png",
-    },
-  },
-}
-
-export const viewport: Viewport = {
-  themeColor: "white",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  title: "About",
 }
 
 export default function Page() {
   return (
-    <main className="space-y-4 max-w-2xl">
-      <section className="space-y-2">
-        <h1 className="text-2xl font-bold">About</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 space-y-2">
+    <div className="space-y-8 max-w-2xl">
+      <section className="space-y-4">
+        <h1 className="text-4xl font-extrabold tracking-tight">About</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Image
             src="/GusFune2025-005-small.jpg"
             alt="Gus Fune"
@@ -36,7 +18,7 @@ export default function Page() {
             height={450}
             className="w-full mx-auto block"
           />
-          <div className="space-y-2">
+          <div className="space-y-3">
             <p>
               If you are here, you probably know something about me. I&#39;m
               Gus, a tech/business person that likes buinding things, and
@@ -63,8 +45,7 @@ export default function Page() {
             </p>
           </div>
         </div>
-        <br />
-        <p>On the non-professional side:</p>
+        <p className="mt-4">On the non-professional side:</p>
         <ul className="list-disc list-inside">
           <li>I&#39;m from Brasília, capital of Brazil 🇧🇷.</li>
           <li>
@@ -80,7 +61,7 @@ export default function Page() {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-bold">Work</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Work</h2>
         <p>
           If you want a timeline of where I worked, you better check Linkedin
           for that. For the &quot;director&#39;s cut&quot;, here is the gist:
@@ -140,7 +121,7 @@ export default function Page() {
         </ul>
       </section>
       <section>
-        <h2 className="text-xl font-bold">Selected work</h2>
+        <h2 className="text-2xl font-bold tracking-tight">Selected work</h2>
         <p className="font-light">
           This is a work in progress, some more stuff will be added later on.
         </p>
@@ -148,37 +129,10 @@ export default function Page() {
           Over the years I managed to work with a ton of cool brands and
           companies. Here are a few companies from my selection:
         </p>
-        <dl className="flex flex-row shrink-0 flex-wrap gap-2 font-light">
-          <dt>3M</dt>
-          <dt>Absolut Vodka</dt>
-          <dt>AmBev</dt>
-          <dt>Behold Studios</dt>
-          <dt>BMW</dt>
-          <dt>Bradesco</dt>
-          <dt>Citibank</dt>
-          <dt>FIAT</dt>
-          <dt>GOL Airlines</dt>
-          <dt>Government of Brazil</dt>
-          <dt>Grupo Pão de Acúcar</dt>
-          <dt>HBO</dt>
-          <dt>Heineken</dt>
-          <dt>Huawei</dt>
-          <dt>Jack Daniels</dt>
-          <dt>John Deere</dt>
-          <dt>L’Occitane Cosmetics</dt>
-          <dt>McDonald&#39;s</dt>
-          <dt>MINI</dt>
-          <dt>Motorola</dt>
-          <dt>Nestlé</dt>
-          <dt>Peugeot</dt>
-          <dt>Rogue Snail</dt>
-          <dt>Scania</dt>
-          <dt>The Coca-Cola Company</dt>
-          <dt>Volkswagen</dt>
-          <dt>WWF</dt>
-          <dt>Xiaomi</dt>
-        </dl>
+        <p className="leading-relaxed">
+          3M &middot; Absolut Vodka &middot; AmBev &middot; Behold Studios &middot; BMW &middot; Bradesco &middot; Citibank &middot; FIAT &middot; GOL Airlines &middot; Government of Brazil &middot; Grupo P&atilde;o de A&ccedil;&uacute;car &middot; HBO &middot; Heineken &middot; Huawei &middot; Jack Daniels &middot; John Deere &middot; L&#39;Occitane Cosmetics &middot; McDonald&#39;s &middot; MINI &middot; Motorola &middot; Nestl&eacute; &middot; Peugeot &middot; Rogue Snail &middot; Scania &middot; The Coca-Cola Company &middot; Volkswagen &middot; WWF &middot; Xiaomi
+        </p>
       </section>
-    </main>
+    </div>
   )
 }

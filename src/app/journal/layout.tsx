@@ -3,5 +3,5 @@ export default function JournalLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return <main className="space-y-2 py-4 max-w-2xl">{children}</main>
+  return <div className="space-y-2 py-4 max-w-2xl">{children}</div>
 }
