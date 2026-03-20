@@ -9,6 +9,7 @@ const NOISE_CHANCE = 0.002
 const SEED_INTERVAL = 2500
 const SEED_DENSITY = 0.08
 const MOUSE_RADIUS = 3
+const RESIZE_DEBOUNCE = 200
 
 // Site palette
 const DEAD_R = 245, DEAD_G = 255, DEAD_B = 242
@@ -26,19 +27,62 @@ export function NoiseField() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    const cols = Math.ceil(window.innerWidth / CELL_PX)
-    const rows = Math.ceil(window.innerHeight / CELL_PX)
-    canvas.width = cols
-    canvas.height = rows
+    // Mutable simulation state
+    let cols = 0
+    let rows = 0
+    let grid: Uint8Array
+    let next: Uint8Array
+    let glow: Float32Array
+    let imageData: ImageData
 
-    let grid = new Uint8Array(cols * rows)
-    let next = new Uint8Array(cols * rows)
-    const glow = new Float32Array(cols * rows)
+    function resize() {
+      const newCols = Math.ceil(window.innerWidth / CELL_PX)
+      const newRows = Math.ceil(window.innerHeight / CELL_PX)
+      if (newCols === cols && newRows === rows) return
 
-    // Sparse random init
-    for (let i = 0; i < grid.length; i++) {
-      grid[i] = Math.random() < 0.12 ? 1 : 0
-      glow[i] = grid[i] ? 1.0 : 0.0
+      const oldGrid = grid
+      const oldGlow = glow
+      const oldCols = cols
+      const oldRows = rows
+
+      cols = newCols
+      rows = newRows
+      canvas.width = cols
+      canvas.height = rows
+
+      grid = new Uint8Array(cols * rows)
+      next = new Uint8Array(cols * rows)
+      glow = new Float32Array(cols * rows)
+      imageData = ctx.createImageData(cols, rows)
+
+      if (oldGrid) {
+        // Preserve existing cells within overlapping area
+        const copyW = Math.min(oldCols, cols)
+        const copyH = Math.min(oldRows, rows)
+        for (let y = 0; y < copyH; y++) {
+          for (let x = 0; x < copyW; x++) {
+            const oldI = y * oldCols + x
+            const newI = y * cols + x
+            grid[newI] = oldGrid[oldI]
+            glow[newI] = oldGlow[oldI]
+          }
+        }
+        // Seed new areas
+        for (let y = 0; y < rows; y++) {
+          for (let x = 0; x < cols; x++) {
+            if (x < copyW && y < copyH) continue
+            const i = y * cols + x
+            grid[i] = Math.random() < 0.12 ? 1 : 0
+            glow[i] = grid[i] ? 1.0 : 0.0
+          }
+        }
+      } else {
+        // First init
+        for (let i = 0; i < grid.length; i++) {
+          grid[i] = Math.random() < 0.12 ? 1 : 0
+          glow[i] = grid[i] ? 1.0 : 0.0
+        }
+      }
     }
 
     function idx(x: number, y: number) {
@@ -64,7 +108,6 @@ export function NoiseField() {
       grid = next
       next = tmp
 
-      // Phosphor persistence + CRT noise flicker
       for (let i = 0; i < grid.length; i++) {
         if (grid[i]) {
           glow[i] = 1.0
@@ -102,10 +145,10 @@ export function NoiseField() {
     function maybeReseed(time: number) {
       if (time - lastSeed < SEED_INTERVAL) return
       lastSeed = time
-      const sx = Math.floor(Math.random() * (cols - 20))
-      const sy = Math.floor(Math.random() * (rows - 15))
-      for (let y = sy; y < sy + 15; y++) {
-        for (let x = sx; x < sx + 20; x++) {
+      const sx = Math.floor(Math.random() * Math.max(1, cols - 20))
+      const sy = Math.floor(Math.random() * Math.max(1, rows - 15))
+      for (let y = sy; y < Math.min(sy + 15, rows); y++) {
+        for (let x = sx; x < Math.min(sx + 20, cols); x++) {
           if (Math.random() < SEED_DENSITY) {
             const i = idx(x, y)
             grid[i] = 1
@@ -114,8 +157,6 @@ export function NoiseField() {
         }
       }
     }
-
-    const imageData = ctx.createImageData(cols, rows)
 
     function draw() {
       const data = imageData.data
@@ -128,6 +169,16 @@ export function NoiseField() {
         data[px + 3] = 255
       }
       ctx!.putImageData(imageData, 0, 0)
+    }
+
+    // Debounced resize
+    let resizeTimer = 0
+    const onResize = () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = window.setTimeout(() => {
+        resize()
+        draw()
+      }, RESIZE_DEBOUNCE)
     }
 
     let lastTick = 0
@@ -146,6 +197,7 @@ export function NoiseField() {
       raf = requestAnimationFrame(loop)
     }
 
+    resize()
     draw()
     raf = requestAnimationFrame(loop)
 
@@ -160,11 +212,14 @@ export function NoiseField() {
     }
 
     window.addEventListener("mousemove", onMouse, { passive: true })
+    window.addEventListener("resize", onResize, { passive: true })
     document.addEventListener("visibilitychange", onVis)
 
     return () => {
       cancelAnimationFrame(raf)
+      clearTimeout(resizeTimer)
       window.removeEventListener("mousemove", onMouse)
+      window.removeEventListener("resize", onResize)
       document.removeEventListener("visibilitychange", onVis)
     }
   }, [])
