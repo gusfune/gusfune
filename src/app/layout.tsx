@@ -6,6 +6,7 @@ import { Nav } from "@/components/Nav"
 import { Analytics } from "@vercel/analytics/react"
 import { Metadata, Viewport } from "next"
 import Script from "next/script"
+import { NoiseField } from "@/components/NoiseField"
 
 export const metadata: Metadata = {
   title: {
@@ -38,63 +39,66 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sourceSans.className}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground"
-        >
-          Skip to main content
-        </a>
-        <div className="grid grid-cols-12 gap-4 relative">
-          {/*
-          <aside
-            className={cn(
-              "col-span-12 p-2 bg-[#fbca3c] text-black relative z-10",
-              code.className
-            )}
+        <NoiseField />
+        <div className="relative z-10">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-foreground"
           >
-            <p className="text-sm uppercase text-center">
-              <a
-                href="https://machalliance.org/events/mach-x-2025-london"
-                className="no-underline hover:underline"
-              >
-                Join me for <strong>MACH X</strong> in London - Oct 21-22! Click
-                for details
-              </a>
-            </p>
-          </aside>
-          */}
-          <div className="static col-span-12 sm:col-span-2 z-0">
-            <div
+            Skip to main content
+          </a>
+          <div className="grid grid-cols-12 gap-4 relative">
+            {/*
+            <aside
               className={cn(
-                "sm:fixed sm:top-8 sm:left-0 sm:w-2/12 w-full text-center flex flex-row sm:flex-col gap-4 justify-between items-center sm:justify-start sm:items-center z-0",
-                sourceCode.className
+                "col-span-12 p-2 bg-[#fbca3c] text-black relative z-10",
+                code.className
               )}
             >
-              <Header />
-              <Nav />
+              <p className="text-sm uppercase text-center">
+                <a
+                  href="https://machalliance.org/events/mach-x-2025-london"
+                  className="no-underline hover:underline"
+                >
+                  Join me for <strong>MACH X</strong> in London - Oct 21-22! Click
+                  for details
+                </a>
+              </p>
+            </aside>
+            */}
+            <div className="static col-span-12 sm:col-span-2 z-0">
+              <div
+                className={cn(
+                  "sm:fixed sm:top-8 sm:left-0 sm:w-2/12 w-full text-center flex flex-row sm:flex-col gap-4 justify-between items-center sm:justify-start sm:items-center z-0",
+                  sourceCode.className
+                )}
+              >
+                <Header />
+                <Nav />
+              </div>
             </div>
+            <main id="main-content" className="col-span-12 sm:col-span-10 px-4 py-6 sm:py-8">{children}</main>
           </div>
-          <main id="main-content" className="col-span-12 sm:col-span-10 px-4 py-6 sm:py-8">{children}</main>
-        </div>
 
-        <div className="text-xs text-muted-foreground text-center py-8 mt-8 border-t border-border">
-          <p>
-            Copyright &copy; 2020-{new Date().getFullYear()} - Gus Fune. All rights reserved
-            <br />
-            Photography by{" "}
-            <a
-              href="https://www.juliebee.co.uk/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Julie Broadfoot
-            </a>{" "}
-            © 2025
-            <br />
-            Source-code for this site is published under MIT license.
-            You&apos;re free to use the code, not the content, that&apos;s all
-            mine.
-          </p>
+          <div className="text-xs text-muted-foreground text-center py-8 mt-8 border-t border-border">
+            <p>
+              Copyright &copy; 2020-{new Date().getFullYear()} - Gus Fune. All rights reserved
+              <br />
+              Photography by{" "}
+              <a
+                href="https://www.juliebee.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Julie Broadfoot
+              </a>{" "}
+              © 2025
+              <br />
+              Source-code for this site is published under MIT license.
+              You&apos;re free to use the code, not the content, that&apos;s all
+              mine.
+            </p>
+          </div>
         </div>
         <Analytics />
         <Script id="ketch-analytics">
