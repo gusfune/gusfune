@@ -47,13 +47,13 @@ export function NoiseField() {
 
       cols = newCols
       rows = newRows
-      canvas.width = cols
-      canvas.height = rows
+      canvas!.width = cols
+      canvas!.height = rows
 
       grid = new Uint8Array(cols * rows)
       next = new Uint8Array(cols * rows)
       glow = new Float32Array(cols * rows)
-      imageData = ctx.createImageData(cols, rows)
+      imageData = ctx!.createImageData(cols, rows)
 
       if (oldGrid) {
         // Preserve existing cells within overlapping area
