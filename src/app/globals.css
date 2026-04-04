@@ -175,6 +175,18 @@
   }
 }
 
+.contribution-0 { background-color: hsl(var(--accent)); }
+.contribution-1 { background-color: hsl(176 50% 70%); }
+.contribution-2 { background-color: hsl(176 60% 50%); }
+.contribution-3 { background-color: hsl(176 70% 35%); }
+.contribution-4 { background-color: hsl(176 80% 22%); }
+
+.dark .contribution-0 { background-color: hsl(217 32% 17%); }
+.dark .contribution-1 { background-color: hsl(176 40% 25%); }
+.dark .contribution-2 { background-color: hsl(176 50% 35%); }
+.dark .contribution-3 { background-color: hsl(176 60% 45%); }
+.dark .contribution-4 { background-color: hsl(176 70% 55%); }
+
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

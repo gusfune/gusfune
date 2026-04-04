@@ -2,6 +2,7 @@ import Image from "next/image"
 import BaerImage from "@assets/baerskin.svg"
 import MachAmbassadorImage from "@assets/ambassador-certified-25.svg"
 import { CertificationList } from "@/components/Certification"
+import { GitHubContributions } from "@/components/GitHubContributions"
 import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
 import dynamic from "next/dynamic"
@@ -270,6 +271,10 @@ export default function Page() {
           . I am available for speaking at events and conferences.{" "}
           <Link href="/#contact">Contact me</Link> for more information.
         </p>
+      </section>
+
+      <section id="github" className="mb-16">
+        <GitHubContributions />
       </section>
 
       <section id="ecommerce" className="mb-12">
