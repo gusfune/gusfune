@@ -1,6 +1,6 @@
 import { fetchContributions, type ContributionCalendar } from "@/lib/github"
 
-const buildLevelFn = (data: ContributionCalendar): ((count: number) => number) => {
+export const buildLevelFn = (data: ContributionCalendar): ((count: number) => number) => {
   const nonZero = data.weeks
     .flatMap((w) => w.contributionDays)
     .map((d) => d.contributionCount)
