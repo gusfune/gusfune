@@ -27,8 +27,8 @@ export default async function Page() {
             >
               QUOTE:&nbsp;
               <strong>
-                The AI X-Factor: MACH Alliance’s 'MACH X' and AI Exchange
-                Hackathon Help Enterprises Face the Future
+                The AI X-Factor: MACH Alliance’s &apos;MACH X&apos; and AI
+                Exchange Hackathon Help Enterprises Face the Future
               </strong>
               - CMS Critic - October &apos;25
             </a>

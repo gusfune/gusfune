@@ -34,8 +34,9 @@ export default function Page() {
               className="underline hover:opacity-75"
             >
               <strong>MACH X (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - Oct &apos;25)</strong> - Panelist
-              in 3 panels and keynote speaker on Engineering track: "Harder,
-              Better, Faster, Stronger – BÆRSkin's FAFO playbook for AI success"
+              in 3 panels and keynote speaker on Engineering track:
+              &quot;Harder, Better, Faster, Stronger – BÆRSkin&apos;s FAFO
+              playbook for AI success&quot;
             </a>
           </li>
           <li>

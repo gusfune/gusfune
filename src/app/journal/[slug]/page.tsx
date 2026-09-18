@@ -19,7 +19,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const slug = (await params).slug
-  let post = getBlogPosts().find((post) => post.slug === slug)
+  const post = getBlogPosts().find((post) => post.slug === slug)
 
   if (!post) {
     return {
@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: PageProps) {
     }
   }
 
-  let {
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata
-  let ogImage = image
+  const ogImage = image
     ? image
     : `${baseUrl}/journal/og?title=${encodeURIComponent(title)}`
 
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function Blog({ params }: PageProps) {
   const slug = (await params).slug
-  let post = getBlogPosts().find((post) => post.slug === slug)
+  const post = getBlogPosts().find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
