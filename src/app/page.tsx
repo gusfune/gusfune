@@ -3,15 +3,13 @@ import BaerImage from "@assets/baerskin.svg"
 import MachAmbassadorImage from "@assets/ambassador-certified-25.svg"
 import { CertificationList } from "@/components/Certification"
 import { GitHubContributions } from "@/components/GitHubContributions"
-import { Github, Linkedin, Twitter, Youtube } from "lucide-react"
-import { Skeleton } from "@/components/ui/skeleton"
-import dynamic from "next/dynamic"
+// lucide-react 1.0 dropped every brand icon. Font Awesome via react-icons is
+// the one pack that still carries all four, LinkedIn included.
+// @see https://lucide.dev/guide/version-1
+import { FaGithub, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6"
+import { SiSubstack } from "react-icons/si"
 import { sourceCode } from "@/lib/fonts"
 import Link from "next/link"
-
-const Excuses = dynamic(() => import("@/components/Excuses"), {
-  loading: () => <Skeleton className="w-full min-h-[3rem]" />,
-})
 
 export default function Page() {
   return (
@@ -24,11 +22,15 @@ export default function Page() {
           I&apos;m a CTO who has delivered over 100 products to scale. Some of
           these products were even developed before the cloud!
         </p>
-        <p className="text-lg mt-1">I talk about management, leadership, e-commerce, AI and tech.</p>
+        <p className="text-lg mt-1">
+          I talk about management, leadership, e-commerce, AI and tech.
+        </p>
       </section>
 
       <section id="work" className="mb-16">
-        <h3 className="text-2xl font-bold tracking-tight mb-5">What do you do?</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-5">
+          What do you do?
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
           <div className="space-y-4">
             <Image
@@ -40,7 +42,11 @@ export default function Page() {
             />
             <p>
               I&apos;m the <strong>CTO and Managing Partner</strong> at{" "}
-              <a href="https://baerskintactical.com" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://baerskintactical.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 BÆRskin Tactical
               </a>
               , been here building the tools, tech and people since the brand
@@ -80,7 +86,11 @@ export default function Page() {
             that you might
           </a>{" "}
           or{" "}
-          <a href="https://useflow.tech/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://useflow.tech/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             might not heard of
           </a>{" "}
           ). I have also done a lot of consulting work for companies in various
@@ -114,24 +124,28 @@ export default function Page() {
           </a>{" "}
           programs across Scotland and the UK.
         </p>
+        <p className="font-light mt-4">
+          I&apos;m a Fellow of{" "}
+          <a
+            href="https://www.bcs.org/membership-and-registrations/become-a-member/bcs-fellowship/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            BCS, The Chartered Institute for IT
+          </a>
+          , which is where the FBCS after my name comes from.
+        </p>
       </section>
 
       <section id="certifications" className="mb-16">
-        <h3 className="text-2xl font-bold tracking-tight mb-3">Do you have badges?</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">
+          Do you have badges?
+        </h3>
         <p className="mb-8">
           I GOT BADGES! Everyone loves a certification/credential badge, here
           are a few of my favourite ones.
         </p>
         <CertificationList />
-      </section>
-
-      <section id="services" className="mb-16">
-        <h3 className="text-2xl font-bold tracking-tight mb-3">
-          Are you available for consulting work?
-        </h3>
-        <div className="bg-accent/50 rounded-lg p-4 sm:p-5">
-          <Excuses />
-        </div>
       </section>
 
       <section id="speaking" className="mb-16">
@@ -152,8 +166,9 @@ export default function Page() {
               className="underline hover:opacity-75"
             >
               <strong>MACH X (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - Oct &apos;25)</strong> - Panelist
-              in 3 panels and keynote speaker on Engineering track: "Harder,
-              Better, Faster, Stronger – BÆRSkin's FAFO playbook for AI success"
+              in 3 panels and keynote speaker on Engineering track:
+              &quot;Harder, Better, Faster, Stronger – BÆRSkin&apos;s FAFO
+              playbook for AI success&quot;
             </a>
           </li>
           <li>
@@ -282,13 +297,17 @@ export default function Page() {
           What&apos;s the correct way to spell &ldquo;e-commerce&rdquo;?
         </h3>
         <p className="mb-1">
-          Pascal case &ldquo;<code className={sourceCode.className}>ECommerce</code>
+          Pascal case &ldquo;
+          <code className={sourceCode.className}>ECommerce</code>
           &rdquo; ✅<br />
-          camelCase &ldquo;<code className={sourceCode.className}>eCommerce</code>
+          camelCase &ldquo;
+          <code className={sourceCode.className}>eCommerce</code>
           &rdquo; ✅<br />
-          kebab-case &ldquo; <code className={sourceCode.className}>e-commerce</code>
+          kebab-case &ldquo;{" "}
+          <code className={sourceCode.className}>e-commerce</code>
           &rdquo; ✅<br />
-          snake_case &ldquo;<code className={sourceCode.className}>e_commerce</code>
+          snake_case &ldquo;
+          <code className={sourceCode.className}>e_commerce</code>
           &rdquo; 👎
         </p>
       </section>
@@ -298,12 +317,22 @@ export default function Page() {
           Do you write about the things you talk about?
         </h3>
         <p className="mb-4">
-          Yes check the <Link href="/journal">journal</Link> page.
+          Yes check the <Link href="/journal">journal</Link> page. I also run{" "}
+          <a
+            href="https://bogusfune.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            a boring newsletter
+          </a>
+          , if that is your sort of thing.
         </p>
       </section>
 
       <section id="contact" className="mb-8">
-        <h3 className="text-2xl font-bold tracking-tight mb-3">Can I get in touch?</h3>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">
+          Can I get in touch?
+        </h3>
         <p className="mb-1">
           Yes, you can contact me at{" "}
           <a href="mailto:gus@fune.uk">gus@fune.uk</a>, or any social network
@@ -324,16 +353,16 @@ export default function Page() {
             aria-label="LinkedIn"
             className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
-            <Linkedin size={32} />
+            <FaLinkedin size={32} />
           </a>
           <a
             href="https://www.twitter.com/gusfune"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Twitter"
+            aria-label="X"
             className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
-            <Twitter size={32} />
+            <FaXTwitter size={32} />
           </a>
           <a
             href="https://github.com/gusfune"
@@ -342,7 +371,16 @@ export default function Page() {
             aria-label="GitHub"
             className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
-            <Github size={32} />
+            <FaGithub size={32} />
+          </a>
+          <a
+            href="https://bogusfune.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Substack"
+            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
+          >
+            <SiSubstack size={32} />
           </a>
           <a
             href="https://youtu.be/dQw4w9WgXcQ"
@@ -351,7 +389,7 @@ export default function Page() {
             aria-label="YouTube"
             className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
           >
-            <Youtube size={32} />
+            <FaYoutube size={32} />
           </a>
           {/* TODO: https://log.epicawesome.co/@gusfune */}
         </div>
