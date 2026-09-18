@@ -77,12 +77,18 @@ export default function RootLayout({
                 <Nav />
               </div>
             </div>
-            <main id="main-content" className="col-span-12 sm:col-span-10 px-4 py-6 sm:py-8">{children}</main>
+            <main
+              id="main-content"
+              className="col-span-12 sm:col-span-10 px-4 py-6 sm:py-8"
+            >
+              {children}
+            </main>
           </div>
 
           <div className="text-xs text-muted-foreground text-center py-8 mt-8 border-t border-border">
             <p>
-              Copyright &copy; 2020-{new Date().getFullYear()} - Gus Fune. All rights reserved
+              Copyright &copy; 2020-{new Date().getFullYear()} - Gus Fune. All
+              rights reserved
               <br />
               Photography by{" "}
               <a

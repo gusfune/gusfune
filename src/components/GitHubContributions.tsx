@@ -1,6 +1,8 @@
 import { fetchContributions, type ContributionCalendar } from "@/lib/github"
 
-export const buildLevelFn = (data: ContributionCalendar): ((count: number) => number) => {
+export const buildLevelFn = (
+  data: ContributionCalendar
+): ((count: number) => number) => {
   const nonZero = data.weeks
     .flatMap((w) => w.contributionDays)
     .map((d) => d.contributionCount)
@@ -33,7 +35,9 @@ export const GitHubContributions = async () => {
   data.weeks.forEach((week, i) => {
     const first = week.contributionDays[0]
     if (!first) return
-    const month = new Date(first.date).toLocaleString("en-US", { month: "short" })
+    const month = new Date(first.date).toLocaleString("en-US", {
+      month: "short",
+    })
     if (month !== lastMonth) {
       months.push({ label: month, col: i })
       lastMonth = month
@@ -45,16 +49,23 @@ export const GitHubContributions = async () => {
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="text-2xl font-bold tracking-tight">GitHub</h3>
         <span className="text-sm text-muted-foreground">
-          {data.totalContributions.toLocaleString()} contributions in the last year
+          {data.totalContributions.toLocaleString()} contributions in the last
+          year
         </span>
       </div>
       <div className="overflow-x-auto">
-        <div className="inline-grid gap-[3px]" style={{ gridTemplateColumns: `repeat(${data.weeks.length}, 11px)` }}>
+        <div
+          className="inline-grid gap-[3px]"
+          style={{ gridTemplateColumns: `repeat(${data.weeks.length}, 11px)` }}
+        >
           {/* Month labels */}
           {Array.from({ length: data.weeks.length }, (_, col) => {
             const m = months.find((m) => m.col === col)
             return (
-              <div key={`m-${col}`} className="text-[10px] text-muted-foreground leading-none h-3">
+              <div
+                key={`m-${col}`}
+                className="text-[10px] text-muted-foreground leading-none h-3"
+              >
                 {m?.label ?? ""}
               </div>
             )
@@ -72,14 +83,17 @@ export const GitHubContributions = async () => {
                   title={`${day.contributionCount} contributions on ${day.date}`}
                 />
               )
-            }),
+            })
           )}
         </div>
       </div>
       <div className="flex items-center justify-end gap-1.5 text-[10px] text-muted-foreground">
         <span>Less</span>
         {[0, 1, 2, 3, 4].map((level) => (
-          <div key={level} className={`size-[11px] rounded-[2px] contribution-${level}`} />
+          <div
+            key={level}
+            className={`size-[11px] rounded-[2px] contribution-${level}`}
+          />
         ))}
         <span>More</span>
       </div>

@@ -130,7 +130,15 @@ export default function Page() {
           companies. Here are a few companies from my selection:
         </p>
         <p className="leading-relaxed">
-          3M &middot; Absolut Vodka &middot; AmBev &middot; Behold Studios &middot; BMW &middot; Bradesco &middot; Citibank &middot; FIAT &middot; GOL Airlines &middot; Government of Brazil &middot; Grupo P&atilde;o de A&ccedil;&uacute;car &middot; HBO &middot; Heineken &middot; Huawei &middot; Jack Daniels &middot; John Deere &middot; L&#39;Occitane Cosmetics &middot; McDonald&#39;s &middot; MINI &middot; Motorola &middot; Nestl&eacute; &middot; Peugeot &middot; Rogue Snail &middot; Scania &middot; The Coca-Cola Company &middot; Volkswagen &middot; WWF &middot; Xiaomi
+          3M &middot; Absolut Vodka &middot; AmBev &middot; Behold Studios
+          &middot; BMW &middot; Bradesco &middot; Citibank &middot; FIAT
+          &middot; GOL Airlines &middot; Government of Brazil &middot; Grupo
+          P&atilde;o de A&ccedil;&uacute;car &middot; HBO &middot; Heineken
+          &middot; Huawei &middot; Jack Daniels &middot; John Deere &middot;
+          L&#39;Occitane Cosmetics &middot; McDonald&#39;s &middot; MINI
+          &middot; Motorola &middot; Nestl&eacute; &middot; Peugeot &middot;
+          Rogue Snail &middot; Scania &middot; The Coca-Cola Company &middot;
+          Volkswagen &middot; WWF &middot; Xiaomi
         </p>
       </section>
     </div>

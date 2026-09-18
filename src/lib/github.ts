@@ -15,7 +15,7 @@ export type ContributionCalendar = {
 }
 
 export const fetchContributions = async (
-  username: string,
+  username: string
 ): Promise<ContributionCalendar | null> => {
   const token = process.env.GITHUB_TOKEN
   if (!token) return null
@@ -42,7 +42,7 @@ export const fetchContributions = async (
     const res = await fetch(GITHUB_GRAPHQL_URL, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${token}`,
+        "Authorization": `Bearer ${token}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ query, variables: { username } }),
@@ -52,7 +52,9 @@ export const fetchContributions = async (
     if (!res.ok) return null
 
     const json = await res.json()
-    return json.data?.user?.contributionsCollection?.contributionCalendar ?? null
+    return (
+      json.data?.user?.contributionsCollection?.contributionCalendar ?? null
+    )
   } catch {
     return null
   }

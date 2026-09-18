@@ -12,8 +12,12 @@ const MOUSE_RADIUS = 3
 const RESIZE_DEBOUNCE = 200
 
 // Site palette
-const DEAD_R = 245, DEAD_G = 255, DEAD_B = 242
-const LIVE_R = 220, LIVE_G = 242, LIVE_B = 232
+const DEAD_R = 245,
+  DEAD_G = 255,
+  DEAD_B = 242
+const LIVE_R = 220,
+  LIVE_G = 242,
+  LIVE_B = 232
 
 export function NoiseField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -100,7 +104,8 @@ export function NoiseField() {
             }
           }
           const i = y * cols + x
-          next[i] = (grid[i] && (n === 2 || n === 3)) || (!grid[i] && n === 3) ? 1 : 0
+          next[i] =
+            (grid[i] && (n === 2 || n === 3)) || (!grid[i] && n === 3) ? 1 : 0
         }
       }
 
