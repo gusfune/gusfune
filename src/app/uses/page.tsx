@@ -37,37 +37,79 @@ export default function Page() {
       text: "saves me a ton of hours with emailing",
     },
     {
-      name: "Granola",
-      url: "https://www.granola.so/",
-      text: "AI-powered note taking for meetings and calls",
+      name: "Notion",
+      url: "https://www.notion.com/",
+      text: "notes, meeting write-ups and the calendar. It replaced Granola for me",
+    },
+    {
+      name: "Doppler",
+      url: "https://www.doppler.com/",
+      text: "every secret lives here. No .env files on my machines",
     },
   ]
 
   const dev = [
     {
+      name: "Zed",
+      url: "https://zed.dev/",
+      text: "is my editor now, and my $EDITOR. I kept the VS Code keymap, because muscle memory is a hard thing to argue with",
+    },
+    {
       name: "Visual Studio Code",
       url: "https://code.visualstudio.com/",
-      text: "is my editor of choice since 2017",
+      text: "was the editor of choice from 2017 and is still installed. Some jobs still want it",
+    },
+    {
+      name: "Ghostty",
+      url: "https://ghostty.org/",
+      text: "replaced Warp as my terminal. It is fast, it is boring, and it starts before I finish letting go of the hotkey",
+    },
+    {
+      name: "mise",
+      url: "https://mise.jdx.dev/",
+      text: "one tool to manage every runtime. It retired nvm and rbenv on the same afternoon and I did not miss either",
+    },
+    {
+      name: "Bun",
+      url: "https://bun.sh/",
+      text: "is the default runtime and package manager for anything new I start",
     },
     {
       name: "Dracula Pro",
-      url: "https://draculatheme.com/",
-      text: "is my theme everywhere. It's a great boost on productivity having all apps with the same color scheme",
-    },
-    {
-      name: "Warp",
-      url: "https://www.warp.dev/",
-      text: "is my terminal of choice",
+      url: "https://draculatheme.com/pro",
+      text: "Van Helsing flavour, everywhere. Editor, terminal, shell, window manager. Same colours on every screen is a real productivity boost",
     },
     {
       name: "JetBrains Mono",
       url: "https://www.jetbrains.com/lp/mono/",
-      text: "is my choice of font in editors and terminals",
+      text: "is my font in the editor, with Hack Nerd Font in the terminal for the glyphs",
     },
     {
       name: "Claude Code",
       url: "https://claude.com/product/claude-code",
       text: "you are absolutely right!",
+    },
+    {
+      name: "lazygit",
+      url: "https://github.com/jesseduffield/lazygit",
+      text: "for everything git that is not a one-line command",
+    },
+    {
+      name: "Atuin",
+      url: "https://atuin.sh/",
+      text: "shell history that syncs between machines and is actually searchable",
+    },
+  ]
+
+  const machines = [
+    {
+      name: 'Macbook M4 Pro 16"',
+      text: "macOS, my daily driver, and where the paid work happens",
+    },
+    {
+      name: "Omarchy",
+      url: "https://omarchy.org/",
+      text: "Arch Linux with Hyprland, as a backup machine and an experiment. Same dotfiles branch as the Mac, same Dracula Pro theme, a fraction of the RAM",
     },
   ]
 
@@ -75,10 +117,6 @@ export default function Page() {
     {
       name: '2x ASUS ProArt Display PA329CV Professional Monitor 32"',
       text: "dual 32-inch professional monitors for design and development work",
-    },
-    {
-      name: 'Macbook M4 Pro 16"',
-      text: "my main development machine",
     },
     {
       name: "Herman Miller Flo X Large Dual Monitor Arm",
@@ -89,20 +127,20 @@ export default function Page() {
       text: "height-adjustable desk for better ergonomics",
     },
     {
-      name: "Logitech MX Vertical",
-      text: "ergonomic vertical mouse for better wrist positioning",
-    },
-    {
-      name: "Keyboard Keycron Q6 MAX with custom Red and Blue Gatreon switches specially positioned",
-      text: "custom mechanical keyboard with strategically placed switches",
+      name: "Upsy Desk modifier to remote control desk",
+      text: "remote control upgrade for standing desk automation",
     },
     {
       name: "Herman Miller Aeron chair",
       text: "ergonomic office chair for long coding sessions",
     },
     {
-      name: "Upsy Desk modifier to remote control desk",
-      text: "remote control upgrade for standing desk automation",
+      name: "Keyboard Keycron Q6 MAX with custom Red and Blue Gatreon switches specially positioned",
+      text: "custom mechanical keyboard with strategically placed switches",
+    },
+    {
+      name: "Logitech MX Vertical",
+      text: "ergonomic vertical mouse for better wrist positioning",
     },
     {
       name: "Insta360 Link camera",
@@ -135,7 +173,7 @@ export default function Page() {
         <h3 className="text-2xl font-bold tracking-tight mb-3">Apps</h3>
         <ul className="space-y-2">
           {apps.map((item, i) => (
-            <li key={`dev-item-${i}`}>
+            <li key={`apps-item-${i}`}>
               <a
                 href={item.url}
                 target="_blank"
@@ -162,6 +200,42 @@ export default function Page() {
               >
                 <strong>{item.name}</strong> – {item.text}
               </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section>
+        <h3 className="text-2xl font-bold tracking-tight mb-3">Machines</h3>
+        <p className="mb-3 font-light">
+          Both machines run off{" "}
+          <a
+            href="https://github.com/gusfune/dotfiles"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:opacity-75"
+          >
+            the same dotfiles branch
+          </a>
+          . One clone, one setup script, two very different computers.
+        </p>
+        <ul className="space-y-2">
+          {machines.map((item, i) => (
+            <li key={`machines-item-${i}`}>
+              {item.url ? (
+                <a
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:opacity-75"
+                >
+                  <strong>{item.name}</strong> – {item.text}
+                </a>
+              ) : (
+                <>
+                  <strong>{item.name}</strong> – {item.text}
+                </>
+              )}
             </li>
           ))}
         </ul>
