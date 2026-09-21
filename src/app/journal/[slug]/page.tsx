@@ -85,7 +85,9 @@ export default async function Blog({ params }: PageProps) {
             "description": post.metadata.summary,
             "image": post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+              : `${baseUrl}/journal/og?title=${encodeURIComponent(
+                  post.metadata.title
+                )}`,
             "url": `${baseUrl}/journal/${post.slug}`,
             "author": {
               "@type": "Person",
