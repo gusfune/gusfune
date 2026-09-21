@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+
 /**
  * The table of pages that have a markdown variant, plus the Next config
  * builders that wire them up.
@@ -19,6 +21,24 @@ export const MARKDOWN_PAGES = [
 export const mdPathFor = (path: string) =>
   path === "/" ? "/index.md" : `${path}.md`
 
+/**
+ * The `alternates` block for a page that is also served as markdown.
+ *
+ * Next replaces `alternates` wholesale instead of merging it, so a page that
+ * declares only its markdown variant silently drops the feed link the root
+ * layout set. Every page repeats the feed, and repeats it from here.
+ *
+ * It lives beside `mdPathFor` so a page cannot advertise a variant that is not
+ * routed.
+ */
+export const alternatesFor = (path: string): Metadata["alternates"] => ({
+  canonical: path,
+  types: {
+    "text/markdown": mdPathFor(path),
+    "application/rss+xml": "/journal/rss",
+  },
+})
+
 const wantsMarkdown = [
   { type: "header", key: "accept", value: "(.*)text/markdown(.*)" },
 ] as const
@@ -38,6 +58,12 @@ export const markdownRewrites = () => ({
       source: mdPathFor(path),
       destination: `/md/${slug}`,
     })),
+    // The .md rule goes before the Accept rule. `:slug` matches a dot, so the
+    // Accept rule would otherwise capture "ai-soft-skills.md" whole and rewrite
+    // to a slug that is not published, turning a request that asks for markdown
+    // both ways at once into a 404.
+    // A literal dot has to be escaped for path-to-regexp.
+    { source: "/journal/:slug\\.md", destination: "/md/journal/:slug" },
     // /journal/:slug is a dynamic route, so afterFiles wins here. It also runs
     // after the filesystem, which is what keeps /journal/rss and /journal/og
     // serving their own handlers.
@@ -46,8 +72,6 @@ export const markdownRewrites = () => ({
       destination: "/md/journal/:slug",
       has: [...wantsMarkdown],
     },
-    // A literal dot has to be escaped for path-to-regexp.
-    { source: "/journal/:slug\\.md", destination: "/md/journal/:slug" },
   ],
   fallback: [],
 })

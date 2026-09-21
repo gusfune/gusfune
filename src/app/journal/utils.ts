@@ -7,7 +7,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
-  // Pages in src/content/pages/ have no publish date. They carry updatedAt
+  // A route content.md file has no publish date. It carries updatedAt
   // instead, which feeds the markdown frontmatter and llms.txt.
   updatedAt?: string
 }

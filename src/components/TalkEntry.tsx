@@ -1,4 +1,4 @@
-import type { Talk } from "@/content/speaking"
+import type { Talk } from "@/app/speaking/content"
 
 const TalkBody = ({ talk }: { talk: Talk }) => (
   <>

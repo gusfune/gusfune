@@ -1,14 +1,12 @@
 import { Metadata } from "next"
 import Link from "next/link"
-import { lostFiles, talks } from "@/content/speaking"
+import { lostFiles, talks } from "./content"
 import { TalkEntry } from "@/components/TalkEntry"
+import { alternatesFor } from "@/lib/markdown-routes"
 
 export const metadata: Metadata = {
   title: "Speaking",
-  alternates: {
-    canonical: "/speaking",
-    types: { "text/markdown": "/speaking.md" },
-  },
+  alternates: alternatesFor("/speaking"),
 }
 
 export default function Page() {

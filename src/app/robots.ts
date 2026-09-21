@@ -34,7 +34,6 @@ const robots = (): MetadataRoute.Robots => ({
       // Convention, not spec — see llmstxt.org.
       other: {
         "LLM-Content": `${baseUrl}/llms.txt`,
-        "LLM-Full-Content": `${baseUrl}/llms-full.txt`,
       },
     },
     {

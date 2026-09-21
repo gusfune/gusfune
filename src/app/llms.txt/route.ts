@@ -1,4 +1,4 @@
-import { buildLlmsTxt, textResponse } from "@/lib/llms"
+import { buildLlmsTxt, textResponse } from "@/lib/markdown"
 
 export const dynamic = "force-static"
 

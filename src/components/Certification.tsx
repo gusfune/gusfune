@@ -1,6 +1,6 @@
 import Image from "next/image"
 import type { StaticImageData } from "next/image"
-import { certifications } from "@/content/certifications"
+import { certifications } from "@/app/profile"
 
 interface CertificationProps {
   image: StaticImageData

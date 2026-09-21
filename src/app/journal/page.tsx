@@ -1,14 +1,12 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { getBlogPosts } from "./utils"
-import { publications } from "@/content/publications"
+import { publications } from "./content"
+import { alternatesFor } from "@/lib/markdown-routes"
 
 export const metadata: Metadata = {
   title: "Publications",
-  alternates: {
-    canonical: "/journal",
-    types: { "text/markdown": "/journal.md" },
-  },
+  alternates: alternatesFor("/journal"),
 }
 
 export default async function Page() {

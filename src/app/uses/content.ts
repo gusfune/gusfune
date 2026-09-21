@@ -1,7 +1,7 @@
 /**
  * The contents of the /uses page.
  *
- * Extracted from the page component so the markdown and MCP layers can read the
+ * Extracted from the page component so the markdown layer can read the
  * same list the page renders. Edit here; the page follows.
  */
 export interface UsesItem {
@@ -165,7 +165,7 @@ export const hardware: UsesItem[] = [
   },
 ]
 
-/** Every /uses section in render order, for the markdown and MCP layers. */
+/** Every /uses section in render order, for the markdown layer. */
 export const usesSections = [
   { heading: "Apps", items: apps },
   { heading: "Dev Tools", items: dev },

@@ -1,13 +1,11 @@
 import { Metadata } from "next"
-import { apps, dev, hardware, machines } from "@/content/uses"
-import type { UsesItem } from "@/content/uses"
+import { apps, dev, hardware, machines } from "./content"
+import type { UsesItem } from "./content"
+import { alternatesFor } from "@/lib/markdown-routes"
 
 export const metadata: Metadata = {
   title: "Uses",
-  alternates: {
-    canonical: "/uses",
-    types: { "text/markdown": "/uses.md" },
-  },
+  alternates: alternatesFor("/uses"),
 }
 
 const UsesEntry = ({ item }: { item: UsesItem }) =>

@@ -1,10 +1,10 @@
-import { markdownResponse } from "@/lib/markdown"
 import {
   getAllDocs,
   getDocByPath,
+  markdownResponse,
   pathFromSlug,
   slugFromPath,
-} from "@/lib/page-markdown"
+} from "@/lib/markdown"
 
 // Every document is known at build time, so nothing here needs a live render.
 export const dynamic = "force-static"

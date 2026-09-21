@@ -57,6 +57,16 @@ describe("markdownRewrites", () => {
     expect(sources).toContain("/journal/:slug\\.md")
   })
 
+  // `:slug` matches a dot, so the Accept rule swallows "ai-soft-skills.md"
+  // whole if it runs first, and rewrites to a slug that is not published.
+  it("matches a journal .md url before the Accept rule can claim it", () => {
+    const sources = markdownRewrites().afterFiles.map((rule) => rule.source)
+
+    expect(sources.indexOf("/journal/:slug\\.md")).toBeLessThan(
+      sources.indexOf("/journal/:slug")
+    )
+  })
+
   it("leaves the feed and the og image alone", () => {
     const sources = [
       ...markdownRewrites().beforeFiles,
