@@ -10,6 +10,22 @@ import { FaGithub, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6"
 import { SiSubstack } from "react-icons/si"
 import { sourceCode } from "@/lib/fonts"
 import Link from "next/link"
+import { featuredTalks } from "@/content/speaking"
+import { socials } from "@/content/profile"
+import type { SocialIcon } from "@/content/profile"
+import { TalkEntry } from "@/components/TalkEntry"
+
+/**
+ * Icon per social network. Lives here rather than in src/content/profile.ts so
+ * that module stays free of JSX and can be read by the markdown and MCP layers.
+ */
+const socialIcons: Record<SocialIcon, typeof FaGithub> = {
+  linkedin: FaLinkedin,
+  x: FaXTwitter,
+  github: FaGithub,
+  substack: SiSubstack,
+  youtube: FaYoutube,
+}
 
 export default function Page() {
   return (
@@ -158,126 +174,9 @@ export default function Page() {
         </p>
 
         <ol className="space-y-3 mb-4">
-          <li>
-            <a
-              href="https://machalliance.org/events/mach-x-2025-london"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              <strong>MACH X (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - Oct &apos;25)</strong> - Panelist
-              in 3 panels and keynote speaker on Engineering track:
-              &quot;Harder, Better, Faster, Stronger – BÆRSkin&apos;s FAFO
-              playbook for AI success&quot;
-            </a>
-          </li>
-          <li>
-            <strong>BetterTech (🔈 Podcast - Sep &apos;25)</strong> - The Brave
-            New World of eCommerce
-            <ul className="list-disc list-inside ml-4">
-              <li>
-                <a
-                  href="https://www.youtube.com/watch?v=y7BdVVP4ay4"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:opacity-75"
-                >
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>
-              Participation on The Ecommerce Toolbox: Expert Perspectives (🔈
-              Podcast - May &apos;25)
-            </strong>{" "}
-            - From Chaos to Composable: Inside Baerskin&apos;s Tactical Rebuild
-            <ul className="list-disc list-inside ml-4">
-              <li>
-                <a
-                  href="https://podcasts.apple.com/us/podcast/from-chaos-to-composable-inside-baerskin-tacticals/id1695871656?i=1000708443380"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:opacity-75"
-                >
-                  Apple Podcasts
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://open.spotify.com/episode/2KMiwIPgpDq3OY0KxDGxjj"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:opacity-75"
-                >
-                  Spotify
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.youtube.com/watch?v=ZKX3LMIZZSc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:opacity-75"
-                >
-                  YouTube
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a
-              href="https://machalliance.org/events/mach-three"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              <strong>MACH Three (New York City, 🇺🇸 - June &apos;24)</strong> -
-              Co-hosted 3 workshops: The Developer Hero Culture... How to Manage
-              & Balance; The Truth & Lies Around Low-Code (as an Enabler of
-              Customer Experience); When to Build—When to Buy.
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://turingfest.com/videos/gus-fune-development-setup-how-an-important-part-of-your-toolset-is-often-overlooked/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              <strong>
-                Turing Fest 2022 (Edinburgh, 🏴󠁧󠁢󠁳󠁣󠁴󠁿🇬🇧 - July &apos;22)
-              </strong>{" "}
-              - Development Setup: How An Important Part of Your Toolset Is
-              Often Overlooked (long version)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://leaddev.com/london/video/development-setup-how-important-part-your-toolset-often-overlooked"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              <strong>
-                LeadDev London 2022 (London, 🏴󠁧󠁢󠁥󠁮󠁧󠁿🇬🇧 - June &apos;22)
-              </strong>{" "}
-              - Development setup: how an important part of your toolset is
-              often overlooked (short version)
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://hasura.io/events/hasura-con-2021/speakers/gus-fune/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              <strong>HasuraCon&apos;21 (remote - June &apos;21)</strong> -
-              Building Off Script on Hasura from day 0: what we learned
-            </a>
-          </li>
+          {featuredTalks.map((talk) => (
+            <TalkEntry key={talk.title} talk={talk} />
+          ))}
         </ol>
         <p className="my-4">
           <Link href="/speaking">
@@ -346,51 +245,21 @@ export default function Page() {
           </a>
         </p>
         <div className="flex flex-row gap-1">
-          <a
-            href="https://www.linkedin.com/in/gusfune/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
-          >
-            <FaLinkedin size={32} />
-          </a>
-          <a
-            href="https://www.twitter.com/gusfune"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X"
-            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
-          >
-            <FaXTwitter size={32} />
-          </a>
-          <a
-            href="https://github.com/gusfune"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
-          >
-            <FaGithub size={32} />
-          </a>
-          <a
-            href="https://bogusfune.substack.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Substack"
-            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
-          >
-            <SiSubstack size={32} />
-          </a>
-          <a
-            href="https://youtu.be/dQw4w9WgXcQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="YouTube"
-            className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
-          >
-            <FaYoutube size={32} />
-          </a>
+          {socials.map((social) => {
+            const Icon = socialIcons[social.icon]
+            return (
+              <a
+                key={social.url}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="p-2.5 rounded-lg transition-all duration-200 hover:bg-foreground/10 hover:scale-110 no-underline text-foreground"
+              >
+                <Icon size={32} />
+              </a>
+            )
+          })}
           {/* TODO: https://log.epicawesome.co/@gusfune */}
         </div>
         <p className="text-sm font-light">

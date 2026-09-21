@@ -1,57 +1,11 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { lostFiles, talks } from "@/content/speaking"
-import type { Talk } from "@/content/speaking"
+import { TalkEntry } from "@/components/TalkEntry"
 
 export const metadata: Metadata = {
   title: "Speaking",
 }
-
-const TalkBody = ({ talk }: { talk: Talk }) => (
-  <>
-    <strong>{talk.title}</strong> - {talk.description}
-  </>
-)
-
-/**
- * One entry in the speaking list.
- *
- * A talk with a single canonical page links the whole line. A talk that lives
- * on several platforms keeps the line plain and lists the platforms below it,
- * because there is no one destination to send the reader to.
- */
-const TalkEntry = ({ talk }: { talk: Talk }) => (
-  <li>
-    {talk.url ? (
-      <a
-        href={talk.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="underline hover:opacity-75"
-      >
-        <TalkBody talk={talk} />
-      </a>
-    ) : (
-      <TalkBody talk={talk} />
-    )}
-    {talk.links ? (
-      <ul className="list-disc list-inside ml-4">
-        {talk.links.map((link) => (
-          <li key={link.url}>
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    ) : null}
-  </li>
-)
 
 export default function Page() {
   return (
