@@ -5,6 +5,10 @@ import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "About",
+  alternates: {
+    canonical: "/about",
+    types: { "text/markdown": "/about.md" },
+  },
 }
 
 export default function Page() {

@@ -16,6 +16,14 @@ import { featuredTalks } from "@/content/speaking"
 import { socials } from "@/content/profile"
 import type { SocialIcon } from "@/content/profile"
 import { TalkEntry } from "@/components/TalkEntry"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+    types: { "text/markdown": "/index.md" },
+  },
+}
 
 /**
  * Icon per social network. Lives here rather than in src/content/profile.ts so

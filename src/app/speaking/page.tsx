@@ -5,6 +5,10 @@ import { TalkEntry } from "@/components/TalkEntry"
 
 export const metadata: Metadata = {
   title: "Speaking",
+  alternates: {
+    canonical: "/speaking",
+    types: { "text/markdown": "/speaking.md" },
+  },
 }
 
 export default function Page() {

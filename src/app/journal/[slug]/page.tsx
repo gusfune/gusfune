@@ -41,6 +41,10 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title,
     description,
+    alternates: {
+      canonical: `/journal/${post.slug}`,
+      types: { "text/markdown": `/journal/${post.slug}.md` },
+    },
     openGraph: {
       title,
       description,

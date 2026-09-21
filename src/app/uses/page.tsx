@@ -4,6 +4,10 @@ import type { UsesItem } from "@/content/uses"
 
 export const metadata: Metadata = {
   title: "Uses",
+  alternates: {
+    canonical: "/uses",
+    types: { "text/markdown": "/uses.md" },
+  },
 }
 
 const UsesEntry = ({ item }: { item: UsesItem }) =>

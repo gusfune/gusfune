@@ -75,7 +75,7 @@ export const profile = {
   postNominals: "FBCS",
   headline:
     "CTO who has delivered over 100 products to scale. Some of these products were even developed before the cloud.",
-  location: "Kingdom of Fife, Scotland, UK",
+  location: "Fife, Scotland, UK",
   origin: "Brasília, Brazil",
   email: "gus@fune.uk",
   supportEmail: "support@baerskintactical.com",

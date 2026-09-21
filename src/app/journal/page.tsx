@@ -5,6 +5,10 @@ import { publications } from "@/content/publications"
 
 export const metadata: Metadata = {
   title: "Publications",
+  alternates: {
+    canonical: "/journal",
+    types: { "text/markdown": "/journal.md" },
+  },
 }
 
 export default async function Page() {
