@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import { getBlogPosts } from "./utils"
+import { publications } from "@/content/publications"
 
 export const metadata: Metadata = {
   title: "Publications",
@@ -18,144 +19,19 @@ export default async function Page() {
           written about me over the past few years.
         </p>
         <ol className="space-y-2 mb-8">
-          <li>
-            <a
-              href="https://cmscritic.com/the-x-factor-is-ai-mach-alliances-mach-x-and-ai-exchange-hackathon-help-enterprises-face-the-future"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              QUOTE:&nbsp;
-              <strong>
-                The AI X-Factor: MACH Alliance’s &apos;MACH X&apos; and AI
-                Exchange Hackathon Help Enterprises Face the Future
-              </strong>
-              - CMS Critic - October &apos;25
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://leaddev.com/uncategorized/how-get-most-out-ai-tooling"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              QUOTE:&nbsp;
-              <strong>How to get the most out of AI tooling</strong>- Lead Dev -
-              June &apos;25
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://machalliance.org/interoperability-for-business"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              QUOTE:&nbsp;
-              <strong>
-                Interoperability: Removing the barriers to business impact
-              </strong>
-              - Mach Alliance - June &apos;25
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://xiatech.io/resources/get-the-2024-business-value-of-mach-technologies-report"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              QUOTE:&nbsp;
-              <strong>
-                2024 Business Value of Mach Technologies Global Report
-              </strong>
-              &apos; -Xiatech & OneStock - January &apos;25
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://open.substack.com/pub/pragmaticengineer/p/bug-management-that-works-part-2"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              QUOTE:&nbsp;
-              <strong>Bug management that works (part 2)</strong>
-              &apos; -The Pragmatic Engineer - January &apos;25
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://leaddev.com/technical-direction/migrating-microservices-mach-speed"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              ARTICLE:&nbsp;
-              <strong>Migrating to microservices at MACH-speed</strong>&apos;
-              -Lead Dev, DirectorPlus, by Bill Doerfield - December &apos;24
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://primer.io/blog/in-conversation-with-gus-fune-chief-technology-officer-at-divbrands"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              ARTICLE:&nbsp;
-              <strong>
-                In conversation with Gus Fune, Chief Technology Officer at
-                Divbrands
-              </strong>
-              &apos; - Primer.io, by James Hayward – August &apos;23
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://www.checklyhq.com/case-study/divbrands/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              CASE STUDY:&nbsp;
-              <strong>
-                Checkly’s Impact on Divbrands: Enabling Daily Deployments and
-                Reducing Response Times by Over 50%
-              </strong>{" "}
-              - May &apos;23
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://controlplane.com/customers/customer/div-brands"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              CASE STUDY:&nbsp;
-              <strong>Control Plane</strong> - January &apos;24
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://payloadcms.com/case-studies/divbrands"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:opacity-75"
-            >
-              CASE STUDY:&nbsp;
-              <strong>
-                How divbrands future-proofed e-commerce with Payload (January
-                &apos;24)
-              </strong>
-            </a>
-          </li>
+          {publications.map((publication) => (
+            <li key={publication.url}>
+              <a
+                href={publication.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:opacity-75"
+              >
+                {publication.kind}:&nbsp;
+                <strong>{publication.title}</strong> - {publication.source}
+              </a>
+            </li>
+          ))}
         </ol>
       </section>
       <section className="space-y-2">
