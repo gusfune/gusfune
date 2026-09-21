@@ -1,3 +1,5 @@
+// Prose here is mirrored by hand in src/content/pages/about.md, which is what
+// /about.md and the MCP tools serve. Edit both.
 import { Metadata } from "next"
 import Image from "next/image"
 
@@ -21,7 +23,7 @@ export default function Page() {
           <div className="space-y-3">
             <p>
               If you are here, you probably know something about me. I&#39;m
-              Gus, a tech/business person that likes buinding things, and
+              Gus, a tech/business person that likes building things, and
               companies.
             </p>
             <p>
@@ -33,7 +35,7 @@ export default function Page() {
               who knows?).
             </p>
             <p>
-              I&#39;ve bult a few companies, some did well, some didn&#39;t.
+              I&#39;ve built a few companies, some did well, some didn&#39;t.
               Moved countries, twice, and in the last few years focused into
               e-commerce and retail.
             </p>
@@ -63,14 +65,14 @@ export default function Page() {
       <section>
         <h2 className="text-2xl font-bold tracking-tight">Work</h2>
         <p>
-          If you want a timeline of where I worked, you better check Linkedin
+          If you want a timeline of where I worked, you better check LinkedIn
           for that. For the &quot;director&#39;s cut&quot;, here is the gist:
         </p>
         <ul className="list-inside list-disc space-y-1">
           <li>
             2007: Co-founded{" "}
             <a href="https://papodehomem.com.br">Papo de Homem</a>, a magazine
-            that over the years grow from 0 to 2.5 million readers. I was a
+            that over the years grew from 0 to 2.5 million readers. I was a
             partner and in charge of tech and media operations.
           </li>
           <li>
@@ -78,12 +80,12 @@ export default function Page() {
             starting my own development agency called{" "}
             <strong>Epic Awesome</strong>. Over the next years I managed to
             deliver hundreds of projects from all kinds of brands, from big and
-            small. Check &quot;who I worked with&quot; section below for more
+            small. Check the &quot;selected work&quot; section below for more
             details.
           </li>
           <li>
             2012: Worked as a freelance game journalist, writing for{" "}
-            <a href="https://tecnoblog.net">Tecnoblog</a>, a big brazilian
+            <a href="https://tecnoblog.net">Tecnoblog</a>, a big Brazilian
             publication and covered new launches, events and conferences.
           </li>
           <li>
@@ -97,8 +99,8 @@ export default function Page() {
           </li>
           <li>
             2020: Co-founded <a href="https://offscript.io">Off-Script</a> and
-            build an entire e-commerce marketplace from ground, was named one of
-            the top startups of the year by Wired UK.
+            built an entire e-commerce marketplace from the ground up, and it
+            was named one of the top startups of the year by Wired UK.
           </li>
           <li>
             2021: Moved to Scotland and joined Div Brands as CTO, and later as a

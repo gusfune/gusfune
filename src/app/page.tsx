@@ -1,3 +1,5 @@
+// Prose here is mirrored by hand in src/content/pages/home.md, which is what
+// /index.md and the MCP tools serve. Edit both.
 import Image from "next/image"
 import BaerImage from "@assets/baerskin.svg"
 import MachAmbassadorImage from "@assets/ambassador-certified-25.svg"
@@ -107,7 +109,7 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            might not heard of
+            might not have heard of
           </a>{" "}
           ). I have also done a lot of consulting work for companies in various
           fields, from small ones to large enterprises, including Banks,
