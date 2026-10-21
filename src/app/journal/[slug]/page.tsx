@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { formatDate, getBlogPosts } from "../utils"
 import { baseUrl } from "../../sitemap"
 import { CustomMDX } from "@/mdx-components"
+import { alternatesFor } from "@/lib/markdown-routes"
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
@@ -41,6 +42,7 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title,
     description,
+    alternates: alternatesFor(`/journal/${post.slug}`),
     openGraph: {
       title,
       description,
@@ -85,7 +87,9 @@ export default async function Blog({ params }: PageProps) {
             "description": post.metadata.summary,
             "image": post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+              : `${baseUrl}/journal/og?title=${encodeURIComponent(
+                  post.metadata.title
+                )}`,
             "url": `${baseUrl}/journal/${post.slug}`,
             "author": {
               "@type": "Person",

@@ -7,14 +7,23 @@ import { Analytics } from "@vercel/analytics/react"
 import { Metadata, Viewport } from "next"
 import Script from "next/script"
 import { NoiseField } from "@/components/NoiseField"
+import { baseUrl, siteDescription, siteName } from "@/lib/site"
 
 export const metadata: Metadata = {
+  // Without this, relative OG image URLs resolve against localhost and Next
+  // warns at build. Also the base for every `alternates` entry below.
+  metadataBase: new URL(baseUrl),
   title: {
-    default: "Gus Fune",
-    template: "%s | Gus Fune",
+    default: siteName,
+    template: `%s | ${siteName}`,
   },
-  description: "e-commerce, tech and stuff...",
-  creator: "Gus Fune",
+  description: siteDescription,
+  creator: siteName,
+  alternates: {
+    types: {
+      "application/rss+xml": "/journal/rss",
+    },
+  },
   icons: {
     icon: "/favicon-32x32.png",
     shortcut: "/favicon-32x32.png",

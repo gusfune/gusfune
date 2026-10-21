@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next"
 import { getBlogPosts } from "./journal/utils"
+import { baseUrl } from "@/lib/site"
 
-export const baseUrl = "https://gusfune.com"
+export { baseUrl }
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogs = getBlogPosts().map((post) => ({

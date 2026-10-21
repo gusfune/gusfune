@@ -7,6 +7,9 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  // A route content.md file has no publish date. It carries updatedAt
+  // instead, which feeds the markdown frontmatter and llms.txt.
+  updatedAt?: string
 }
 
 export function parseFrontmatter(fileContent: string) {
