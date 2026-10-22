@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import { formatDate, getBlogPosts } from "../utils"
 import { baseUrl } from "../../sitemap"
 import { CustomMDX } from "@/mdx-components"
+import { alternatesFor } from "@/lib/markdown-routes"
 
 export async function generateStaticParams() {
   const posts = getBlogPosts()
@@ -19,7 +20,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const slug = (await params).slug
-  let post = getBlogPosts().find((post) => post.slug === slug)
+  const post = getBlogPosts().find((post) => post.slug === slug)
 
   if (!post) {
     return {
@@ -28,19 +29,20 @@ export async function generateMetadata({ params }: PageProps) {
     }
   }
 
-  let {
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata
-  let ogImage = image
+  const ogImage = image
     ? image
     : `${baseUrl}/journal/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
     description,
+    alternates: alternatesFor(`/journal/${post.slug}`),
     openGraph: {
       title,
       description,
@@ -64,7 +66,7 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function Blog({ params }: PageProps) {
   const slug = (await params).slug
-  let post = getBlogPosts().find((post) => post.slug === slug)
+  const post = getBlogPosts().find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
@@ -85,7 +87,9 @@ export default async function Blog({ params }: PageProps) {
             "description": post.metadata.summary,
             "image": post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+              : `${baseUrl}/journal/og?title=${encodeURIComponent(
+                  post.metadata.title
+                )}`,
             "url": `${baseUrl}/journal/${post.slug}`,
             "author": {
               "@type": "Person",

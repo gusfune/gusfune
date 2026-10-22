@@ -1,127 +1,52 @@
 import { Metadata } from "next"
+import { apps, dev, hardware, machines } from "./content"
+import type { UsesItem } from "./content"
+import { alternatesFor } from "@/lib/markdown-routes"
 
 export const metadata: Metadata = {
   title: "Uses",
+  alternates: alternatesFor("/uses"),
 }
 
+const UsesEntry = ({ item }: { item: UsesItem }) =>
+  item.url ? (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline hover:opacity-75"
+    >
+      <strong>{item.name}</strong> – {item.text}
+    </a>
+  ) : (
+    <>
+      <strong>{item.name}</strong> – {item.text}
+    </>
+  )
+
+const UsesSection = ({
+  heading,
+  items,
+  children,
+}: {
+  heading: string
+  items: UsesItem[]
+  children?: React.ReactNode
+}) => (
+  <section>
+    <h3 className="text-2xl font-bold tracking-tight mb-3">{heading}</h3>
+    {children}
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li key={item.name}>
+          <UsesEntry item={item} />
+        </li>
+      ))}
+    </ul>
+  </section>
+)
+
 export default function Page() {
-  const apps = [
-    {
-      name: "1Password",
-      url: "https://1password.com/",
-      text: "sudo I am the network administrator, my voice is my password, verify me*",
-    },
-    {
-      name: "Little Snitch",
-      url: "https://www.obdev.at/products/littlesnitch/index.html",
-      text: "for network blocking and privacy",
-    },
-    {
-      name: "Magnet",
-      url: "https://magnet.crowdcafe.com/",
-      text: "for window management and snapping things nicely",
-    },
-    {
-      name: "Numi",
-      url: "https://numi.app/",
-      text: 'better than your regular calculator. Useful for "the mathz"',
-    },
-    {
-      name: "Raycast",
-      url: "https://www.raycast.com/",
-      text: "replacement for spotlight with superpowers",
-    },
-    {
-      name: "Superhuman",
-      url: "https://superhuman.com/refer/zh9hjjcy",
-      text: "saves me a ton of hours with emailing",
-    },
-    {
-      name: "Granola",
-      url: "https://www.granola.so/",
-      text: "AI-powered note taking for meetings and calls",
-    },
-  ]
-
-  const dev = [
-    {
-      name: "Visual Studio Code",
-      url: "https://code.visualstudio.com/",
-      text: "is my editor of choice since 2017",
-    },
-    {
-      name: "Dracula Pro",
-      url: "https://draculatheme.com/",
-      text: "is my theme everywhere. It's a great boost on productivity having all apps with the same color scheme",
-    },
-    {
-      name: "Warp",
-      url: "https://www.warp.dev/",
-      text: "is my terminal of choice",
-    },
-    {
-      name: "JetBrains Mono",
-      url: "https://www.jetbrains.com/lp/mono/",
-      text: "is my choice of font in editors and terminals",
-    },
-    {
-      name: "Claude Code",
-      url: "https://claude.com/product/claude-code",
-      text: "you are absolutely right!",
-    },
-  ]
-
-  const hardware = [
-    {
-      name: '2x ASUS ProArt Display PA329CV Professional Monitor 32"',
-      text: "dual 32-inch professional monitors for design and development work",
-    },
-    {
-      name: 'Macbook M4 Pro 16"',
-      text: "my main development machine",
-    },
-    {
-      name: "Herman Miller Flo X Large Dual Monitor Arm",
-      text: "for optimal monitor positioning and desk space",
-    },
-    {
-      name: "Fuller Standing Desk",
-      text: "height-adjustable desk for better ergonomics",
-    },
-    {
-      name: "Logitech MX Vertical",
-      text: "ergonomic vertical mouse for better wrist positioning",
-    },
-    {
-      name: "Keyboard Keycron Q6 MAX with custom Red and Blue Gatreon switches specially positioned",
-      text: "custom mechanical keyboard with strategically placed switches",
-    },
-    {
-      name: "Herman Miller Aeron chair",
-      text: "ergonomic office chair for long coding sessions",
-    },
-    {
-      name: "Upsy Desk modifier to remote control desk",
-      text: "remote control upgrade for standing desk automation",
-    },
-    {
-      name: "Insta360 Link camera",
-      text: "AI-powered webcam for video calls and streaming",
-    },
-    {
-      name: "PreSonus Eris 3.5BT Gen 2 Studio Monitor",
-      text: "professional studio monitors for audio quality",
-    },
-    {
-      name: "Belkin Thunderbolt 4 Dock Pro",
-      text: "high-performance docking station for connectivity",
-    },
-    {
-      name: "Elgato Stream Deck Neo",
-      text: "customizable control pad for shortcuts and automation",
-    },
-  ]
-
   return (
     <div className="space-y-12 max-w-2xl">
       <section id="intro">
@@ -131,52 +56,25 @@ export default function Page() {
         <p>And these are the stuff I use...</p>
       </section>
 
-      <section>
-        <h3 className="text-2xl font-bold tracking-tight mb-3">Apps</h3>
-        <ul className="space-y-2">
-          {apps.map((item, i) => (
-            <li key={`dev-item-${i}`}>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:opacity-75"
-              >
-                <strong>{item.name}</strong> – {item.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <UsesSection heading="Apps" items={apps} />
+      <UsesSection heading="Dev Tools" items={dev} />
 
-      <section>
-        <h3 className="text-2xl font-bold tracking-tight mb-3">Dev Tools</h3>
-        <ul className="space-y-2">
-          {dev.map((item, i) => (
-            <li key={`dev-item-${i}`}>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:opacity-75"
-              >
-                <strong>{item.name}</strong> – {item.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <UsesSection heading="Machines" items={machines}>
+        <p className="mb-3 font-light">
+          Both machines run off{" "}
+          <a
+            href="https://github.com/gusfune/dotfiles"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:opacity-75"
+          >
+            the same dotfiles branch
+          </a>
+          . One clone, one setup script, two very different computers.
+        </p>
+      </UsesSection>
 
-      <section>
-        <h3 className="text-2xl font-bold tracking-tight mb-3">Hardware</h3>
-        <ul className="space-y-2">
-          {hardware.map((item, i) => (
-            <li key={`hardware-item-${i}`}>
-              <strong>{item.name}</strong> – {item.text}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <UsesSection heading="Hardware" items={hardware} />
     </div>
   )
 }

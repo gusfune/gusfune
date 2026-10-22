@@ -55,7 +55,7 @@ describe("fetchContributions", () => {
         headers: expect.objectContaining({
           Authorization: "Bearer test-token",
         }),
-      }),
+      })
     )
   })
 
@@ -101,7 +101,9 @@ describe("fetchContributions", () => {
     })
 
     await fetchContributions("gusfune")
-    const body = JSON.parse((globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls[0][1].body)
+    const body = JSON.parse(
+      (globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls[0][1].body
+    )
     expect(body.variables.username).toBe("gusfune")
   })
 })

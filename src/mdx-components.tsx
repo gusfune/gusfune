@@ -8,16 +8,25 @@ import Image, { ImageProps } from "next/image"
 // components from other libraries, and more.
 
 const customComponents = {
-  h1: ({ children }) => <h1 className="text-4xl font-extrabold tracking-tight">{children}</h1>,
-  img: (props) => (
+  h1: ({ children }) => (
+    <h1 className="text-4xl font-extrabold tracking-tight">{children}</h1>
+  ),
+  // Markdown `![](...)` yields no alt at all, so default to an empty string and
+  // let screen readers skip the image rather than read the file name.
+  img: ({ alt, ...props }) => (
     <Image
       sizes="100vw"
       style={{ width: "100%", height: "auto" }}
       {...(props as ImageProps)}
+      alt={alt ?? ""}
     />
   ),
-  h2: ({ children }) => <h2 className="text-3xl font-bold tracking-tight py-2">{children}</h2>,
-  h3: ({ children }) => <h3 className="text-2xl font-bold tracking-tight">{children}</h3>,
+  h2: ({ children }) => (
+    <h2 className="text-3xl font-bold tracking-tight py-2">{children}</h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="text-2xl font-bold tracking-tight">{children}</h3>
+  ),
   p: ({ children }) => <p className="">{children}</p>,
   ul: ({ children }) => <ul className="list-disc list-inside">{children}</ul>,
   blockquote: ({ children }) => (
