@@ -1,7 +1,7 @@
 ---
 title: "Gus Fune"
-summary: "CTO and Managing Partner at BÆRskin Tactical, MACH Alliance Ambassador, and Fellow of BCS."
-updatedAt: "2026-09-21"
+summary: "CTO at BÆRskin Tactical, MACH Alliance Ambassador, and Fellow of BCS."
+updatedAt: "2026-11-14"
 ---
 
 I'm a CTO who has delivered over 100 products to scale. Some of these products were even developed before the cloud!
@@ -10,7 +10,7 @@ I talk about management, leadership, e-commerce, AI and tech.
 
 ## What do you do?
 
-I'm the **CTO and Managing Partner** at [BÆRskin Tactical](https://baerskintactical.com), been here building the tools, tech and people since the brand's early days in 2021.
+I'm the **CTO** at [BÆRskin Tactical](https://baerskintactical.com), been here building the tools, tech and people since the brand's early days in 2021.
 
 I'm also an **Ambassador** at the [MACH Alliance](https://machalliance.org/), where I help advocate for open and best-of-breed enterprise technology in e-commerce ecosystems.
 

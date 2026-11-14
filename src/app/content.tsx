@@ -58,7 +58,7 @@ const HomeContent = () => (
             className="block aspect-square"
           />
           <p>
-            I&apos;m the <strong>CTO and Managing Partner</strong> at{" "}
+            I&apos;m the <strong>CTO</strong> at{" "}
             <a
               href="https://baerskintactical.com"
               target="_blank"

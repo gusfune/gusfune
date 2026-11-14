@@ -75,7 +75,7 @@ export interface SocialLink {
 
 export const roles: Role[] = [
   {
-    title: "CTO and Managing Partner",
+    title: "CTO",
     organisation: "BÆRskin Tactical",
     url: "https://baerskintactical.com",
     description:
