@@ -1,6 +1,6 @@
 ---
 title: "Gus Fune"
-summary: "CTO at BÆRskin Tactical, MACH Alliance Ambassador, and Fellow of BCS."
+summary: "CTO at BÆRskin Tactical, MACH Alliance Ambassador, 2026 MACH Impact Maker, and Fellow of BCS."
 updatedAt: "2026-11-14"
 ---
 
@@ -13,6 +13,8 @@ I talk about management, leadership, e-commerce, AI and tech.
 I'm the **CTO** at [BÆRskin Tactical](https://baerskintactical.com), been here building the tools, tech and people since the brand's early days in 2021.
 
 I'm also an **Ambassador** at the [MACH Alliance](https://machalliance.org/), where I help advocate for open and best-of-breed enterprise technology in e-commerce ecosystems.
+
+In 2026 I was named an **Impact Maker** at the [MACH Impact Awards](https://machalliance.org/insights-hub/machx-amsterdam-impact-award-winners) in Amsterdam, for driving agentic innovation and operational efficiency at scale.
 
 My previous roles include working at a few startups ([that you might](https://www.wired.com/story/europe-hottest-startups-2021/) or [might not have heard of](https://useflow.tech/)). I have also done a lot of consulting work for companies in various fields, from small ones to large enterprises, including banks, airlines, consumer goods, car makers, NGOs and government.
 

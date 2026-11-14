@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import BaerImage from "@assets/baerskin.svg"
 import MachAmbassadorImage from "@assets/ambassador-certified-25.svg"
+import MachImpactAwardImage from "@assets/mach-impact-award.svg"
 import { CertificationList } from "@/components/Certification"
 import { GitHubContributions } from "@/components/GitHubContributions"
 // lucide-react 1.0 dropped every brand icon. Font Awesome via react-icons is
@@ -91,6 +92,28 @@ const HomeContent = () => (
             technology in e-commerce ecosystems.
           </p>
         </div>
+      </div>
+      <div className="flex items-center gap-4">
+        {/* Decorative: the sentence next to it carries the meaning. */}
+        <Image
+          src={MachImpactAwardImage}
+          alt=""
+          width={22}
+          height={64}
+          className="h-16 w-auto shrink-0 dark:invert"
+        />
+        <p>
+          In 2026 I was named an <strong>Impact Maker</strong> at the{" "}
+          <a
+            href="https://machalliance.org/insights-hub/machx-amsterdam-impact-award-winners"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MACH Impact Awards
+          </a>{" "}
+          in Amsterdam, for driving agentic innovation and operational
+          efficiency at scale.
+        </p>
       </div>
       <hr className="w-16 h-0.5 my-6 bg-foreground/30 border-0 mx-0" />
       <p className="font-light">
