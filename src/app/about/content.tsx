@@ -110,6 +110,14 @@ const AboutContent = () => (
           </a>
           .
         </li>
+        <li>
+          2026: Named an Impact Maker at the{" "}
+          <a href="https://machalliance.org/insights-hub/machx-amsterdam-impact-award-winners">
+            MACH Impact Awards
+          </a>{" "}
+          in Amsterdam, for driving agentic innovation and operational
+          efficiency at scale.
+        </li>
       </ul>
     </section>
     <section>

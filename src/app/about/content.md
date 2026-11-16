@@ -1,7 +1,7 @@
 ---
 title: "About"
 summary: "Gus Fune is a self-taught CTO from Brasília who now builds e-commerce technology from the Kingdom of Fife in Scotland."
-updatedAt: "2026-09-21"
+updatedAt: "2026-11-14"
 ---
 
 If you are here, you probably know something about me. I'm Gus, a tech/business person that likes building things, and companies.
@@ -33,6 +33,7 @@ If you want a timeline of where I worked, you better check LinkedIn for that. Fo
 - **2021**: Moved to Scotland and joined Div Brands as CTO, and later as a Managing Partner as well. Been there making e-commerce amazing while scaling brands such as BÆRSkin.
 - **2024**: In parallel to my work at Div Brands, I also became an ambassador for the [MACH Alliance](https://machalliance.org/).
 - **2025**: I was part of the first subject matter expert group that developed the certification for [Certified MACH Architect Professional](https://machalliance.org/mach-architect-certification).
+- **2026**: Named an Impact Maker at the [MACH Impact Awards](https://machalliance.org/insights-hub/machx-amsterdam-impact-award-winners) in Amsterdam, for driving agentic innovation and operational efficiency at scale.
 
 ## Selected work
 

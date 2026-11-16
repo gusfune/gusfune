@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="64" height="184" viewBox="0 0 64 184"
+     class="mach-award mach-award--outline"
+     role="img" aria-label="MACH Impact Awards black outline icon">
+  <title>MACH Impact Awards — black outline icon</title>
+  <desc>Four stacked editable shapes with black outlines and no fill: a hexagon, a circle, an inverted triangle and a square. Transparent background.</desc>
+  <defs>
+    <!-- Trim the triangle at the square's top edge, keeping its interior transparent. -->
+    <clipPath id="award-outline-triangle-clip" clipPathUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="64" height="138.27"/>
+    </clipPath>
+  </defs>
+  <!-- Edit the group's stroke and stroke-width, or target each shape by ID. -->
+  <g id="award-outline-shapes" fill="none" stroke="#000000"
+     stroke-width="6.65" stroke-linejoin="miter" stroke-miterlimit="4">
+    <polygon id="award-outline-hexagon"
+             points="32,8.1 54.21,21.1 54.21,45.8 32,58.9 9.81,45.8 9.81,21.1"/>
+    <circle id="award-outline-circle" cx="32" cy="78.97" r="19.685"/>
+    <polygon id="award-outline-triangle"
+             points="8.85,98.62 55.17,98.62 32,138.65"
+             clip-path="url(#award-outline-triangle-clip)"/>
+    <rect id="award-outline-square" x="12.94" y="138.27" width="38.15" height="38.15"/>
+  </g>
+</svg>
